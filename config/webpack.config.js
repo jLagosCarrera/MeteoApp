@@ -24,6 +24,10 @@ module.exports = {
                         attrs: [':data-src']
                     }
                 }
+            },
+            {
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
