@@ -1,4 +1,8 @@
 import angular from 'angular';
-import appComponent from './app.component';
+import helloComponent from './hello/hello';
+import worldComponent from './world/world';
 
-angular.module('app', []).component('app', appComponent);
+const app = angular.module('app', []);
+
+app.component('hello', helloComponent);
+app.component('world', worldComponent);
