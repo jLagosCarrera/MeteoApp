@@ -9,13 +9,13 @@ app.component('hello', helloComponent);
 app.component('world', worldComponent);
 
 app.config(['$stateProvider', function (provider) {
-    var helloState = {
+    const helloState = {
         name: 'hello',
         url: '/hello',
         component: 'hello'
     }
 
-    var constState = {
+    const constState = {
         name: 'world',
         url: '/world',
         component: 'world'
