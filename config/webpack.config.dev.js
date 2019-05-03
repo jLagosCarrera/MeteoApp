@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
+
 module.exports = {
     entry: './src/app/app.module.js',
     output: {
@@ -16,14 +18,13 @@ module.exports = {
             hash: true,
             template: path.resolve(__dirname, '../src/index.html'),
             filename: path.resolve(__dirname, '../dist/index.html')
+        }),
+        new Dotenv({
+            path: './config/.env'
         })
     ],
     module: {
         rules: [{
-                test: /\.(s*)css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
                 test: /\.(html)$/,
                 use: {
                     loader: 'html-loader',
@@ -31,6 +32,10 @@ module.exports = {
                         attrs: [':data-src']
                     }
                 }
+            },
+            {
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }

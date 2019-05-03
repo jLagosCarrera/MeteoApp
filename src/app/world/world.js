@@ -1,5 +1,5 @@
 import template from './world.html';
-import './world.css';
+import './world.scss';
 
 export default {
     template

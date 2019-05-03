@@ -1,5 +1,5 @@
 import template from './hello.html';
-import './hello.css';
+import './hello.scss';
 
 export default {
     template
