@@ -10,6 +10,8 @@ import routes from './app.routes';
 //Services
 import actualWeather from './shared/services/actualWeather';
 
+import weatherService from './shared/services/weatherService';
+
 export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
     .config(routes)
     .factory('actualWeather', actualWeather);
