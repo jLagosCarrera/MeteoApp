@@ -1,8 +1,6 @@
 import template from './hello.html';
 import './hello.css';
 
-const AppComponent = {
+export default {
     template
 };
-
-export default AppComponent;

@@ -9,9 +9,8 @@ import appComponent from './component/component';
 import helloComponent from './hello/hello';
 import worldComponent from './world/world';
 
-const app = angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd]);
-
-app.component('hello', helloComponent);
-app.component('world', worldComponent);
-app.component('app', appComponent);
-app.config(routes);
+export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
+    .config(routes)
+    .component('hello', helloComponent)
+    .component('world', worldComponent)
+    .component('app', appComponent);

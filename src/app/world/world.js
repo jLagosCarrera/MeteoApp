@@ -1,8 +1,6 @@
 import template from './world.html';
 import './world.css';
 
-const AppComponent = {
+export default {
     template
 };
-
-export default AppComponent;
