@@ -9,7 +9,7 @@ export default ['$http', function ($http) {
             mode: 'json',
             units: 'metric',
             lang: 'en',
-            appid: '37499dd44886aa89565abd094ecbfc8c'
+            appid: process.env.OPEN_WEATHER_MAP_APIKEY
         }
     };
 

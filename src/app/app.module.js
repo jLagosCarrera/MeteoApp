@@ -10,7 +10,7 @@ import appComponent from './component/component';
 import helloComponent from './hello/hello';
 import worldComponent from './world/world';
 
-import weatherService from '../services/weatherService';
+import weatherService from './shared/services/weatherService';
 
 export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
     .config(routes)
