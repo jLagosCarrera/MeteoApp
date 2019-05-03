@@ -1,4 +1,4 @@
-const config = ['$stateProvider', function (provider) {
+export default ['$stateProvider', function (provider) {
     const helloState = {
         name: 'hello',
         url: '/hello',
@@ -14,5 +14,3 @@ const config = ['$stateProvider', function (provider) {
     provider.state(helloState);
     provider.state(constState);
 }];
-
-export default config;

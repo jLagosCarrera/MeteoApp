@@ -15,10 +15,6 @@ module.exports = {
     ],
     module: {
         rules: [{
-                test: /\.(s*)css$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
                 test: /\.(html)$/,
                 use: {
                     loader: 'html-loader',
@@ -26,6 +22,10 @@ module.exports = {
                         attrs: [':data-src']
                     }
                 }
+            },
+            {
+                test: /\.(s*)css$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
