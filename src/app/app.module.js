@@ -8,14 +8,18 @@ import 'angular-material/angular-material.scss';
 import 'material-icons/iconfont/material-icons.scss'
 //UiRouter and routes
 import uiRouter from '@uirouter/angularjs';
-import routes from './app.routes';
 
+
+//Values
+import latestSearches from './shared/data/latestSearches';
 //Components
 import homePage from './home-page/home-page';
 //Services
-import actualWeather from './shared/services/actualWeather';
+import openWeatherMaps from './shared/services/openWeatherMaps';
+import latestSearchesUtil from './shared/services/latestSearchesUtil';
 
 export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
-    .config(routes)
-    .factory('actualWeather', actualWeather)
-    .component('homePage', homePage);
+    .component('homePage', homePage)
+    .value('latestSearches', latestSearches)
+    .factory('openWeatherMaps', openWeatherMaps)
+    .factory('latestSearchesUtil', latestSearchesUtil);

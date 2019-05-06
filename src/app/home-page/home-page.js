@@ -1,8 +1,8 @@
-import template from './home-page.html';
 import controller from './home-page.controller';
+import template from './home-page.html';
 import './home-page.scss';
 
 export default {
-    template,
-    controller
+    controller,
+    template
 };

@@ -1,7 +1,7 @@
 <div layout="column" layout-fill>
     <div flex="20" layout="row" layout-align="center center">TuTiempo Typography or Logo here</div>
     <div flex>
-        <form ng-submit="$ctrl.search()" layout="row" layout-align="center start" novalidate>
+        <form ng-submit="$ctrl.search()" layout="row" layout-align="center center" novalidate>
             <md-input-container flex="50">
                 <md-icon class="material-icons">place</md-icon>
                 <input required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder="Tell me a city to start forecasting!" autocomplete="off">
@@ -10,5 +10,10 @@
                 <md-icon class="material-icons">search</md-icon>
             </md-button>
         </form>
+        <div layout="row" layout-align="center start">
+            <ul flex="70">
+                <li ng-repeat="search in $ctrl.latestSearches track by $index">{{ search }}</li>
+            </ul>
+        </div>
     </div>
 </div>
