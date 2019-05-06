@@ -12,6 +12,7 @@ import uiRouter from '@uirouter/angularjs';
 
 //Values
 import latestSearches from './shared/data/latestSearches';
+import fiveDayForecast from './shared/data/fiveDayForecast';
 //Components
 import homePage from './home-page/home-page';
 //Services
@@ -21,5 +22,6 @@ import latestSearchesUtil from './shared/services/latestSearchesUtil';
 export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
     .component('homePage', homePage)
     .value('latestSearches', latestSearches)
+    .value('fiveDayForecast', fiveDayForecast)
     .factory('openWeatherMaps', openWeatherMaps)
     .factory('latestSearchesUtil', latestSearchesUtil);

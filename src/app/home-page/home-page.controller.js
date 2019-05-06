@@ -1,7 +1,7 @@
 export default class HomePageController {
-    constructor(latestSearches, latestSearchesUtil) {
-        this.latestSearches = latestSearches;
+    constructor(latestSearchesUtil, openWeatherMaps) {
         this.latestSearchesUtil = latestSearchesUtil;
+        this.openWeatherMaps = openWeatherMaps;
     }
 
     $onInit() {
@@ -9,8 +9,9 @@ export default class HomePageController {
     }
 
     search() {
-        this.latestSearchesUtil.saveLatestSearches(this.latestSearches, this.city);
+        this.latestSearchesUtil.addCity(this.city);
+        console.log(this.openWeatherMaps.getFiveDayForecastCity(this.city));
     };
 };
 
-HomePageController.$inject = ['latestSearches', 'latestSearchesUtil'];
+HomePageController.$inject = ['latestSearchesUtil', 'openWeatherMaps'];
