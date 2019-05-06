@@ -1,11 +1,11 @@
-export default ['$http', function ($http) {
+export default ['$http', 'city', function ($http, city) {
     const URL = 'http://api.openweathermap.org/data/2.5/weather';
 
     const request = {
         method: 'GET',
         url: URL,
         params: {
-            q: 'Vigo',
+            q: city,
             mode: 'json',
             units: 'metric',
             lang: 'en',
