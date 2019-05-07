@@ -1,3 +1,53 @@
-body {
-    background-color: lightblue;
+body,
+html {
+    height: 100%;
+}
+
+.bg {
+    height: 100%;
+    background-image: url("./img/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    text-shadow: 2px 2px 0 black;
+}
+
+#lightBackground {
+    background-color: #d1e6ea;
+}
+
+.md-button,
+md-input-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.md-button {
+    margin-top: 2px;
+}
+
+md-input-container .md-input {
+    margin-top: 4px;
 }

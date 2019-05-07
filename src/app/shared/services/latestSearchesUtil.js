@@ -13,8 +13,8 @@ export default class LatestSearchesUtil {
         }
 
         this.latestSearches.unshift(city);
-        if (this.latestSearches.length > 10) {
-            this.latestSearches.splice(10, this.latestSearches.length - 10);
+        if (this.latestSearches.length > 16) {
+            this.latestSearches.splice(16, this.latestSearches.length - 16);
         }
 
         localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
