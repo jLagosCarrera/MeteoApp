@@ -1,19 +1,14 @@
 export default class LatestSearchesUtil {
-    constructor($window, latestSearches) {
-        this.$window = $window;
+    constructor(latestSearches) {
         this.latestSearches = latestSearches;
     }
 
     getLatestSearches() {
-        return this.latestSearches = JSON.parse(this.$window.localStorage.getItem('latestSearches')) || [];
+        return this.latestSearches = JSON.parse(localStorage.getItem('latestSearches')) || [];
     };
 
     addCity(city) {
-        if (city == undefined || city == null || city.trim() === '' || this.latestSearches.includes(city)) {
-            return;
-        }
-
-        if (city === this.latestSearches[0]) {
+        if (!city || city.trim() === '' || this.latestSearches.includes(city)) {
             return;
         }
 
@@ -22,8 +17,8 @@ export default class LatestSearchesUtil {
             this.latestSearches.splice(10, this.latestSearches.length - 10);
         }
 
-        this.$window.localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
+        localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
     }
 }
 
-LatestSearchesUtil.$inject = ['$window', 'latestSearches'];
+LatestSearchesUtil.$inject = ['latestSearches'];

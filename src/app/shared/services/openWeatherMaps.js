@@ -7,9 +7,7 @@ export default class OpenWeatherMaps {
     getActualForecastCity(city) {
         const URL = 'https://api.openweathermap.org/data/2.5/weather';
 
-        const request = {
-            method: 'GET',
-            url: URL,
+        const params = {
             params: {
                 q: city,
                 units: 'metric',
@@ -18,15 +16,13 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.fiveDayForecast = this.$http(request);
+        //return daily forecast promise
     };
 
     getFiveDayForecastCity(city) {
         const URL = 'https://api.openweathermap.org/data/2.5/forecast';
 
-        const request = {
-            method: 'GET',
-            url: URL,
+        const params = {
             params: {
                 q: city,
                 units: 'metric',
@@ -35,7 +31,7 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.fiveDayForecast = this.$http(request);
+        return this.fiveDayForecast = this.$http.get(URL, params);
     }
 }
 
