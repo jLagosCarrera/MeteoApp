@@ -1,5 +1,6 @@
 export default class HomePageController {
-    constructor(latestSearchesUtil, openWeatherMaps) {
+    constructor($state, latestSearchesUtil, openWeatherMaps) {
+        this.$state = $state;
         this.latestSearchesUtil = latestSearchesUtil;
         this.openWeatherMaps = openWeatherMaps;
     }
@@ -11,7 +12,8 @@ export default class HomePageController {
     search() {
         this.latestSearchesUtil.addCity(this.city);
         console.log(this.openWeatherMaps.getFiveDayForecastCity(this.city));
+        this.$state.go('search');
     };
 };
 
-HomePageController.$inject = ['latestSearchesUtil', 'openWeatherMaps'];
+HomePageController.$inject = ['$state', 'latestSearchesUtil', 'openWeatherMaps'];

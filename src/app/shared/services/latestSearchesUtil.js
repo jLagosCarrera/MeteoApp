@@ -8,13 +8,18 @@ export default class LatestSearchesUtil {
         return this.latestSearches = JSON.parse(this.$window.localStorage.getItem('latestSearches')) || [];
     };
 
-    addCity(city) {
-        if (city == undefined || city == null || city.trim() === '' || this.latestSearches.includes(city)) {
+    addCity(rawCity) {
+        let city = rawCity.charAt(0).toUpperCase() + rawCity.slice(1).toLowerCase();
+
+        if (city == undefined || city == null || city.trim() === '') {
             return;
         }
 
-        if (city === this.latestSearches[0]) {
-            return;
+        if (this.latestSearches.includes(city)) {
+            let index = this.latestSearches.indexOf(city);
+            if (index > -1) {
+                this.latestSearches.splice(index, 1);
+            }
         }
 
         this.latestSearches.unshift(city);
