@@ -1,5 +1,5 @@
 export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('', '/home');
+    $urlRouterProvider.otherwise('/home');
 
     const homeState = {
         name: 'home',
