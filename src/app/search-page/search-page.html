@@ -4,13 +4,13 @@
             <a ui-sref="home">TuTiempo</a>
         </div>
         <div flex="10">
-            <form ng-submit="$ctrl.search()" layout="columns" layout-align="center center" novalidate>
-                <md-input-container flex="100">
+            <form ng-submit="$ctrl.search()" layout="row" layout-align="center center" novalidate>
+                <md-input-container flex="80">
                     <md-icon class="material-icons">place</md-icon>
                     <input required md-no-asterisk ng-model="$ctrl.city" type="text"
-                        placeholder="Tell me a city to start forecasting!" autocomplete="off">
+                        placeholder="Tell me a city!" autocomplete="off">
                 </md-input-container>
-                <md-button type="submit" flex="100" class="md-raised md-primary">
+                <md-button type="submit" flex class="md-raised md-primary">
                     <md-icon class="material-icons">search</md-icon>
                 </md-button>
             </form>
