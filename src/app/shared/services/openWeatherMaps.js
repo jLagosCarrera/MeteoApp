@@ -1,12 +1,14 @@
 export default class OpenWeatherMaps {
+
     constructor($http, fiveDayForecast, latestError, currentForecast) {
         this.$http = $http;
         this.fiveDayForecast = fiveDayForecast;
         this.latestError = latestError;
         this.currentForecast = currentForecast;
+        this.baseURL = 'https://api.openweathermap.org/data/2.5';
     }
 
-    getCurrentForecastCity(city) {
+    async getCurrentForecastCity(city) {
         const URL = 'https://api.openweathermap.org/data/2.5/weather';
 
         const params = {
@@ -27,9 +29,7 @@ export default class OpenWeatherMaps {
             });
     };
 
-    getFiveDayForecastCity(city) {
-        const URL = 'https://api.openweathermap.org/data/2.5/forecast';
-
+    async getFiveDayForecastCity(city) {
         const params = {
             params: {
                 q: city,
@@ -39,7 +39,15 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.$http.get(URL, params)
+        try {
+            return await this.$http.get(`${this.baseURL}/forecast`, params).then((response) => {
+                this.fiveDayForecast = response;
+            });
+        } catch (response) {
+            this.latestError = response;
+        }
+
+        return this.$http.get(`${baseURL}/forecast`, params)
             .then((response) => {
                 this.fiveDayForecast = response;
             })
