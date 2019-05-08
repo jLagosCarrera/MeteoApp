@@ -7,8 +7,8 @@
             <form ng-submit="$ctrl.search()" layout="row" layout-align="center center" novalidate>
                 <md-input-container flex="80">
                     <md-icon class="material-icons">place</md-icon>
-                    <input required md-no-asterisk ng-model="$ctrl.city" type="text"
-                        placeholder="Tell me a city!" autocomplete="off">
+                    <input required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder="Tell me a city!"
+                        autocomplete="off">
                 </md-input-container>
                 <md-button type="submit" flex class="md-raised md-primary">
                     <md-icon class="material-icons">search</md-icon>
@@ -22,6 +22,6 @@
         </div>
     </div>
     <div flex class="contentBox">
-
+        {{$ctrl.latestSearches[0]}}
     </div>
 </div>
