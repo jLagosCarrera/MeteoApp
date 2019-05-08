@@ -15,7 +15,7 @@ module.exports = {
             filename: path.resolve(__dirname, '../dist/index.html')
         }),
         new Dotenv({
-            path: '.env'
+            systemvars: true,
         })
     ],
     module: {
