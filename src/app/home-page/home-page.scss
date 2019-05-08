@@ -3,51 +3,25 @@ html {
     height: 100%;
 }
 
-.bg {
+.home-page {
     height: 100%;
-    background-image: url("./img/background.jpg");
+    background-image: url("./img/background.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 
-@keyframes Gradient {
-    0% {
-        background-position: 0% 50%
-    }
+md-input-container .md-input.tealInput {
+    border-radius: 2px;
+    box-shadow: 16px 16px 20px -13px #b1d9f4 inset;
+    background-color: #e5f2fb;
+}
 
-    50% {
-        background-position: 100% 50%
-    }
-
-    100% {
-        background-position: 0% 50%
-    }
+.buttonAlign {
+    margin-bottom: 32px;
 }
 
 ul {
     list-style-type: none;
-}
-
-h1 {
-    text-shadow: 2px 2px 0 black;
-}
-
-#lightBackground {
-    background-color: #d1e6ea;
-}
-
-.md-button,
-md-input-container {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.md-button {
-    margin-top: 2px;
-}
-
-md-input-container .md-input {
-    margin-top: 4px;
 }

@@ -38,7 +38,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                test: /\.(png|woff|woff2|eot|ttf|svg|otf)$/,
                 use: ['url-loader?limit=100000']
             },
             {

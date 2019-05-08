@@ -5,7 +5,7 @@ import angularAnimate from 'angular-animate';
 import angularAria from 'angular-aria';
 import angularMessages from 'angular-messages';
 import 'angular-material/angular-material.scss';
-import 'material-icons/iconfont/material-icons.scss'
+import 'material-icons/iconfont/material-icons.scss';
 
 //UiRouter and routes
 import uiRouter from '@uirouter/angularjs';
