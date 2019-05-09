@@ -11,9 +11,17 @@ export default class HomePageController {
 
     search() {
         this.latestSearchesUtil.addCity(this.city);
-        console.log(this.openWeatherMaps.getFiveDayForecastCity(this.city));
+        
+        //Will do this call on the search page
+        //this.openWeatherMaps.getFiveDayForecastCity(this.city);
+
         this.$state.go('search');
-    };
+    }
+
+    clickCity(city) {
+        //Will do this call on the search page
+        //this.openWeatherMaps.getFiveDayForecastCity(city);
+    }
 };
 
 HomePageController.$inject = ['$state', 'latestSearchesUtil', 'openWeatherMaps'];

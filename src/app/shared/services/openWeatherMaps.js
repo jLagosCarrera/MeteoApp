@@ -1,15 +1,15 @@
 export default class OpenWeatherMaps {
-    constructor($http, fiveDayForecast) {
+
+    constructor($http, fiveDayForecast, latestError, currentForecast) {
         this.$http = $http;
         this.fiveDayForecast = fiveDayForecast;
+        this.latestError = latestError;
+        this.currentForecast = currentForecast;
+        this.baseURL = 'https://api.openweathermap.org/data/2.5';
     }
 
-    getActualForecastCity(city) {
-        const URL = 'https://api.openweathermap.org/data/2.5/weather';
-
-        const request = {
-            method: 'GET',
-            url: URL,
+    async getCurrentForecastCity(city) {
+        const params = {
             params: {
                 q: city,
                 units: 'metric',
@@ -18,15 +18,15 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.fiveDayForecast = this.$http(request);
+        try {
+            return this.fiveDayForecast = await this.$http.get(`${this.baseURL}/weather`, params);
+        } catch (response) {
+            return this.latestError = response;
+        }
     };
 
-    getFiveDayForecastCity(city) {
-        const URL = 'https://api.openweathermap.org/data/2.5/forecast';
-
-        const request = {
-            method: 'GET',
-            url: URL,
+    async getFiveDayForecastCity(city) {
+        const params = {
             params: {
                 q: city,
                 units: 'metric',
@@ -35,8 +35,12 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.fiveDayForecast = this.$http(request);
+        try {
+            return this.fiveDayForecast = await this.$http.get(`${this.baseURL}/forecast`, params);
+        } catch (response) {
+            return this.latestError = response;
+        }
     }
 }
 
-OpenWeatherMaps.$inject = ['$http', 'fiveDayForecast'];
+OpenWeatherMaps.$inject = ['$http', 'fiveDayForecast', 'latestError', 'currentForecast'];

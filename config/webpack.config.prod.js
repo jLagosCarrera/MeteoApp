@@ -15,7 +15,7 @@ module.exports = {
             filename: path.resolve(__dirname, '../dist/index.html')
         }),
         new Dotenv({
-            path: './config/.env'
+            systemvars: true,
         })
     ],
     module: {
@@ -33,8 +33,12 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                test: /\.(woff|woff2|eot|ttf|svg|otf)$/,
                 use: ['url-loader?limit=100000']
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: ['url-loader?limit=8192']
             }
         ]
     }

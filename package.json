@@ -1,7 +1,7 @@
 {
-  "name": "TuTiempo",
+  "name": "MeteoApp",
   "version": "1.0.0",
-  "description": "TuTiempo is a Web Applciation made using AngularJS for displaying forecast predictions in desired places",
+  "description": "MeteoApp is a Web Applciation made using AngularJS for displaying forecast predictions in desired places",
   "main": "app.module.js",
   "scripts": {
     "dev": "webpack-dev-server --open --hot --mode development --config ./config/webpack.config.dev.js",
