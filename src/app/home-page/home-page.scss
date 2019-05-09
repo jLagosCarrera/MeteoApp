@@ -5,7 +5,7 @@ html {
 
 .home-page {
     height: 100%;
-    background-image: url("./img/background.svg");
+    background-image: url("img/background.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,37 +35,29 @@ html {
     color: #000000;
 }
 
-.iconsWrapper {
-    padding-right: 50px;
-    padding-bottom: 100px;
-}
-
 .icon {
-    margin-left: 50px;
-    margin-right: 50px;
     font-size: 100px;
+    height: 100px;
+    width: 100px;
 }
 
 md-input-container .md-input.tealInput {
     border-radius: 2px;
     box-shadow: 16px 16px 20px -13px #b1d9f4 inset;
     background-color: #e5f2fb;
-}
-
-.buttonAlign {
-    margin-bottom: 32px;
+    min-height: 33px;
 }
 
 ul {
-    margin-left: 200px;
     list-style-type: none;
 }
 
 .linkEffect {
     text-decoration: none;
-    color: black;
+    color: #122534;
 }
 
 .linkEffect:hover {
     text-decoration: underline;
+    color: #244a68;
 }
