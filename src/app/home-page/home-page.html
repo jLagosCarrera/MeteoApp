@@ -25,7 +25,8 @@
         <ul flex="70" flex-offset="10" layout="row" layout-align="space-around start" layout-wrap layout-padding>
             <li flex="33" ng-repeat="city in $ctrl.latestSearches track by $index">
                 <a class="linkEffect" href ng-click="$ctrl.search(city)">
-                    <md-icon id="recent" class="material-icons">update</md-icon>{{ city }}
+                    <md-icon id="recent" class="material-icons">update</md-icon>
+                    <span class="capitalize">{{ city }}</span>
                 </a>
             </li>
         </ul>

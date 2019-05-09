@@ -12,7 +12,7 @@ export default class LatestSearchesUtil {
             return false;
         }
 
-        city = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+        city = city.toLowerCase();
         if (this.latestSearches.includes(city)) {
             const index = this.latestSearches.indexOf(city);
             if (index > -1) {
