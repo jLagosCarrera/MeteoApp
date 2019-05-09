@@ -10,8 +10,9 @@
 
     <!-- Search and recent row -->
     <div layout="row" layout-align="center start" layout-wrap>
-        <form novalidate ng-submit="$ctrl.search()" flex="70" layout="row" layout-align="center start" layout-margin>
-            <md-input-container flex="50" class="md-icon-float md-block md-title">
+        <form novalidate ng-submit="$ctrl.search($ctrl.city)" flex="70" layout="row" layout-align="center start"
+            layout-margin>
+            <md-input-container flex="50" class="md-icon-float md-block md-title" required>
                 <md-icon class="material-icons">my_location</md-icon>
                 <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
                     autocomplete="off">
@@ -22,9 +23,9 @@
         </form>
 
         <ul flex="70" flex-offset="10" layout="row" layout-align="space-around start" layout-wrap layout-padding>
-            <li flex="33" ng-repeat="search in $ctrl.latestSearches track by $index">
-                <a class="linkEffect" href ng-click="$ctrl.clickCity(search)">
-                    <md-icon id="recent" class="material-icons">update</md-icon>{{ search }}
+            <li flex="33" ng-repeat="city in $ctrl.latestSearches track by $index">
+                <a class="linkEffect" href ng-click="$ctrl.search(city)">
+                    <md-icon id="recent" class="material-icons">update</md-icon>{{ city }}
                 </a>
             </li>
         </ul>
