@@ -9,8 +9,6 @@ export default class OpenWeatherMaps {
     }
 
     async getCurrentForecastCity(city) {
-        const URL = 'https://api.openweathermap.org/data/2.5/weather';
-
         const params = {
             params: {
                 q: city,
@@ -20,13 +18,11 @@ export default class OpenWeatherMaps {
             }
         };
 
-        return this.$http.get(URL, params)
-            .then((response) => {
-                this.currentForecast = response;
-            })
-            .catch((response) => {
-                this.latestError = response;
-            });
+        try {
+            return this.fiveDayForecast = await this.$http.get(`${this.baseURL}/weather`, params);
+        } catch (response) {
+            return this.latestError = response;
+        }
     };
 
     async getFiveDayForecastCity(city) {
@@ -40,20 +36,10 @@ export default class OpenWeatherMaps {
         };
 
         try {
-            return await this.$http.get(`${this.baseURL}/forecast`, params).then((response) => {
-                this.fiveDayForecast = response;
-            });
+            return this.fiveDayForecast = await this.$http.get(`${this.baseURL}/forecast`, params);
         } catch (response) {
-            this.latestError = response;
+            return this.latestError = response;
         }
-
-        return this.$http.get(`${baseURL}/forecast`, params)
-            .then((response) => {
-                this.fiveDayForecast = response;
-            })
-            .catch((response) => {
-                this.latestError = response;
-            });
     }
 }
 
