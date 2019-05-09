@@ -1,9 +1,32 @@
 <div layout="row" layout-fill>
-    <div flex="25" class="sideBar">
-        <a ui-sref="home">Home</a>
-        {{$ctrl.latestSearches[0]}}
+    <div class="menuBackground" flex="25" layout="column" layout-align="start" layout-padding>
+        <div class="logoDiv" ng-click="$ctrl.goHome()" layout="row" layout-align="center">
+            <md-icon class="material-icons search-icon sun">wb_sunny</md-icon>
+            <md-icon class="material-icons search-icon cloud">wb_cloudy</md-icon>
+            <md-icon class="material-icons search-icon ice">ac_unit</md-icon>
+            <md-icon class="material-icons search-icon moon">brightness_2</md-icon>
+            <md-icon class="material-icons search-icon thunder">flash_on</md-icon>
+        </div>
+
+        <form novalidate ng-submit="$ctrl.search()" layout="column">
+            <md-input-container class="md-icon-float md-block md-title deleteMargin removeInputExtraHeight">
+                <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
+                    autocomplete="off">
+            </md-input-container>
+            <md-button type="submit" class="md-raised md-primary deleteMargin">
+                <md-icon class="material-icons">search</md-icon>
+            </md-button>
+        </form>
+
+        <ul layout="row" layout-align="center start" layout-wrap layout-padding class="deleteMargin">
+            <li flex="50" ng-repeat="search in $ctrl.latestSearches track by $index">
+                <a class="linkEffect" href ng-click="$ctrl.clickCity(search)">
+                    <md-icon class="material-icons recent">update</md-icon>{{ search }}
+                </a>
+            </li>
+        </ul>
     </div>
-    <div flex class="contentBox">
+    <div flex class="contentBackground">
         {{$ctrl.latestSearches[0]}}
     </div>
 </div>

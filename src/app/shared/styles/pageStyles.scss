@@ -1,0 +1,57 @@
+body,
+html {
+    height: 100%;
+}
+
+.contentBackground {
+    height: 100%;
+    background-image: url("../../../../img/contentBackground.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sun {
+    color: #FDB813;
+}
+
+.cloud {
+    color: #747474;
+}
+
+.ice {
+    color: #A5F2F3;
+}
+
+.moon {
+    color: #31302E;
+}
+
+.thunder {
+    color: #FDD436;
+}
+
+.recent {
+    color: #000000;
+}
+
+md-input-container .md-input.tealInput {
+    border-radius: 2px;
+    box-shadow: 16px 16px 20px -13px #b1d9f4 inset;
+    background-color: #e5f2fb;
+    min-height: 33px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.linkEffect {
+    text-decoration: none;
+    color: #122534;
+}
+
+.linkEffect:hover {
+    text-decoration: underline;
+    color: #244a68;
+}

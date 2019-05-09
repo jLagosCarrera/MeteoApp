@@ -1,5 +1,6 @@
 export default class SearchPageController {
-    constructor(latestSearchesUtil) {
+    constructor(searchFunctions, latestSearchesUtil) {
+        this.searchFunctions = searchFunctions;
         this.latestSearchesUtil = latestSearchesUtil;
     }
 
@@ -8,4 +9,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['latestSearchesUtil'];
+SearchPageController.$inject = ['searchFunctions', 'latestSearchesUtil'];
