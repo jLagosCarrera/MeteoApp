@@ -10,12 +10,13 @@ export default class HomePageController {
 
     search() {
         this.latestSearchesUtil.addCity(this.city);
-        console.log(this.openWeatherMaps.getFiveDayForecastCity(this.city));
+        //Will do this call on the search page
+        //this.openWeatherMaps.getFiveDayForecastCity(this.city);
     }
 
     clickCity(city) {
-        console.log(city);
-        //console.log(this.openWeatherMaps.getFiveDayForecastCity(this.city));
+        //Will do this call on the search page
+        //this.openWeatherMaps.getFiveDayForecastCity(city);
     }
 };
 

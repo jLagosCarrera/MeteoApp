@@ -1,21 +1,30 @@
 <div class="home-page" layout="column" layout-align="center">
+    <div class="iconsWrapper" layout="row" layout-align="center" layout-wrap>
+        <div flex="25"></div>
+        <md-icon id="sun" class="material-icons icon">wb_sunny</md-icon>
+        <md-icon id="cloud" class="material-icons icon">wb_cloudy</md-icon>
+        <md-icon id="ice" class="material-icons icon">ac_unit</md-icon>
+        <md-icon id="moon" class="material-icons icon">brightness_2</md-icon>
+        <md-icon id="thunder" class="material-icons icon">flash_on</md-icon>
+        <div flex="25"></div>
+    </div>
     <div layout="row" layout-align="center">
         <form novalidate ng-submit="$ctrl.search()" layout="row" layout-align="center center" flex="65">
-            <md-input-container flex class="md-icon-float md-block md-title">
-                <md-icon class="material-icons">place</md-icon>
+            <md-input-container flex="50" class="md-icon-float md-block md-title">
+                <md-icon class="material-icons">my_location</md-icon>
                 <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
                     autocomplete="off">
             </md-input-container>
-            <md-button flex="20" type="submit" class="md-raised md-primary buttonAlign">
+            <md-button flex="40" type="submit" class="md-raised md-primary buttonAlign">
                 <md-icon class="material-icons">search</md-icon>
             </md-button>
         </form>
     </div>
-    <div layout="row" layout-align="center center" layout-wrap layout-padding>
+    <div layout="row" layout-align="center" layout-wrap layout-padding>
         <ul flex="65" layout="row" layout-align="space-around center" layout-wrap layout-padding>
             <li flex="33" ng-repeat="search in $ctrl.latestSearches track by $index">
-                <a href ng-submit="$ctrl.clickCity()">
-                    <md-icon class="material-icons">update</md-icon>{{ search }}
+                <a class="linkEffect" href ng-click="$ctrl.clickCity(search)">
+                    <md-icon id="recent" class="material-icons">update</md-icon>{{ search }}
                 </a>
             </li>
         </ul>
