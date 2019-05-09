@@ -19,7 +19,7 @@ export default class OpenWeatherMaps {
         };
 
         try {
-            return this.fiveDayForecast = await this.$http.get(`${this.baseURL}/weather`, params);
+            return this.currentForecast = await this.$http.get(`${this.baseURL}/weather`, params);
         } catch (response) {
             return this.latestError = response;
         }

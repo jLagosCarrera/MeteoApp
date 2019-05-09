@@ -1,25 +1,7 @@
 <div layout="row" layout-fill>
-    <div flex="20" layout="column" class="sideBar">
-        <div flex="10" layout="row" layout-align="center center">
-            <a ui-sref="home">TuTiempo</a>
-        </div>
-        <div flex="10">
-            <form ng-submit="$ctrl.search()" layout="row" layout-align="center center" novalidate>
-                <md-input-container flex="80">
-                    <md-icon class="material-icons">place</md-icon>
-                    <input required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder="Tell me a city!"
-                        autocomplete="off">
-                </md-input-container>
-                <md-button type="submit" flex class="md-raised md-primary">
-                    <md-icon class="material-icons">search</md-icon>
-                </md-button>
-            </form>
-        </div>
-        <div flex layout-align="center start">
-            <ul>
-                <li ng-repeat="search in $ctrl.latestSearches track by $index">{{ search }}</li>
-            </ul>
-        </div>
+    <div flex="25" class="sideBar">
+        <a ui-sref="home">Home</a>
+        {{$ctrl.latestSearches[0]}}
     </div>
     <div flex class="contentBox">
         {{$ctrl.latestSearches[0]}}

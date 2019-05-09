@@ -11,16 +11,16 @@ export default class HomePageController {
 
     search() {
         this.latestSearchesUtil.addCity(this.city);
-        
-        //Will do this call on the search page
-        //this.openWeatherMaps.getFiveDayForecastCity(this.city);
-
+        this.openWeatherMaps.getCurrentForecastCity(this.city);
+        this.openWeatherMaps.getFiveDayForecastCity(this.city);
         this.$state.go('search');
     }
 
     clickCity(city) {
-        //Will do this call on the search page
-        //this.openWeatherMaps.getFiveDayForecastCity(city);
+        this.latestSearchesUtil.addCity(city);
+        this.openWeatherMaps.getCurrentForecastCity(city);
+        this.openWeatherMaps.getFiveDayForecastCity(city);
+        this.$state.go('search');
     }
 };
 
