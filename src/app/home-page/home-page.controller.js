@@ -7,6 +7,6 @@ export default class HomePageController {
     $onInit() {
         this.latestSearches = this.latestSearchesUtil.getLatestSearches();
     }
-};
+}
 
 HomePageController.$inject = ['searchFunctions', 'latestSearchesUtil'];

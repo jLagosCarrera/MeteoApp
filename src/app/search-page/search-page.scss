@@ -1,4 +1,9 @@
-.menuBackground {
+body,
+html {
+    height: 100%;
+}
+
+.sideBar {
     height: 100%;
     background-image: url("../../../img/menuBackground.svg");
     background-position: center;
@@ -11,4 +16,12 @@
     font-size: 40px;
     height: 40px;
     width: 40px;
+}
+
+.contentBox {
+    height: 100%;
+    background-image: url("../../../img/contentBackground.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

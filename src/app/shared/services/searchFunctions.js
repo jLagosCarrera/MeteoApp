@@ -1,18 +1,14 @@
 export default class SearchFunctions {
-    constructor($state, latestSearches) {
+    constructor($state, latestSearchesUtil) {
         this.$state = $state;
-        this.latestSearches = latestSearches;
+        this.latestSearchesUtil = latestSearchesUtil;
     }
 
     search(city) {
-        this.latestSearchesUtil.addCity(city);
-        this.$state.go('search');
-    }
-
-    clickCity(city) {
-        this.latestSearchesUtil.addCity(city);
-        this.$state.go('search');
+        if (this.latestSearchesUtil.addCity(city)) {
+            this.$state.go('search');
+        }
     }
 }
 
-SearchFunctions.$inject = ['$state', 'latestSearches'];
+SearchFunctions.$inject = ['$state', 'latestSearchesUtil'];

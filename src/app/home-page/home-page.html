@@ -1,5 +1,5 @@
 <div class="contentBackground" layout="column" layout-align="center center" layout-fill>
-    <div class="logoDiv" layout="row" layout-align="center" layout-margin>
+    <div class="iconDiv" layout="row" layout-align="center" layout-margin>
         <md-icon class="material-icons home-icon sun">wb_sunny</md-icon>
         <md-icon class="material-icons home-icon cloud">wb_cloudy</md-icon>
         <md-icon class="material-icons home-icon ice">ac_unit</md-icon>
@@ -7,25 +7,25 @@
         <md-icon class="material-icons home-icon thunder">flash_on</md-icon>
     </div>
 
-    <div layout="row" layout-align="center start" layout-wrap>
-        <form novalidate ng-submit="$ctrl.searchFunctions.search($ctrl.city)" flex="70" layout="row"
-            layout-align="center start" layout-margin>
-            <md-input-container flex="50" class="md-icon-float md-block md-title">
-                <md-icon class="material-icons">my_location</md-icon>
-                <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
-                    autocomplete="off">
-            </md-input-container>
-            <md-button flex="50" type="submit" class="md-raised md-primary">
-                <md-icon class="material-icons">search</md-icon>
-            </md-button>
-        </form>
+    <form novalidate ng-submit="$ctrl.searchFunctions.search($ctrl.city)" layout="row" layout-align="center start"
+        layout-margin class="formWidth">
+        <md-input-container flex="50" class="md-icon-float md-block md-title" required>
+            <md-icon class="material-icons">my_location</md-icon>
+            <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
+                autocomplete="off">
+        </md-input-container>
+        <md-button flex="50" type="submit" class="md-raised md-primary">
+            <md-icon class="material-icons">search</md-icon>
+        </md-button>
+    </form>
 
-        <ul flex="70" flex-offset="10" layout="row" layout-align="space-around start" layout-wrap layout-padding>
-            <li flex="33" ng-repeat="search in $ctrl.latestSearches track by $index">
-                <a class="linkEffect" href ng-click="$ctrl.searchFunctions.clickCity(search)">
-                    <md-icon class="material-icons recent">update</md-icon>{{ search }}
-                </a>
-            </li>
-        </ul>
-    </div>
+    <ul layout="row" layout-align="space-around start" layout-wrap layout-padding class="formWidth">
+        <li flex="30" ng-repeat="city in $ctrl.latestSearches track by $index" layout="row"
+            layout-align="center center">
+            <a class="linkEffect" href ng-click="$ctrl.searchFunctions.search(city)">
+                <md-icon class="material-icons recent">update</md-icon>
+                <span class="capitalize">{{ city }}</span>
+            </a>
+        </li>
+    </ul>
 </div>

@@ -7,11 +7,17 @@ export default class LatestSearchesUtil {
         return this.latestSearches = JSON.parse(localStorage.getItem('latestSearches')) || [];
     };
 
-    addCity(rawCity) {
-        let city = rawCity.charAt(0).toUpperCase() + rawCity.slice(1).toLowerCase();
-
+    addCity(city) {
         if (!city || city.trim() === '') {
-            return;
+            return false;
+        }
+
+        city = city.trim().toLowerCase();
+        if (this.latestSearches.includes(city)) {
+            const index = this.latestSearches.indexOf(city);
+            if (index > -1) {
+                this.latestSearches.splice(index, 1);
+            }
         }
 
         if (this.latestSearches.includes(city)) {
@@ -27,6 +33,7 @@ export default class LatestSearchesUtil {
         }
 
         localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
+        return true;
     }
 }
 

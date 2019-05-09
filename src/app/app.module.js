@@ -1,9 +1,9 @@
 //Angular and Angularmd
 import angular from 'angular';
-import angularmd from 'angular-material';
-import angularanimate from 'angular-animate';
-import angulararia from 'angular-aria';
-import angularmessages from 'angular-messages';
+import angularMd from 'angular-material';
+import angularAnimate from 'angular-animate';
+import angularAria from 'angular-aria';
+import angularMessages from 'angular-messages';
 
 //Styles
 import 'angular-material/angular-material.scss';
@@ -29,7 +29,7 @@ import openWeatherMaps from './shared/services/openWeatherMaps';
 import latestSearchesUtil from './shared/services/latestSearchesUtil';
 import searchFunctions from './shared/services/searchFunctions';
 
-export default angular.module('app', [uiRouter, angularanimate, angulararia, angularmessages, angularmd])
+export default angular.module('app', [uiRouter, angularAnimate, angularAria, angularMessages, angularMd])
     .config(routes)
     .component('homePage', homePage)
     .component('searchPage', searchPage)
