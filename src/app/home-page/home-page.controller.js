@@ -1,23 +1,18 @@
 export default class HomePageController {
-    constructor(latestSearchesUtil, openWeatherMaps) {
+    constructor($state, latestSearchesUtil) {
+        this.$state = $state;
         this.latestSearchesUtil = latestSearchesUtil;
-        this.openWeatherMaps = openWeatherMaps;
     }
 
     $onInit() {
         this.latestSearches = this.latestSearchesUtil.getLatestSearches();
     }
 
-    search() {
-        this.latestSearchesUtil.addCity(this.city);
-        //Will do this call on the search page
-        //this.openWeatherMaps.getFiveDayForecastCity(this.city);
+    search(city) {
+        if (this.latestSearchesUtil.addCity(city)) {
+            this.$state.go('search');
+        }
     }
+}
 
-    clickCity(city) {
-        //Will do this call on the search page
-        //this.openWeatherMaps.getFiveDayForecastCity(city);
-    }
-};
-
-HomePageController.$inject = ['latestSearchesUtil', 'openWeatherMaps'];
+HomePageController.$inject = ['$state', 'latestSearchesUtil'];

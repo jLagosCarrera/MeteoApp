@@ -5,7 +5,7 @@ html {
 
 .home-page {
     height: 100%;
-    background-image: url("../../../img/background.svg");
+    background-image: url("../../../img/contentBackground.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,6 +50,10 @@ md-input-container .md-input.tealInput {
 
 ul {
     list-style-type: none;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }
 
 .linkEffect {

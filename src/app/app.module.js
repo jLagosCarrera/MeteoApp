@@ -9,6 +9,7 @@ import 'material-icons/iconfont/material-icons.scss';
 
 //UiRouter and routes
 import uiRouter from '@uirouter/angularjs';
+import routes from './app.routes';
 
 //Values
 import latestError from './shared/data/latestError';
@@ -18,13 +19,16 @@ import currentForecast from './shared/data/currentForecast';
 
 //Components
 import homePage from './home-page/home-page';
+import searchPage from './search-page/search-page';
 
 //Services
 import openWeatherMaps from './shared/services/openWeatherMaps';
 import latestSearchesUtil from './shared/services/latestSearchesUtil';
 
 export default angular.module('app', [uiRouter, angularAnimate, angularAria, angularMessages, angularMd])
+    .config(routes)
     .component('homePage', homePage)
+    .component('searchPage', searchPage)
     .value('latestError', latestError)
     .value('latestSearches', latestSearches)
     .value('fiveDayForecast', fiveDayForecast)

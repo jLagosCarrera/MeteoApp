@@ -8,8 +8,16 @@ export default class LatestSearchesUtil {
     };
 
     addCity(city) {
-        if (!city || city.trim() === '' || this.latestSearches.includes(city)) {
-            return;
+        if (!city || city.trim() === '') {
+            return false;
+        }
+
+        city = city.toLowerCase();
+        if (this.latestSearches.includes(city)) {
+            const index = this.latestSearches.indexOf(city);
+            if (index > -1) {
+                this.latestSearches.splice(index, 1);
+            }
         }
 
         this.latestSearches.unshift(city);
@@ -18,6 +26,7 @@ export default class LatestSearchesUtil {
         }
 
         localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
+        return true;
     }
 }
 
