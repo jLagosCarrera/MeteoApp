@@ -5,16 +5,8 @@
                 <web-logo icon-size="40px"></web-logo>
 
                 <div layout="row">
-                    <form class="removeTopBotSpacing" novalidate ng-submit="$ctrl.routingFunctions.search($ctrl.city)"
-                        layout="column" layout-padding layout-fill>
-                        <md-input-container class="md-icon-float md-block md-title removeTopBotSpacing fitInputSize">
-                            <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text"
-                                placeholder="" autocomplete="off">
-                        </md-input-container>
-                        <md-button type="submit" class="md-raised md-primary removeTopBotSpacing">
-                            <md-icon class="material-icons">search</md-icon>
-                        </md-button>
-                    </form>
+                    <city-search screen="search" layout="column" layout-padding layout-fill>
+                    </city-search>
                 </div>
             </div>
         </div>

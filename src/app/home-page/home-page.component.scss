@@ -1,5 +1,12 @@
-.contentWidth{
-    margin: 0;
-    padding: 0;
-    width: 75%;
+home-page-component {
+
+    city-search:first-child {
+        //Way to apply styles to first child of a component
+    }
+
+    .contentWidth {
+        margin: 0;
+        padding: 0;
+        width: 75%;
+    }
 }

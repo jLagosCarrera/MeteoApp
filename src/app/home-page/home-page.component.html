@@ -1,18 +1,9 @@
 <div class="contentBackground" layout="column" layout-align="center center" layout-fill>
-    <web-logo icon-size="100px"></web-logo>
-
-    <form novalidate ng-submit="$ctrl.routingFunctions.search($ctrl.city)" layout="row" layout-align="center start"
-        layout-margin class="contentWidth">
-        <md-input-container flex="50" class="md-icon-float md-block md-title fitInputSize">
-            <md-icon class="material-icons">my_location</md-icon>
-            <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
-                autocomplete="off">
-        </md-input-container>
-        <md-button flex="50" type="submit" class="md-raised md-primary">
-            <md-icon class="material-icons">search</md-icon>
-        </md-button>
-    </form>
-
+    <web-logo icon-size="100px">
+    </web-logo>
+    <city-search screen="home" layout="row" layout-align="center start" layout-margin>
+    </city-search>
+    
     <ul layout="row" layout-align="space-around start" layout-wrap class="contentWidth">
         <li flex="30" ng-repeat="city in $ctrl.latestSearches track by $index" layout="row" layout-align="center center"
             layout-padding>

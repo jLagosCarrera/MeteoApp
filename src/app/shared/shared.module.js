@@ -17,6 +17,7 @@ import './styles/pageStyles.scss'
 
 //Components
 import webLogo from './components/web-logo/web-logo.component';
+import citySearch from './components/city-search/city-search.component';
 
 export default angular.module('sharedModule', [])
     .value('latestError', latestError)
@@ -27,4 +28,5 @@ export default angular.module('sharedModule', [])
     .factory('latestSearchesUtil', latestSearchesUtil)
     .factory('routingFunctions', routingFunctions)
     .component('webLogo', webLogo)
+    .component('citySearch', citySearch)
     .name;
