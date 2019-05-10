@@ -7,36 +7,26 @@ import angularMessages from 'angular-messages';
 
 //Styles
 import 'angular-material/angular-material.scss';
-import 'material-icons/iconfont/material-icons.scss'
-import './shared/styles/pageStyles.scss'
+import 'material-icons/iconfont/material-icons.scss';
 
 //UiRouter and routes
 import uiRouter from '@uirouter/angularjs';
 import routes from './app.routes';
 
-//Values
-import latestError from './shared/data/latestError';
-import latestSearches from './shared/data/latestSearches';
-import fiveDayForecast from './shared/data/fiveDayForecast';
-import currentForecast from './shared/data/currentForecast';
+//Modules
+import homePageModule from './home-page/home-page.module';
+import searchPageModule from './search-page/search-page.module';
+import sharedModule from './shared/shared.module';
 
-//Components
-import homePage from './home-page/home-page';
-import searchPage from './search-page/search-page';
+export default angular.module('app', [
+        uiRouter,
+        angularAnimate,
+        angularAria,
+        angularMessages,
+        angularMd,
 
-//Services
-import openWeatherMaps from './shared/services/openWeatherMaps';
-import latestSearchesUtil from './shared/services/latestSearchesUtil';
-import routingFunctions from './shared/services/routingFunctions';
-
-export default angular.module('app', [uiRouter, angularAnimate, angularAria, angularMessages, angularMd])
-    .config(routes)
-    .component('homePage', homePage)
-    .component('searchPage', searchPage)
-    .value('latestError', latestError)
-    .value('latestSearches', latestSearches)
-    .value('fiveDayForecast', fiveDayForecast)
-    .value('currentForecast', currentForecast)
-    .factory('openWeatherMaps', openWeatherMaps)
-    .factory('latestSearchesUtil', latestSearchesUtil)
-    .factory('routingFunctions', routingFunctions);
+        homePageModule,
+        searchPageModule,
+        sharedModule
+    ])
+    .config(routes);
