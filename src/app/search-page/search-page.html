@@ -1,31 +1,66 @@
 <div layout="row" layout-fill>
-    <div class="menuBackground" flex="25" layout="column" layout-align="start" layout-padding>
-        <div class="logoDiv" ng-click="$ctrl.goHome()" layout="row" layout-align="center">
-            <md-icon class="material-icons search-icon sun">wb_sunny</md-icon>
-            <md-icon class="material-icons search-icon cloud">wb_cloudy</md-icon>
-            <md-icon class="material-icons search-icon ice">ac_unit</md-icon>
-            <md-icon class="material-icons search-icon moon">brightness_2</md-icon>
-            <md-icon class="material-icons search-icon thunder">flash_on</md-icon>
+    <div class="menuBackground" flex="25" layout="column" layout-align="space-between">
+        <div layout>
+            <div layout="column" layout-fill>
+                <div class="logoDiv" ng-click="$ctrl.routingFunctions.goHome()" layout="row" layout-align="center"
+                    layout-margin>
+                    <md-icon class="material-icons searchIcon sun">wb_sunny</md-icon>
+                    <md-icon class="material-icons searchIcon cloud">wb_cloudy</md-icon>
+                    <md-icon class="material-icons searchIcon ice">ac_unit</md-icon>
+                    <md-icon class="material-icons searchIcon moon">brightness_2</md-icon>
+                    <md-icon class="material-icons searchIcon thunder">flash_on</md-icon>
+                </div>
+
+                <div layout="row">
+                    <form class="removeTopBotSpacing" novalidate ng-submit="$ctrl.routingFunctions.search($ctrl.city)"
+                        layout="column" layout-padding layout-fill>
+                        <md-input-container class="md-icon-float md-block md-title removeTopBotSpacing fitInputSize">
+                            <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text"
+                                placeholder="" autocomplete="off">
+                        </md-input-container>
+                        <md-button type="submit" class="md-raised md-primary removeTopBotSpacing">
+                            <md-icon class="material-icons">search</md-icon>
+                        </md-button>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <form novalidate ng-submit="$ctrl.search()" layout="column">
-            <md-input-container class="md-icon-float md-block md-title deleteMargin removeInputExtraHeight">
-                <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
-                    autocomplete="off">
-            </md-input-container>
-            <md-button type="submit" class="md-raised md-primary deleteMargin">
-                <md-icon class="material-icons">search</md-icon>
-            </md-button>
-        </form>
+        <div layout>
+            <div layout="column" layout-fill>
+                <div layout="row" layout-align="center">
+                    <div layout="column" layout-align="center" layout-fill layout-padding>
+                        <md-icon class="material-icons recent">update</md-icon>
+                        <md-divider></md-divider>
+                        <ul layout="row" layout-align="space-around start" layout-wrap class="fitList">
+                            <li flex="50" ng-repeat="city in $ctrl.latestSearches | limitTo:6 track by $index"
+                                layout="row" layout-align="center center" layout-padding>
+                                <a class="linkEffect" href ng-click="$ctrl.routingFunctions.search(city)">
+                                    <span class="capitalize">{{ city }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-        <ul layout="row" layout-align="center start" layout-wrap layout-padding class="deleteMargin">
-            <li flex="50" ng-repeat="search in $ctrl.latestSearches track by $index">
-                <a class="linkEffect" href ng-click="$ctrl.clickCity(search)">
-                    <md-icon class="material-icons recent">update</md-icon>{{ search }}
-                </a>
-            </li>
-        </ul>
+                <div layout="row" layout-align="center">
+                    <div layout="column" layout-align="center" layout-fill layout-padding>
+                        <md-icon class="material-icons recent">near_me</md-icon>
+                        <md-divider></md-divider>
+                        <ul layout="row" layout-align="space-around start" layout-wrap class="fitList">
+                            <li flex="50" ng-repeat="city in $ctrl.latestSearches | limitTo:6 track by $index"
+                                layout="row" layout-align="center center" layout-padding>
+                                <a class="linkEffect" href ng-click="$ctrl.routingFunctions.search(city)">
+                                    <span class="capitalize">{{ city }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div flex class="contentBackground">
         {{$ctrl.latestSearches[0]}}
     </div>

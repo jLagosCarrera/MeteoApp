@@ -1,6 +1,6 @@
 export default class HomePageController {
-    constructor(searchFunctions, latestSearchesUtil) {
-        this.searchFunctions = searchFunctions;
+    constructor(routingFunctions, latestSearchesUtil) {
+        this.routingFunctions = routingFunctions;
         this.latestSearchesUtil = latestSearchesUtil;
     }
 
@@ -9,4 +9,4 @@ export default class HomePageController {
     }
 }
 
-HomePageController.$inject = ['searchFunctions', 'latestSearchesUtil'];
+HomePageController.$inject = ['routingFunctions', 'latestSearchesUtil'];

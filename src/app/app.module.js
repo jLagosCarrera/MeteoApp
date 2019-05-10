@@ -27,7 +27,7 @@ import searchPage from './search-page/search-page';
 //Services
 import openWeatherMaps from './shared/services/openWeatherMaps';
 import latestSearchesUtil from './shared/services/latestSearchesUtil';
-import searchFunctions from './shared/services/searchFunctions';
+import routingFunctions from './shared/services/routingFunctions';
 
 export default angular.module('app', [uiRouter, angularAnimate, angularAria, angularMessages, angularMd])
     .config(routes)
@@ -39,4 +39,4 @@ export default angular.module('app', [uiRouter, angularAnimate, angularAria, ang
     .value('currentForecast', currentForecast)
     .factory('openWeatherMaps', openWeatherMaps)
     .factory('latestSearchesUtil', latestSearchesUtil)
-    .factory('searchFunctions', searchFunctions);
+    .factory('routingFunctions', routingFunctions);

@@ -3,7 +3,7 @@ html {
     height: 100%;
 }
 
-.sideBar {
+.menuBackground {
     height: 100%;
     background-image: url("../../../img/menuBackground.svg");
     background-position: center;
@@ -12,16 +12,21 @@ html {
     border-right: 1px solid;
 }
 
-.search-icon {
+.searchIcon {
     font-size: 40px;
     height: 40px;
     width: 40px;
 }
 
-.contentBox {
-    height: 100%;
-    background-image: url("../../../img/contentBackground.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.removeTopBotSpacing {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fitList {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
 }

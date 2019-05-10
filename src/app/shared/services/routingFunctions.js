@@ -1,4 +1,4 @@
-export default class SearchFunctions {
+export default class RoutingFunctions {
     constructor($state, latestSearchesUtil) {
         this.$state = $state;
         this.latestSearchesUtil = latestSearchesUtil;
@@ -9,6 +9,10 @@ export default class SearchFunctions {
             this.$state.go('search');
         }
     }
+
+    goHome() {
+        this.$state.go('home');
+    }
 }
 
-SearchFunctions.$inject = ['$state', 'latestSearchesUtil'];
+RoutingFunctions.$inject = ['$state', 'latestSearchesUtil'];

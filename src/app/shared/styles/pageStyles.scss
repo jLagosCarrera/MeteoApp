@@ -44,6 +44,7 @@ md-input-container .md-input.tealInput {
 
 ul {
     list-style-type: none;
+    word-wrap: break-word;
 }
 
 .linkEffect {
@@ -59,4 +60,12 @@ ul {
 
 .capitalize {
     text-transform: capitalize;
+}
+
+.logoDiv {
+    cursor: pointer;
+}
+
+.fitInputSize {
+    height: 37px;
 }
