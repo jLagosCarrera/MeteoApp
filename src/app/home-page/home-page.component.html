@@ -1,11 +1,5 @@
 <div class="contentBackground" layout="column" layout-align="center center" layout-fill>
-    <div class="logoDiv" ng-click="$ctrl.routingFunctions.goHome()" layout="row" layout-align="center" layout-margin>
-        <md-icon class="material-icons homeIcon sun">wb_sunny</md-icon>
-        <md-icon class="material-icons homeIcon cloud">wb_cloudy</md-icon>
-        <md-icon class="material-icons homeIcon ice">ac_unit</md-icon>
-        <md-icon class="material-icons homeIcon moon">brightness_2</md-icon>
-        <md-icon class="material-icons homeIcon thunder">flash_on</md-icon>
-    </div>
+    <web-logo icon-size="100px"></web-logo>
 
     <form novalidate ng-submit="$ctrl.routingFunctions.search($ctrl.city)" layout="row" layout-align="center start"
         layout-margin class="contentWidth">

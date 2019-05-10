@@ -2,14 +2,7 @@
     <div class="menuBackground" flex="25" layout="column" layout-align="space-between">
         <div layout>
             <div layout="column" layout-fill>
-                <div class="logoDiv" ng-click="$ctrl.routingFunctions.goHome()" layout="row" layout-align="center"
-                    layout-margin>
-                    <md-icon class="material-icons searchIcon sun">wb_sunny</md-icon>
-                    <md-icon class="material-icons searchIcon cloud">wb_cloudy</md-icon>
-                    <md-icon class="material-icons searchIcon ice">ac_unit</md-icon>
-                    <md-icon class="material-icons searchIcon moon">brightness_2</md-icon>
-                    <md-icon class="material-icons searchIcon thunder">flash_on</md-icon>
-                </div>
+                <web-logo icon-size="40px"></web-logo>
 
                 <div layout="row">
                     <form class="removeTopBotSpacing" novalidate ng-submit="$ctrl.routingFunctions.search($ctrl.city)"

@@ -16,6 +16,8 @@ import routingFunctions from './services/routingFunctions';
 import './styles/pageStyles.scss'
 
 //Components
+import webLogo from './components/web-logo/web-logo.component';
+
 export default angular.module('sharedModule', [])
     .value('latestError', latestError)
     .value('latestSearches', latestSearches)
@@ -24,4 +26,5 @@ export default angular.module('sharedModule', [])
     .factory('openWeatherMaps', openWeatherMaps)
     .factory('latestSearchesUtil', latestSearchesUtil)
     .factory('routingFunctions', routingFunctions)
+    .component('webLogo', webLogo)
     .name;
