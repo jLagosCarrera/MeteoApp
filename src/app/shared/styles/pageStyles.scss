@@ -48,12 +48,13 @@ ul {
 
 .linkEffect {
     text-decoration: none;
-    color: #122534;
+    color: #000000;
+    border-radius: 8px;
+    background-color: rgba(229, 229, 229, 0.6);
 }
 
 .linkEffect:hover {
-    text-decoration: underline;
-    color: #244a68;
+    background-color: rgba(229, 229, 229, 0.9);
 }
 
 .capitalize {

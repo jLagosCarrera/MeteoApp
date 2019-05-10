@@ -1,4 +1,4 @@
-<div class="contentBackground" layout="column" layout-align="center center" layout-fill>
+<div class="contentBackground" layout="column" layout-align="center center">
     <div class="iconDiv" layout="row" layout-align="center" layout-margin>
         <md-icon class="material-icons home-icon sun">wb_sunny</md-icon>
         <md-icon class="material-icons home-icon cloud">wb_cloudy</md-icon>
@@ -19,9 +19,9 @@
         </md-button>
     </form>
 
-    <ul layout="row" layout-align="space-around start" layout-wrap layout-padding class="formWidth">
-        <li flex="30" ng-repeat="city in $ctrl.latestSearches track by $index" layout="row"
-            layout-align="center center">
+    <ul layout="row" layout-align="space-around start" layout-wrap class="formWidth">
+        <li flex="30" ng-repeat="city in $ctrl.latestSearches track by $index" layout="row" layout-align="center center"
+            layout-padding>
             <a class="linkEffect" href ng-click="$ctrl.searchFunctions.search(city)">
                 <md-icon class="material-icons recent">update</md-icon>
                 <span class="capitalize">{{ city }}</span>
