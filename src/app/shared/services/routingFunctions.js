@@ -4,8 +4,8 @@ export default class RoutingFunctions {
         this.latestSearchesUtil = latestSearchesUtil;
     }
 
-    search(city) {
-        if (this.latestSearchesUtil.addCity(city)) {
+    search(city, cities) {
+        if (this.latestSearchesUtil.addCity(city, cities)) {
             this.$state.go('search');
         }
     }

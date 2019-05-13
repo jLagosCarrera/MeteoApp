@@ -3,6 +3,10 @@ search-page-component {
         .flexType {
             display: flex;
             flex-direction: column;
+
+            :first-child{
+                padding-bottom: 4px;
+            }
         }
     }
 
