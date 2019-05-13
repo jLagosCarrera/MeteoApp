@@ -1,13 +1,9 @@
-<form novalidate ng-class="{'contentWidth': $ctrl.screen == 'home', 'removeTopBotSpacing': $ctrl.screen == 'search'}"
-    ng-submit="$ctrl.routingFunctions.search($ctrl.city)">
-    <md-input-container
-        ng-class="{'equalFlex': $ctrl.screen == 'home', 'removeTopBotSpacing': $ctrl.screen == 'search'}"
-        class="md-icon-float md-block md-title fitInputSize">
-        <md-icon class="material-icons" ng-hide="$ctrl.screen == 'search'">my_location</md-icon>
-        <input class="tealInput" required md-no-asterisk ng-model="$ctrl.city" type="text" placeholder=""
-            autocomplete="off"></input>
+<form class="fillContent flexType" ng-submit="$ctrl.routingFunctions.search($ctrl.city)" novalidate>
+    <md-input-container class="md-icon-float md-block md-title formComponentsHeight removeAllSpacing">
+        <input class="tealInput formComponentsHeight" required md-no-asterisk ng-model="$ctrl.city" type="text"
+            placeholder="" autocomplete="off"></input>
     </md-input-container>
-    <md-button type="submit" class="md-raised md-primary">
+    <md-button type="submit" class="md-raised md-primary formComponentsHeight removeAllSpacing">
         <md-icon class="material-icons">search</md-icon>
     </md-button>
 </form>

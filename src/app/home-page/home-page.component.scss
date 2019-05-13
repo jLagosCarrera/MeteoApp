@@ -1,12 +1,32 @@
 home-page-component {
-
-    city-search:first-child {
-        //Way to apply styles to first child of a component
+    .contentBackground {
+        height: 100%;
+        background-image: url("../../../img/contentBackground.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
-    .contentWidth {
-        margin: 0;
-        padding: 0;
+    city-search {
+        .flexType {
+            display: flex;
+            flex-direction: row;
+
+            >* {
+                flex: 0 1 50%;
+                margin-right: 4px;
+                margin-left: 4px;
+            }
+        }
+    }
+
+    recent-list {
+        .flexNumber {
+            flex: 0 1 33%;
+        }
+    }
+
+    .width75 {
         width: 75%;
     }
 }

@@ -1,52 +1,15 @@
-<div layout="row" layout-fill>
-    <div class="menuBackground" flex="25" layout="column" layout-align="space-between">
-        <div layout>
-            <div layout="column" layout-fill>
-                <web-logo icon-size="40px"></web-logo>
-
-                <div layout="row">
-                    <city-search screen="search" layout="column" layout-padding layout-fill>
-                    </city-search>
-                </div>
-            </div>
+<div class="flexRow fillContent">
+    <div class="flex25 flexColumn alignCenter menuBackground">
+        <web-logo class="flexRow justifyCenter" icon-size="40px"></web-logo>
+        <div class="flexRow">
+            <city-search class="flexColumn"></city-search>
         </div>
-
-        <div layout>
-            <div layout="column" layout-fill>
-                <div layout="row" layout-align="center">
-                    <div layout="column" layout-align="center" layout-fill layout-padding>
-                        <md-icon class="material-icons recent">update</md-icon>
-                        <md-divider></md-divider>
-                        <ul layout="row" layout-align="space-around start" layout-wrap class="fitList">
-                            <li flex="50" ng-repeat="city in $ctrl.latestSearches | limitTo:6 track by $index"
-                                layout="row" layout-align="center center" layout-padding>
-                                <a class="linkEffect" href ng-click="$ctrl.routingFunctions.search(city)">
-                                    <span class="capitalize">{{ city }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div layout="row" layout-align="center">
-                    <div layout="column" layout-align="center" layout-fill layout-padding>
-                        <md-icon class="material-icons recent">near_me</md-icon>
-                        <md-divider></md-divider>
-                        <ul layout="row" layout-align="space-around start" layout-wrap class="fitList">
-                            <li flex="50" ng-repeat="city in $ctrl.latestSearches | limitTo:6 track by $index"
-                                layout="row" layout-align="center center" layout-padding>
-                                <a class="linkEffect" href ng-click="$ctrl.routingFunctions.search(city)">
-                                    <span class="capitalize">{{ city }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="flexRow">
+            <recent-list class="flexColumn justifyCenter alignCenter" use-header="true"></recent-list>
         </div>
     </div>
 
-    <div flex class="contentBackground">
+    <div class="flex75 contentBackground">
         {{$ctrl.latestSearches[0]}}
     </div>
 </div>

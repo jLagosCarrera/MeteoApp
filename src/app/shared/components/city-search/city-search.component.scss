@@ -1,29 +1,11 @@
 city-search {
-    .fitInputSize {
-        height: 37px;
+    .formComponentsHeight {
+        height: 40px;
     }
 
     md-input-container .md-input.tealInput {
         border-radius: 2px;
         box-shadow: 16px 16px 20px -13px #b1d9f4 inset;
         background-color: #e5f2fb;
-        min-height: 33px;
-    }
-
-    .removeTopBotSpacing {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .equalFlex {
-        flex: 50;
-    }
-
-    .contentWidth {
-        margin: 0;
-        padding: 0;
-        width: 75%;
     }
 }

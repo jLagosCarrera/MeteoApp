@@ -1,8 +1,26 @@
 search-page-component {
 
+    recent-list {
+        ul {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .flexNumber {
+            flex: 0 1 50%;
+        }
+    }
+
     body,
     html {
         height: 100%;
+    }
+
+    .contentBackground {
+        height: 100%;
+        background-image: url("../../../img/contentBackground.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .menuBackground {
@@ -14,9 +32,11 @@ search-page-component {
         border-right: 1px solid;
     }
 
-    .fitList {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 0;
+    .flex25 {
+        flex: 0 1 25%;
+    }
+
+    .flex75 {
+        flex: 0 1 75%;
     }
 }

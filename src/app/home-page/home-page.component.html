@@ -1,16 +1,5 @@
-<div class="contentBackground" layout="column" layout-align="center center" layout-fill>
-    <web-logo icon-size="100px">
-    </web-logo>
-    <city-search screen="home" layout="row" layout-align="center start" layout-margin>
-    </city-search>
-    
-    <ul layout="row" layout-align="space-around start" layout-wrap class="contentWidth">
-        <li flex="30" ng-repeat="city in $ctrl.latestSearches track by $index" layout="row" layout-align="center center"
-            layout-padding>
-            <a class="linkEffect" href ng-click="$ctrl.routingFunctions.search(city)">
-                <md-icon class="material-icons recent">update</md-icon>
-                <span class="capitalize">{{ city }}</span>
-            </a>
-        </li>
-    </ul>
+<div class="flexColumn justifyCenter alignCenter fillContent contentBackground">
+    <web-logo class="flexRow justifyCenter" icon-size="100px"></web-logo>
+    <city-search class="flexRow justifyCenter width75 paddingY20"></city-search>
+    <recent-list class="width75"></recent-list>
 </div>
