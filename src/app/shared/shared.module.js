@@ -5,6 +5,7 @@ import angular from 'angular';
 import openWeatherMaps from './services/openWeatherMaps';
 import latestSearchesUtil from './services/latestSearchesUtil';
 import routingFunctions from './services/routingFunctions';
+import geoNames from './services/geoNames';
 
 //Styles
 import './styles/pageStyles.scss'
@@ -18,6 +19,7 @@ import recentList from './components/recent-list/recent-list.component';
 
 export default angular.module('sharedModule', [])
     .factory('openWeatherMaps', openWeatherMaps)
+    .factory('geoNames', geoNames)
     .factory('latestSearchesUtil', latestSearchesUtil)
     .factory('routingFunctions', routingFunctions)
     .component('webLogo', webLogo)

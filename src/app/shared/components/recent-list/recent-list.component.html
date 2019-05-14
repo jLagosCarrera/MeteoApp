@@ -1,10 +1,12 @@
-<md-icon class="material-icons recent" ng-show="$ctrl.useHeader">update</md-icon>
+<md-icon class="material-icons recent" ng-show="$ctrl.useHeader">{{ $ctrl.displayIcon }}</md-icon>
 <ul class="flexRow justifySpaceAround flexWrap removeAllSpacing">
-    <li class="flexRow justifyCenter alignCenter flexNumber" ng-repeat="city in $ctrl.latestSearches track by $index">
+    <li class="flexRow justifyCenter alignCenter flexNumber" ng-repeat="city in $ctrl.displayableList track by $index">
         <a class="linkEffect spacing4" href ng-click="$ctrl.routingFunctions.search(city, $ctrl.latestSearches)">
-            <md-icon class="material-icons recent" ng-hide="$ctrl.useHeader">update</md-icon>
+            <md-icon class="material-icons recent" ng-hide="$ctrl.useHeader">{{ $ctrl.displayIcon }}</md-icon>
             <span class="capitalize">{{ city }}</span>
         </a>
     </li>
-    <li class="flexRow justifyCenter alignCenter" ng-show="!$ctrl.latestSearches.length"><a class="linkEffect spacing4">No last searches!</a></li>
+    <li class="flexRow justifyCenter alignCenter" ng-show="!$ctrl.displayableList || $ctrl.displayableList.length === 0">
+        <a class="linkEffect spacing4">No items!</a>
+    </li>
 </ul>

@@ -1,3 +1,5 @@
 export default {
-    useHeader: '@'
+    displayableList: '<',
+    displayIcon: '@',
+    useHeader: '<'
 }

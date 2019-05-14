@@ -5,11 +5,16 @@
             <city-search class="flexColumn"></city-search>
         </div>
         <div class="flexRow">
-            <recent-list class="flexColumn justifyCenter alignCenter" use-header="true"></recent-list>
+            <recent-list class="flexColumn justifyCenter alignCenter" use-header="true" display-icon="update"
+                displayable-list="$ctrl.latestSearches"></recent-list>
+        </div>
+        <div class="flexRow">
+            <recent-list class="flexColumn justifyCenter alignCenter" use-header="true" display-icon="near_me"
+                displayable-list="$ctrl.nearbyCities"></recent-list>
         </div>
     </div>
 
     <div class="flex75 contentBackground">
-
+        
     </div>
 </div>
