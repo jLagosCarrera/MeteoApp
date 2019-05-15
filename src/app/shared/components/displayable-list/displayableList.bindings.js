@@ -1,5 +1,5 @@
 export default {
-    displayableList: '<',
+    listToDisplay: '<',
     displayIcon: '@',
     useHeader: '<'
 }

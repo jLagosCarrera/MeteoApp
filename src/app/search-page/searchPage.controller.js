@@ -17,7 +17,7 @@ export default class SearchPageController {
         this.geoNamesService.getNearbyCities(this.cityParam)
             .then((data) => {
                 const cities = data.map(city => city.name);
-                this.$timeout(() => this.nearbyCities = cities);
+                this.nearbyCities = cities;
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets
