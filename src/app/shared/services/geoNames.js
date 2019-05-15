@@ -7,7 +7,7 @@ export default class GeoNames {
     //maxRows -> Number of JSON objects returned (cities)
     //cities ('cities500','cities1000','cities5000','cities15000') -> Minimum quantity of population filter
     //style ('SHORT','MEDIUM','LONG','FULL') -> Quantity of data retrieved
-    async getNearbyCities(city, maxRows = 6, style = 'SHORT', radius = 30, cities = 'cities500') {
+    async getNearbyCities(city, maxRows = 7, style = 'SHORT', radius = 30, cities = 'cities500') {
         const latlongParams = {
             params: {
                 q: city,
@@ -33,7 +33,11 @@ export default class GeoNames {
 
         try {
             //Get latitude and longitude from last result
-            const cityLatLon = await this.$http.get(`${this.baseURL}/searchJSON`, latlongParams);
+            let cityLatLon = await this.$http.get(`${this.baseURL}/searchJSON`, latlongParams);
+            if (cityLatLon.data.totalResultsCount === 0) {
+                delete latlongParams.params.cities;
+                cityLatLon = await this.$http.get(`${this.baseURL}/searchJSON`, latlongParams);
+            }
             nearbyParams.params.lat = cityLatLon.data.geonames[0].lat;
             nearbyParams.params.lng = cityLatLon.data.geonames[0].lng;
 

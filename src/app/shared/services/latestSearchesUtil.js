@@ -24,8 +24,8 @@ export default class LatestSearchesUtil {
         }
 
         cities.unshift(city);
-        if (cities.length > 12) {
-            cities.splice(12, cities.length - 12);
+        if (cities.length > 10) {
+            cities.splice(10, cities.length - 10);
         }
 
         localStorage.setItem('latestSearches', JSON.stringify(cities));

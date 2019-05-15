@@ -1,13 +1,12 @@
 export default class RoutingFunctions {
-    constructor($state, latestSearchesUtil) {
+    constructor($state) {
         this.$state = $state;
-        this.latestSearchesUtil = latestSearchesUtil;
     }
 
-    search(city, cities) {
-        if (this.latestSearchesUtil.addCity(city, cities)) {
-            this.$state.go('search');
-        }
+    search(city) {
+        this.$state.go('search', {
+            city: city.toLowerCase()
+        });
     }
 
     goHome() {
@@ -15,4 +14,4 @@ export default class RoutingFunctions {
     }
 }
 
-RoutingFunctions.$inject = ['$state', 'latestSearchesUtil'];
+RoutingFunctions.$inject = ['$state'];

@@ -1,16 +1,21 @@
 export default class SearchPageController {
-    constructor(geoNames, latestSearchesUtil) {
+    constructor(geoNames, latestSearchesUtil, $timeout, $state) {
         this.geoNames = geoNames;
         this.latestSearchesUtil = latestSearchesUtil;
+        this.$timeout = $timeout;
+        this.$state = $state;
+        this.nearbyCities = [];
     }
 
     $onInit() {
-        this.nearbyCities = [];
+        this.cityParam = this.$state.params.city.toLowerCase();
         this.latestSearches = this.latestSearchesUtil.getLatestSearches();
-        this.geoNames.getNearbyCities(this.latestSearches[0])
+        this.latestSearchesUtil.addCity(this.cityParam, this.latestSearches);
+
+        this.geoNames.getNearbyCities(this.cityParam)
             .then((data) => {
                 const cities = data.map(city => city.name);
-                this.nearbyCities = cities;
+                this.$timeout(() => this.nearbyCities = cities);
             })
             .catch((error) => {
                 //Send user to error page on the future or do somethings (On next tickets).
@@ -18,4 +23,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['geoNames', 'latestSearchesUtil'];
+SearchPageController.$inject = ['geoNames', 'latestSearchesUtil', '$timeout', '$state'];

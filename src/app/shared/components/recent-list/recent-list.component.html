@@ -6,7 +6,8 @@
             <span class="capitalize">{{ city }}</span>
         </a>
     </li>
-    <li class="flexRow justifyCenter alignCenter" ng-show="!$ctrl.displayableList || $ctrl.displayableList.length === 0">
-        <a class="linkEffect spacing4">No items!</a>
+    <li class="flexRow justifyCenter alignCenter"
+        ng-show="!$ctrl.displayableList || $ctrl.displayableList.length === 0">
+        <md-icon class="material-icons recent">more_horiz</md-icon>
     </li>
 </ul>

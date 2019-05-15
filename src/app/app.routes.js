@@ -9,7 +9,7 @@ export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider
 
     const mainState = {
         name: 'search',
-        url: '/search',
+        url: '/search?city',
         component: 'searchPageComponent'
     }
 
