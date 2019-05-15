@@ -14,8 +14,8 @@ import uiRouter from '@uirouter/angularjs';
 import routes from './app.routes';
 
 //Modules
-import homePageModule from './home-page/home-page.module';
-import searchPageModule from './search-page/search-page.module';
+import homePageModule from './home-page/homePage.module';
+import searchPageModule from './search-page/searchPage.module';
 import sharedModule from './shared/shared.module';
 
 export default angular.module('app', [

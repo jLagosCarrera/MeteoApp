@@ -2,8 +2,8 @@
 import angular from 'angular';
 
 //Component
-import searchPageComponent from './search-page.component';
+import searchPage from './searchPage.component';
 
 export default angular.module('searchPageModule', [])
-    .component('searchPageComponent', searchPageComponent)
+    .component('searchPage', searchPage)
     .name;

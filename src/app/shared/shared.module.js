@@ -13,9 +13,9 @@ import './styles/flexStyles.scss'
 import './styles/spacingStyles.scss'
 
 //Components
-import webLogo from './components/web-logo/web-logo.component';
-import citySearch from './components/city-search/city-search.component';
-import recentList from './components/recent-list/recent-list.component';
+import webLogo from './components/web-logo/webLogo.component';
+import citySearch from './components/city-search/citySearch.component';
+import displayableList from './components/displayable-list/displayableList.component';
 
 export default angular.module('sharedModule', [])
     .factory('openWeatherMaps', openWeatherMaps)
@@ -24,5 +24,5 @@ export default angular.module('sharedModule', [])
     .factory('routingFunctions', routingFunctions)
     .component('webLogo', webLogo)
     .component('citySearch', citySearch)
-    .component('recentList', recentList)
+    .component('displayableList', displayableList)
     .name;

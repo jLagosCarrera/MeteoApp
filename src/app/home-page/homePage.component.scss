@@ -1,4 +1,4 @@
-home-page-component {
+home-page {
     .contentBackground {
         height: 100%;
         background-image: url("../../../img/contentBackground.svg");
@@ -20,7 +20,7 @@ home-page-component {
         }
     }
 
-    recent-list {
+    displayable-list {
         .flexNumber {
             flex: 0 1 33%;
         }

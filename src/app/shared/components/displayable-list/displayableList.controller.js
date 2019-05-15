@@ -1,8 +1,8 @@
-export default class RecentListController {
+export default class DisplayableListController {
     constructor(routingFunctions, latestSearchesUtil) {
         this.routingFunctions = routingFunctions;
         this.latestSearches = latestSearchesUtil.getLatestSearches();
     }
 }
 
-RecentListController.$inject = ['routingFunctions', 'latestSearchesUtil'];
+DisplayableListController.$inject = ['routingFunctions', 'latestSearchesUtil'];

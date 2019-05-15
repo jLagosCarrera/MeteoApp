@@ -1,4 +1,4 @@
-search-page-component {
+search-page {
     city-search {
         .flexType {
             display: flex;
@@ -10,7 +10,7 @@ search-page-component {
         }
     }
 
-    recent-list {
+    displayable-list {
         ul {
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }

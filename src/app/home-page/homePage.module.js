@@ -2,8 +2,8 @@
 import angular from 'angular';
 
 //Component
-import homePageComponent from './home-page.component';
+import homePage from './homePage.component';
 
 export default angular.module('homePageModule', [])
-    .component('homePageComponent', homePageComponent)
+    .component('homePage', homePage)
     .name;
