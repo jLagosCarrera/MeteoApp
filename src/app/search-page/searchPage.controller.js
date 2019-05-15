@@ -35,15 +35,18 @@ export default class SearchPageController {
                     if (forecastDate.getDate() === new Date().getDate()) {
                         todayForecast.push(hourlyForecast);
                     } else {
-                        console.log(forecastDate)
-                        if (fiveDayForecast.has(forecastDate)) {
-                            fiveDayForecast.set(forecastDate, fiveDayForecast.get(fiveDayForecast).push());
-                        } else {
-
+                        if ([9, 15, 21].includes(forecastDate.getHours() + (forecastDate.getTimezoneOffset() / 60))) {
+                            if (fiveDayForecast.has(forecastDate)) {
+                                fiveDayForecast.set(forecastDate, fiveDayForecast.get(forecastDate).push(hourlyForecast));
+                            } else {
+                                fiveDayForecast.set(forecastDate, [hourlyForecast]);
+                            }
                         }
                     }
-
                 });
+
+                console.log(todayForecast);
+                console.log(fiveDayForecast);
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets
