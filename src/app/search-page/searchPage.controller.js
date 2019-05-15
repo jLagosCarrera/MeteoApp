@@ -26,8 +26,23 @@ export default class SearchPageController {
 
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
-                const forecastFiveDays = data.data.list.forEach((hourlyForecast) => {
-                    console.log(hourlyForecast);
+                const todayForecast = [];
+                const fiveDayForecast = new Map();
+
+                data.data.list.forEach((hourlyForecast) => {
+                    const forecastDate = new Date(hourlyForecast.dt * 1000);
+
+                    if (forecastDate.getDate() === new Date().getDate()) {
+                        todayForecast.push(hourlyForecast);
+                    } else {
+                        console.log(forecastDate)
+                        if (fiveDayForecast.has(forecastDate)) {
+                            fiveDayForecast.set(forecastDate, fiveDayForecast.get(fiveDayForecast).push());
+                        } else {
+
+                        }
+                    }
+
                 });
             })
             .catch((error) => {
