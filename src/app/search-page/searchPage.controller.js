@@ -1,5 +1,6 @@
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, $state) {
+    constructor(openWeatherMapsService, geoNamesService, latestSearchesUtilService, $timeout, $state) {
+        this.openWeatherMapsService = openWeatherMapsService;
         this.geoNamesService = geoNamesService;
         this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
@@ -22,7 +23,17 @@ export default class SearchPageController {
             .catch((error) => {
                 console.log(error); //TODO on next tickets
             });
+
+        this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
+            .then((data) => {
+                const forecastFiveDays = data.data.list.forEach((hourlyForecast) => {
+                    console.log(hourlyForecast);
+                });
+            })
+            .catch((error) => {
+                console.log(error); //TODO on next tickets
+            });
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', '$state'];
+SearchPageController.$inject = ['openWeatherMapsService', 'geoNamesService', 'latestSearchesUtilService', '$timeout', '$state'];
