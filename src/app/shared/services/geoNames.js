@@ -1,7 +1,7 @@
 export default class GeoNames {
     constructor($http) {
         this.$http = $http;
-        this.baseURL = 'http://api.geonames.org';
+        this.baseURL = 'https://secure.geonames.org';
     }
 
     //maxRows -> Number of JSON objects returned (cities)
