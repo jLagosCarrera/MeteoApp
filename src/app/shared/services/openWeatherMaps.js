@@ -4,10 +4,11 @@ export default class OpenWeatherMaps {
         this.baseURL = 'https://api.openweathermap.org/data/2.5';
     }
 
-    async getCurrentForecastCity(city) {
+    async getCurrentForecastCity(lat, lon) {
         const params = {
             params: {
-                q: city,
+                lat: lat,
+                lon: lon,
                 units: 'metric',
                 lang: 'en',
                 appid: process.env.OPENWEATHERMAP_API_KEY
@@ -22,10 +23,11 @@ export default class OpenWeatherMaps {
         }
     }
 
-    async getFiveDayForecastCity(city) {
+    async getFiveDayForecastCity(lat, lon) {
         const params = {
             params: {
-                q: city,
+                lat: lat,
+                lon: lon,
                 units: 'metric',
                 lang: 'en',
                 appid: process.env.OPENWEATHERMAP_API_KEY
