@@ -1,11 +1,11 @@
 export default class HomePageController {
-    constructor(latestSearchesUtil) {
-        this.latestSearchesUtil = latestSearchesUtil;
+    constructor(latestSearchesUtilService) {
+        this.latestSearchesUtilService = latestSearchesUtilService;
     }
 
     $onInit() {
-        this.latestSearches = this.latestSearchesUtil.getLatestSearches();
+        this.latestSearches = this.latestSearchesUtilService.getLatestSearches();
     }
 }
 
-HomePageController.$inject = ['latestSearchesUtil'];
+HomePageController.$inject = ['latestSearchesUtilService'];

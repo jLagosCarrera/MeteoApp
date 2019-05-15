@@ -1,12 +1,12 @@
 export default class CitySearchController {
-    constructor(routingFunctions, latestSearchesUtil) {
-        this.routingFunctions = routingFunctions;
-        this.latestSearches = latestSearchesUtil.getLatestSearches();
+    constructor(routingFunctionsService, latestSearchesUtilService) {
+        this.routingFunctionsService = routingFunctionsService;
+        this.latestSearches = latestSearchesUtilService.getLatestSearches();
     }
 
     search(city, cities) {
-        this.routingFunctions.search(city, cities);
+        this.routingFunctionsService.search(city, cities);
     }
 }
 
-CitySearchController.$inject = ['routingFunctions', 'latestSearchesUtil'];
+CitySearchController.$inject = ['routingFunctionsService', 'latestSearchesUtilService'];

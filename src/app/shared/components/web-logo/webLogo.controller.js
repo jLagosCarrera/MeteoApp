@@ -1,7 +1,11 @@
 export default class WebLogoController {
-    constructor(routingFunctions) {
-        this.routingFunctions = routingFunctions;
+    constructor(routingFunctionsService) {
+        this.routingFunctionsService = routingFunctionsService;
+    }
+
+    goHome() {
+        this.routingFunctionsService.goHome();
     }
 }
 
-WebLogoController.$inject = ['routingFunctions'];
+WebLogoController.$inject = ['routingFunctionsService'];

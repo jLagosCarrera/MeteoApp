@@ -1,7 +1,7 @@
 export default class LatestSearchesUtil {
     getLatestSearches() {
         return JSON.parse(localStorage.getItem('latestSearches')) || [];
-    };
+    }
 
     addCity(city, cities) {
         if (!city || city.trim() === '') {

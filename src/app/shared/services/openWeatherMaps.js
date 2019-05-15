@@ -20,7 +20,7 @@ export default class OpenWeatherMaps {
         } catch (response) {
             return response;
         }
-    };
+    }
 
     async getFiveDayForecastCity(city) {
         const params = {

@@ -1,6 +1,7 @@
 <md-icon class="material-icons recent" ng-show="$ctrl.useHeader">{{ $ctrl.displayIcon }}</md-icon>
 <ul class="flex-row justify-space-around flex-wrap remove-all-spacing">
-    <li class="flex-row justify-center align-center flex-number" ng-repeat="city in $ctrl.displayableList track by $index">
+    <li class="flex-row justify-center align-center flex-number"
+        ng-repeat="city in $ctrl.displayableList track by $index">
         <a class="link-effect spacing-4" href ng-click="$ctrl.search(city, $ctrl.latestSearches)">
             <md-icon class="material-icons recent" ng-hide="$ctrl.useHeader">{{ $ctrl.displayIcon }}</md-icon>
             <span class="capitalize">{{ city }}</span>
