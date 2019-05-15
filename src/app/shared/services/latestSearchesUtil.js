@@ -1,33 +1,27 @@
 export default class LatestSearchesUtil {
-    constructor(latestSearches) {
-        this.latestSearches = latestSearches;
+    getLatestSearches() {
+        return JSON.parse(localStorage.getItem('latestSearches')) || [];
     }
 
-    getLatestSearches() {
-        return this.latestSearches = JSON.parse(localStorage.getItem('latestSearches')) || [];
-    };
-
-    addCity(city) {
+    addCity(city, cities) {
         if (!city || city.trim() === '') {
             return false;
         }
 
-        city = city.toLowerCase();
-        if (this.latestSearches.includes(city)) {
-            const index = this.latestSearches.indexOf(city);
+        city = city.trim().toLowerCase();
+        if (cities.includes(city)) {
+            const index = cities.indexOf(city);
             if (index > -1) {
-                this.latestSearches.splice(index, 1);
+                cities.splice(index, 1);
             }
         }
 
-        this.latestSearches.unshift(city);
-        if (this.latestSearches.length > 12) {
-            this.latestSearches.splice(12, this.latestSearches.length - 12);
+        cities.unshift(city);
+        if (cities.length > 10) {
+            cities.splice(10, cities.length - 10);
         }
 
-        localStorage.setItem('latestSearches', JSON.stringify(this.latestSearches));
+        localStorage.setItem('latestSearches', JSON.stringify(cities));
         return true;
     }
 }
-
-LatestSearchesUtil.$inject = ['latestSearches'];

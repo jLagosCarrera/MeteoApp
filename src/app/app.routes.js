@@ -5,14 +5,14 @@ export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider
         name: 'home',
         url: '/home',
         component: 'homePage'
-    }
+    };
 
-    const mainState = {
+    const searchState = {
         name: 'search',
-        url: '/search',
+        url: '/search?city',
         component: 'searchPage'
-    }
+    };
 
     $stateProvider.state(homeState);
-    $stateProvider.state(mainState);
+    $stateProvider.state(searchState);
 }];

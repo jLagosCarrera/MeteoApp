@@ -1,0 +1,25 @@
+displayable-list {
+    .recent {
+        color: #000000;
+    }
+
+    ul {
+        list-style-type: none;
+        word-wrap: break-word;
+    }
+
+    .link-effect {
+        text-decoration: none;
+        color: #000000;
+        border-radius: 8px;
+        background-color: rgba(229, 229, 229, 0.6);
+    }
+
+    .link-effect:hover {
+        background-color: rgba(229, 229, 229, 0.9);
+    }
+
+    .capitalize {
+        text-transform: capitalize;
+    }
+}

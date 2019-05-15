@@ -1,0 +1,45 @@
+@import '../shared/styles/mixins/background';
+
+search-page {
+    city-search {
+        .flex-type {
+            display: flex;
+            flex-direction: column;
+
+            :first-child {
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    displayable-list {
+        ul {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .flex-number {
+            flex: 0 1 50%;
+        }
+    }
+
+    .content-background {
+        @include setBackground("../../../img/contentBackground.svg");
+    }
+
+    .menu-background {
+        @include setBackground("../../../img/menuBackground.svg");
+        border-right: 1px solid;
+    }
+
+    .flex-25 {
+        flex: 0 1 25%;
+    }
+
+    .flex-75 {
+        flex: 0 1 75%;
+    }
+
+    .flex-100 {
+        flex: 0 1 100%;
+    }
+}
