@@ -1,20 +1,20 @@
-<div class="flexRow fillContent">
-    <div class="flex25 flexColumn alignCenter menuBackground">
-        <web-logo class="flexRow justifyCenter paddingTop20" icon-size="34px"></web-logo>
-        <div class="flexRow paddingY20">
-            <city-search class="flexColumn"></city-search>
+<div class="flex-row fill-content">
+    <div class="flex-25 flex-column align-center menu-background">
+        <web-logo class="flex-row justify-center padding-top-20" icon-size="34px"></web-logo>
+        <div class="flex-row padding-y-20">
+            <city-search class="flex-column"></city-search>
         </div>
-        <div class="flexRow">
-            <displayable-list class="flexColumn justifyCenter alignCenter" use-header="true" display-icon="restore"
+        <div class="flex-row">
+            <displayable-list class="flex-column justify-center align-center" use-header="true" display-icon="restore"
                 displayable-list="$ctrl.latestSearches"></displayable-list>
         </div>
-        <div class="flexRow">
-            <displayable-list class="flexColumn justifyCenter alignCenter" use-header="true" display-icon="near_me"
+        <div class="flex-row">
+            <displayable-list class="flex-column justify-center align-center" use-header="true" display-icon="near_me"
                 displayable-list="$ctrl.nearbyCities"></displayable-list>
         </div>
     </div>
 
-    <div class="flex75 contentBackground">
+    <div class="flex-75 content-background">
         <ui-view></ui-view>
     </div>
 </div>

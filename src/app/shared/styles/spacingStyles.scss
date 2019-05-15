@@ -1,32 +1,44 @@
-.removeAllSpacing {
+.remove-all-spacing {
     margin: 0;
     padding: 0;
 }
 
-.removeYSpacing {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+.remove-y-spacing {
+    margin: {
+        top: 0;
+        bottom: 0;
+    }
+
+    padding: {
+        top: 0;
+        bottom: 0;
+    }
 }
 
-.removeXSpacing {
-    margin-right: 0;
-    margin-left: 0;
-    padding-right: 0;
-    padding-left: 0;
+.remove-x-spacing {
+    margin: {
+        right: 0;
+        left: 0;
+    }
+
+    padding: {
+        right: 0;
+        left: 0;
+    }
 }
 
-.paddingY20 {
+.padding-y-20 {
+    padding: {
+        top: 20px;
+        bottom: 20px;
+    }
+}
+
+.padding-top-20 {
     padding-top: 20px;
-    padding-bottom: 20px;
 }
 
-.paddingTop20 {
-    padding-top: 20px;
-}
-
-.spacing4 {
+.spacing-4 {
     margin: 4px;
     padding: 4px;
 }

@@ -1,10 +1,12 @@
+@import '../shared/styles/mixins/background';
+
 search-page {
     city-search {
-        .flexType {
+        .flex-type {
             display: flex;
             flex-direction: column;
 
-            :first-child{
+            :first-child {
                 padding-bottom: 4px;
             }
         }
@@ -15,37 +17,29 @@ search-page {
             border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .flexNumber {
+        .flex-number {
             flex: 0 1 50%;
         }
     }
 
-    .contentBackground {
-        height: 100%;
-        background-image: url("../../../img/contentBackground.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .content-background {
+        @include setBackground("../../../img/contentBackground.svg");
     }
 
-    .menuBackground {
-        height: 100%;
-        background-image: url("../../../img/menuBackground.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .menu-background {
+        @include setBackground("../../../img/menuBackground.svg");
         border-right: 1px solid;
     }
 
-    .flex25 {
+    .flex-25 {
         flex: 0 1 25%;
     }
 
-    .flex75 {
+    .flex-75 {
         flex: 0 1 75%;
     }
 
-    .flex100 {
+    .flex-100 {
         flex: 0 1 100%;
     }
 }

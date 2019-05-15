@@ -8,7 +8,9 @@ export default class SearchPageController {
     }
 
     $onInit() {
-        this.cityParam = this.$state.params.city.toLowerCase();
+        if (this.$state.params.city) {
+            this.cityParam = this.$state.params.city.toLowerCase();
+        }
         this.latestSearches = this.latestSearchesUtil.getLatestSearches();
         this.latestSearchesUtil.addCity(this.cityParam, this.latestSearches);
 

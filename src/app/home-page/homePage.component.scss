@@ -1,32 +1,33 @@
+@import '../shared/styles/mixins/background';
+
 home-page {
-    .contentBackground {
-        height: 100%;
-        background-image: url("../../../img/contentBackground.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .content-background {
+        @include setBackground("../../../img/contentBackground.svg");
     }
 
     city-search {
-        .flexType {
+        .flex-type {
             display: flex;
             flex-direction: row;
 
             >* {
                 flex: 0 1 50%;
-                margin-right: 4px;
-                margin-left: 4px;
+
+                margin: {
+                    right: 4px;
+                    left: 4px;
+                }
             }
         }
     }
 
     displayable-list {
-        .flexNumber {
+        .flex-number {
             flex: 0 1 33%;
         }
     }
 
-    .width75 {
+    .width-75 {
         width: 75%;
     }
 }

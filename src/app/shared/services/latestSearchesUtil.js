@@ -16,13 +16,6 @@ export default class LatestSearchesUtil {
             }
         }
 
-        if (cities.includes(city)) {
-            let index = cities.indexOf(city);
-            if (index > -1) {
-                cities.splice(index, 1);
-            }
-        }
-
         cities.unshift(city);
         if (cities.length > 10) {
             cities.splice(10, cities.length - 10);

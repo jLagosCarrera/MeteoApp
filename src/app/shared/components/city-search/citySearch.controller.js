@@ -3,6 +3,10 @@ export default class CitySearchController {
         this.routingFunctions = routingFunctions;
         this.latestSearches = latestSearchesUtil.getLatestSearches();
     }
+
+    search(city, cities) {
+        this.routingFunctions.search(city, cities);
+    }
 }
 
 CitySearchController.$inject = ['routingFunctions', 'latestSearchesUtil'];
