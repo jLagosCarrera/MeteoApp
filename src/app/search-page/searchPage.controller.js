@@ -26,32 +26,25 @@ export default class SearchPageController {
 
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
-                const todayForecast = [];
                 const fiveDayForecast = new Map();
 
                 data.data.list.forEach((hourlyForecast) => {
-                    //Forecast Date, converted from unix to miliseconds
-                    const forecastDate = new Date(hourlyForecast.dt * 1000);
+                    const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
+                    const data = fiveDayForecast.get(forecastDay) || [];
+                    data.push(hourlyForecast);
 
-                    //If todays date equals forecast date, push it to the array
-                    //So we get the data for all the today hours
-                    //If not, push it to the map with the day key and only take
-                    //The data for forecasts at 09, 15 and 21
-                    if (forecastDate.getDate() === new Date().getDate()) {
-                        todayForecast.push(hourlyForecast);
-                    } else {
-                        if ([9, 15, 21].includes(forecastDate.getHours() + (forecastDate.getTimezoneOffset() / 60))) {
-                            if (fiveDayForecast.has(forecastDate)) {
-                                fiveDayForecast.set(forecastDate, fiveDayForecast.get(forecastDate).push(hourlyForecast));
-                            } else {
-                                fiveDayForecast.set(forecastDate, [hourlyForecast]);
-                            }
-                        }
-                    }
+                    fiveDayForecast.set(forecastDay, data);
                 });
 
-                console.log(todayForecast);
-                console.log(fiveDayForecast);
+                console.log(fiveDayForecast); //TODO do something with this info
+            })
+            .catch((error) => {
+                console.log(error); //TODO on next tickets
+            });
+
+        this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
+            .then((data) => {
+                console.log(data);
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets
