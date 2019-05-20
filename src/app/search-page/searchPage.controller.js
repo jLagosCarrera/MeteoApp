@@ -30,8 +30,13 @@ export default class SearchPageController {
                 const fiveDayForecast = new Map();
 
                 data.data.list.forEach((hourlyForecast) => {
+                    //Forecast Date, converted from unix to miliseconds
                     const forecastDate = new Date(hourlyForecast.dt * 1000);
 
+                    //If todays date equals forecast date, push it to the array
+                    //So we get the data for all the today hours
+                    //If not, push it to the map with the day key and only take
+                    //The data for forecasts at 09, 15 and 21
                     if (forecastDate.getDate() === new Date().getDate()) {
                         todayForecast.push(hourlyForecast);
                     } else {
