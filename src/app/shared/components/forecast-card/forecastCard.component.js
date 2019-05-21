@@ -6,6 +6,6 @@ export default {
     controller,
     template,
     bindings: {
-        dataArray: '<'
+        forecastData: '<'
     }
 };

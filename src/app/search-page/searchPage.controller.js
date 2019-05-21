@@ -26,17 +26,7 @@ export default class SearchPageController {
 
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
-                const fiveDayForecast = new Map();
-
-                data.data.list.forEach((hourlyForecast) => {
-                    const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
-                    const data = fiveDayForecast.get(forecastDay) || [];
-                    data.push(hourlyForecast);
-
-                    fiveDayForecast.set(forecastDay, data);
-                });
-
-                console.log(fiveDayForecast); //TODO do something with this info
+                this.filterFiveDayData(data);
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets
@@ -44,11 +34,29 @@ export default class SearchPageController {
 
         this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
             .then((data) => {
-                console.log(data);
+
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets
             });
+    }
+
+    filterFiveDayData(data) {
+        this.todayForecast = [];
+        this.fiveDayForecast = new Map();
+
+        data.data.list.forEach((hourlyForecast) => {
+            const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
+            if (forecastDay === new Date().getDate()) {
+                this.todayForecast.push(hourlyForecast);
+            } else {
+                const data = this.fiveDayForecast.get(forecastDay) || [];
+                data.push(hourlyForecast);
+                this.fiveDayForecast.set(forecastDay, data);
+            }
+        });
+
+        this.fiveDayForecast = Array.from(this.fiveDayForecast.values());
     }
 }
 

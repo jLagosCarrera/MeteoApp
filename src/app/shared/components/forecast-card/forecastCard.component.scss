@@ -1,3 +1,38 @@
 forecast-card {
-    
+    * {
+        background-color: #3b82a3;
+        border-radius: 10px;
+    }
+
+    md-card {
+        border: 1px solid;
+
+        * {
+            padding: 0;
+        }
+
+        md-card-header {
+            padding: 5px;
+
+            md-card-header-text {
+                span.md-title {
+                    text-align: center;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        md-card-content {
+            md-list {
+                md-list-item.md-no-proxy {
+                    flex: 0 1 100%;
+                    padding: 0;
+
+                    img.md-avatar {
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
 }
