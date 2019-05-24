@@ -14,7 +14,12 @@
         </div>
     </div>
 
-    <div class="flex-75 content-background">
-        <ui-view></ui-view>
+    <div class="flex-75 content-background flex-column flex-50-childs">
+        <div class="flex-row">
+            <forecast-card class="current" forecast-data="$ctrl.todayForecast" current-forecast="$ctrl.currentForecast"></forecast-card>
+        </div>
+        <div class="flex-row justify-center">
+            <forecast-card class="fiveDays" ng-repeat="day in $ctrl.fiveDayForecast track by $index" forecast-data="day"></forecast-card>
+        </div>
     </div>
 </div>

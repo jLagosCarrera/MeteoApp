@@ -1,5 +1,6 @@
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, $state) {
+    constructor(openWeatherMapsService, geoNamesService, latestSearchesUtilService, $timeout, $state) {
+        this.openWeatherMapsService = openWeatherMapsService;
         this.geoNamesService = geoNamesService;
         this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
@@ -22,7 +23,43 @@ export default class SearchPageController {
             .catch((error) => {
                 console.log(error); //TODO on next tickets
             });
+
+        this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
+            .then((data) => {
+                this.filterFiveDayData(data);
+            })
+            .catch((error) => {
+                console.log(error); //TODO on next tickets
+            });
+
+        this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
+            .then((data) => {
+                this.currentForecast = data.data;
+            })
+            .catch((error) => {
+                console.log(error); //TODO on next tickets
+            });
+    }
+
+    filterFiveDayData(data) {
+        this.todayForecast = [];
+        this.fiveDayForecast = new Map();
+
+        if (data && data.data && data.data.list) {
+            data.data.list.forEach((hourlyForecast) => {
+                const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
+                if (forecastDay === new Date().getDate()) {
+                    this.todayForecast.push(hourlyForecast);
+                } else {
+                    const data = this.fiveDayForecast.get(forecastDay) || [];
+                    data.push(hourlyForecast);
+                    this.fiveDayForecast.set(forecastDay, data);
+                }
+            });
+
+            this.fiveDayForecast = Array.from(this.fiveDayForecast.values());
+        }
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', '$state'];
+SearchPageController.$inject = ['openWeatherMapsService', 'geoNamesService', 'latestSearchesUtilService', '$timeout', '$state'];

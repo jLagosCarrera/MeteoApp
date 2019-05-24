@@ -12,12 +12,22 @@
     flex-wrap: wrap;
 }
 
+.flex-50-childs {
+    >* {
+        flex: 0 1 50%;
+    }
+}
+
 .justify-center {
     justify-content: center;
 }
 
 .justify-space-around {
     justify-content: space-around;
+}
+
+.justify-space-between {
+    justify-content: space-between;
 }
 
 .justify-start {
