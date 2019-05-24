@@ -4,9 +4,9 @@
             <div ng-show="$ctrl.currentForecast" class="flex-row justify-space-around">
                 <span class="md-title">Sunrise: {{ $ctrl.currentForecast.sys.sunrise * 1000 | date:'HH:mm:ss' }}</span>
                 <span class="md-title">
-                    <img ng-src="https://openweathermap.org/img/w/{{$ctrl.currentForecast.weather[0].icon}}.png"
+                    <img ng-src="https://openweathermap.org/img/w/{{::$ctrl.currentForecast.weather[0].icon}}.png"
                         class="md-avatar icon-size" />
-                    {{ $ctrl.currentForecast.name }} ({{ $ctrl.currentForecast.sys.country }})
+                    {{ ::$ctrl.currentForecast.name }} ({{ ::$ctrl.currentForecast.sys.country }})
                 </span>
                 <span class="md-title">Sunset: {{ $ctrl.currentForecast.sys.sunset * 1000 | date:'HH:mm:ss' }}</span>
             </div>
@@ -22,18 +22,18 @@
             <progress-bar icon-to-display="opacity" progress="$ctrl.currentForecast.main.humidity" color="#a9dcf4">
             </progress-bar>
             <span class="flex-25">
-                <md-icon class="material-icons temp">whatshot</md-icon>{{$ctrl.currentForecast.main.temp}}ºC
+                <md-icon class="material-icons temp">whatshot</md-icon>{{::$ctrl.currentForecast.main.temp}}ºC
             </span>
             <span class="flex-25">
                 <md-icon class="material-icons" ng-style="{'transform': $ctrl.getRotation()}">arrow_downward</md-icon>
-                {{$ctrl.currentForecast.wind.deg}}º
+                {{::$ctrl.currentForecast.wind.deg}}º
             </span>
             <span class="flex-25">
                 <md-icon class="material-icons">network_check</md-icon>
-                {{$ctrl.currentForecast.wind.speed * 3.6 | number:2 }} km/h
+                {{::$ctrl.currentForecast.wind.speed * 3.6 | number:2 }} km/h
             </span>
             <span class="pressure flex-25">
-                <md-icon class="material-icons">vertical_align_bottom</md-icon>{{$ctrl.currentForecast.main.pressure}}
+                <md-icon class="material-icons">vertical_align_bottom</md-icon>{{::$ctrl.currentForecast.main.pressure}}
                 hPa
             </span>
         </div>
@@ -42,7 +42,7 @@
                 ng-class="{'flex-25': $ctrl.currentForecast, 'flex-100': !$ctrl.currentForecast}"
                 ng-repeat="forecast in $ctrl.forecastData track by $index">
                 <img ng-src="https://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" class="md-avatar" />
-                <span>{{ forecast.dt * 1000 | date:'HH:mm' }}</span>
+                <span>{{ ::forecast.dt * 1000 | date:'HH:mm' }}</span>
             </md-list-item>
         </md-list>
     </md-card-content>
