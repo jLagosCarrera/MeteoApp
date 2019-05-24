@@ -4,7 +4,7 @@
             <div ng-show="$ctrl.currentForecast" class="flex-row justify-space-around">
                 <span class="md-title">Sunrise: {{ $ctrl.currentForecast.sys.sunrise * 1000 | date:'HH:mm:ss' }}</span>
                 <span class="md-title">
-                    <img ng-src="http://openweathermap.org/img/w/{{$ctrl.currentForecast.weather[0].icon}}.png"
+                    <img ng-src="https://openweathermap.org/img/w/{{$ctrl.currentForecast.weather[0].icon}}.png"
                         class="md-avatar icon-size" />
                     {{ $ctrl.currentForecast.name }} ({{ $ctrl.currentForecast.sys.country }})
                 </span>
@@ -41,7 +41,7 @@
             <md-list-item class="justify-center"
                 ng-class="{'flex-25': $ctrl.currentForecast, 'flex-100': !$ctrl.currentForecast}"
                 ng-repeat="forecast in $ctrl.forecastData track by $index">
-                <img ng-src="http://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" class="md-avatar" />
+                <img ng-src="https://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" class="md-avatar" />
                 <span>{{ forecast.dt * 1000 | date:'HH:mm' }}</span>
             </md-list-item>
         </md-list>
