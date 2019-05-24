@@ -1,8 +1,8 @@
-@import '../shared/styles/mixins/background';
+@import '../../styles/mixins/background';
 
 error-inform {
     .error-background {
-        @include setBackground("../../../../img/errorBackground.svg");
+        @include setBackground("../../../../../img/errorBackground.svg");
     }
 
     div.title {
