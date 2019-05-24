@@ -16,6 +16,7 @@ import routes from './app.routes';
 //Modules
 import homePageModule from './home-page/homePage.module';
 import searchPageModule from './search-page/searchPage.module';
+import errorPageModule from './error-page/errorPage.module';
 import sharedModule from './shared/shared.module';
 
 export default angular.module('app', [
@@ -27,6 +28,7 @@ export default angular.module('app', [
 
         homePageModule,
         searchPageModule,
+        errorPageModule,
         sharedModule
     ])
     .config(routes);
