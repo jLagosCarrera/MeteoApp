@@ -18,6 +18,7 @@ import citySearch from './components/city-search/citySearch.component';
 import displayableList from './components/displayable-list/displayableList.component';
 import forecastCard from './components/forecast-card/forecastCard.component';
 import progressBar from './components/progress-bar/progressBar.component';
+import errorInform from './components/error-inform/errorInform.component';
 
 export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
@@ -29,4 +30,5 @@ export default angular.module('sharedModule', [])
     .component('displayableList', displayableList)
     .component('forecastCard', forecastCard)
     .component('progressBar', progressBar)
+    .component('errorInform', errorInform)
     .name;

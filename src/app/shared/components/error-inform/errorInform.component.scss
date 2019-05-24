@@ -1,0 +1,27 @@
+@import '../shared/styles/mixins/background';
+
+error-inform {
+    .error-background {
+        @include setBackground("../../../../img/errorBackground.svg");
+    }
+
+    div.title {
+        md-icon.material-icons {
+            padding-right: 10px;
+            font-size: 80px;
+            height: 80px;
+            width: 80px;
+        }
+
+        span {
+            font-size: 40px;
+            color: rgba(0,0,0,0.7);
+        }
+    }
+
+    div.buttons {
+        md-button {
+            flex: 0 1 50%;
+        }
+    }
+}

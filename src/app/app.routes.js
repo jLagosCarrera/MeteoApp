@@ -13,13 +13,6 @@ export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider
         component: 'searchPage'
     };
 
-    const errorState = {
-        name: 'error',
-        url: '/error',
-        component: 'errorPage'
-    }
-
     $stateProvider.state(homeState);
     $stateProvider.state(searchState);
-    $stateProvider.state(errorState);
 }];
