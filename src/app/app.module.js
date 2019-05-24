@@ -1,4 +1,4 @@
-//Angular, Angularmd ns uiRoutes
+//Angular, Angularmd and uiRouter
 import angular from 'angular';
 import angularMd from 'angular-material';
 import angularAnimate from 'angular-animate';

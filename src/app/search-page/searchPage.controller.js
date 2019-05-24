@@ -45,18 +45,20 @@ export default class SearchPageController {
         this.todayForecast = [];
         this.fiveDayForecast = new Map();
 
-        data.data.list.forEach((hourlyForecast) => {
-            const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
-            if (forecastDay === new Date().getDate()) {
-                this.todayForecast.push(hourlyForecast);
-            } else {
-                const data = this.fiveDayForecast.get(forecastDay) || [];
-                data.push(hourlyForecast);
-                this.fiveDayForecast.set(forecastDay, data);
-            }
-        });
+        if (data && data.data && data.data.list) {
+            data.data.list.forEach((hourlyForecast) => {
+                const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
+                if (forecastDay === new Date().getDate()) {
+                    this.todayForecast.push(hourlyForecast);
+                } else {
+                    const data = this.fiveDayForecast.get(forecastDay) || [];
+                    data.push(hourlyForecast);
+                    this.fiveDayForecast.set(forecastDay, data);
+                }
+            });
 
-        this.fiveDayForecast = Array.from(this.fiveDayForecast.values());
+            this.fiveDayForecast = Array.from(this.fiveDayForecast.values());
+        }
     }
 }
 

@@ -4,7 +4,7 @@ export default class ProgressBarController {
     }
 
     getPercentage() {
-        return this.progress + "%";
+        return `${this.progress}%`;
     }
 }
 
