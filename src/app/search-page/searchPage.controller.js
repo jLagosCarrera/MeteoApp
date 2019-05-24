@@ -34,7 +34,7 @@ export default class SearchPageController {
 
         this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
             .then((data) => {
-
+                this.currentForecast = data.data;
             })
             .catch((error) => {
                 console.log(error); //TODO on next tickets

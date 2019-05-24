@@ -17,9 +17,7 @@ import webLogo from './components/web-logo/webLogo.component';
 import citySearch from './components/city-search/citySearch.component';
 import displayableList from './components/displayable-list/displayableList.component';
 import forecastCard from './components/forecast-card/forecastCard.component';
-
-//Filters
-import dateFilters from './filters/date.filters'
+import progressBar from './components/progress-bar/progressBar.component';
 
 export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
@@ -30,6 +28,5 @@ export default angular.module('sharedModule', [])
     .component('citySearch', citySearch)
     .component('displayableList', displayableList)
     .component('forecastCard', forecastCard)
-    .filter('toLocaleTime', () => dateFilters.toLocaleTime)
-    .filter('toLocaleDate', () => dateFilters.toLocaleDate)
+    .component('progressBar', progressBar)
     .name;

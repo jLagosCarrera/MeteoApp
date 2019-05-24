@@ -1,0 +1,7 @@
+<md-icon ng-show="$ctrl.iconToDisplay" class="material-icons">{{ $ctrl.iconToDisplay }}</md-icon>
+<div class="all-rounded progress-bar">
+    <div class="all-rounded progress-bar-percentage"
+        ng-style="{'width': $ctrl.getPercentage(), 'background-color': $ctrl.color}">
+        <span>{{ $ctrl.progress }}/100%</span>
+    </div>
+</div>
