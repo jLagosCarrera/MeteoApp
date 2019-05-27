@@ -20,6 +20,7 @@ import forecastCard from './components/forecast-card/forecastCard.component';
 import allCards from './components/all-cards/allCards.component';
 import progressBar from './components/progress-bar/progressBar.component';
 import errorInform from './components/error-inform/errorInform.component';
+import contactForm from './components/contact-form/contactForm.component';
 
 export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
@@ -33,4 +34,5 @@ export default angular.module('sharedModule', [])
     .component('allCards', allCards)
     .component('progressBar', progressBar)
     .component('errorInform', errorInform)
+    .component('contactForm', contactForm)
     .name;
