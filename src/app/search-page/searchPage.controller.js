@@ -1,10 +1,11 @@
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, $state) {
+    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state) {
         this.geoNamesService = geoNamesService;
         this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
-        this.$state = $state;
+        this.routingFunctionsService = routingFunctionsService;
         this.nearbyCities = [];
+        this.$state = $state;
     }
 
     $onInit() {
@@ -21,12 +22,9 @@ export default class SearchPageController {
                 this.$timeout(() => this.nearbyCities = cities);
             })
             .catch((error) => {
-                this.$state.go('searchError', {
-                    errorInfo: error,
-                    citySearched: this.cityParam
-                });
+                this.routingFunctionsService.goError(error, this.cityParam);
             });
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', '$state'];
+SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state'];

@@ -14,6 +14,13 @@ export default class RoutingFunctions {
     goHome() {
         this.$state.go('home');
     }
+
+    goError(error, city) {
+        this.$state.go('searchError', {
+            errorInfo: error,
+            citySearched: city
+        });
+    }
 }
 
 RoutingFunctions.$inject = ['$state'];
