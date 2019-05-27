@@ -14,21 +14,31 @@ export default class AllCardsController {
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
                 this.todayForecast = [];
-                this.fiveDayForecast = new Map();
+                this.fiveDayForecast = [];
 
+                let auxMap = new Map();
+                const currentDate = new Date().getDate();
+
+                //Check for data not falsy.
                 if (data && data.data && data.data.list) {
+                    //For each of the 40 forecast values we iterate.
                     data.data.list.forEach((hourlyForecast) => {
+                        //We check if the day of the forecast is today and we add
+                        //it to the todayForecast array.
                         const forecastDay = new Date(hourlyForecast.dt * 1000).getDate();
-                        if (forecastDay === new Date().getDate()) {
+                        if (forecastDay === currentDate) {
                             this.todayForecast.push(hourlyForecast);
                         } else {
-                            const data = this.fiveDayForecast.get(forecastDay) || [];
+                            //If not, we are gonna take the forecast date and put it as Map key with
+                            //its forecast value inside an array.
+                            const data = auxMap.get(forecastDay) || [];
                             data.push(hourlyForecast);
-                            this.fiveDayForecast.set(forecastDay, data);
+                            auxMap.set(forecastDay, data);
                         }
                     });
 
-                    this.$timeout(() => this.fiveDayForecast = Array.from(this.fiveDayForecast.values()));
+                    //We finally get an array with all the arrays of then daily forecast.
+                    this.$timeout(() => this.fiveDayForecast = Array.from(auxMap.values()));
                 }
             })
             .catch((error) => {
