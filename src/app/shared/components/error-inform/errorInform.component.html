@@ -1,7 +1,7 @@
 <div class="flex-column justify-center align-center fill-content error-background">
     <div class="title flex-row align-center">
         <md-icon class="material-icons">mood_bad</md-icon>
-        <span ng-show=$ctrl.errorInfo>{{ $ctrl.errorInfo.status }}: {{ $ctrl.errorInfo.statusText }}</span>
+        <span ng-show=$ctrl.errorInfo>{{ ::$ctrl.errorInfo.status }}: {{ ::$ctrl.errorInfo.statusText }}</span>
         <span ng-hide=$ctrl.errorInfo>Nothing here to show</span>
     </div>
     <div class="subtitle flex-row align-center">

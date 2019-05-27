@@ -1,6 +1,5 @@
 export default class ErrorPageController {
-    constructor($state, $stateParams, routingFunctionsService) {
-        this.$state = $state;
+    constructor($stateParams, routingFunctionsService) {
         this.$stateParams = $stateParams;
         this.routingFunctionsService = routingFunctionsService;
     }
@@ -19,4 +18,4 @@ export default class ErrorPageController {
     }
 }
 
-ErrorPageController.$inject = ['$state', '$stateParams', 'routingFunctionsService'];
+ErrorPageController.$inject = ['$stateParams', 'routingFunctionsService'];

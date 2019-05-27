@@ -46,7 +46,7 @@ export default class GeoNames {
             nearbyCities.data.geonames.shift();
             return nearbyCities.data.geonames;
         } catch (response) {
-            return await Promise.reject(response);
+            throw response;
         }
     }
 }
