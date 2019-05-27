@@ -1,14 +1,21 @@
 <md-dialog>
     <md-dialog-content>
         <form class="flex-column" ng-submit="$ctrl.success()">
-            <md-input-container class="md-icon-float">
+            <md-input-container class="md-icon-float md-block">
                 <label>Name</label>
                 <md-icon class="material-icons">perm_identity</md-icon>
-                <input type="text">
+                <input ng-model="form.name" type="text" required>
             </md-input-container>
-            <md-input-container class="md-icon-float">
+            <md-input-container class="md-icon-float md-block">
+                <label>Email</label>
                 <md-icon class="material-icons">mail_outline</md-icon>
-                <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                <input ng-model="form.mail" type="email" required>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Message</label>
+                <md-icon class="material-icons">message</md-icon>
+                <textarea ng-model="form.text" md-maxlength="100" md-no-autogrow md-no-resize md-no-resize max-rows="5"
+                    rows="5" required></textarea>
             </md-input-container>
             <md-dialog-actions>
                 <md-button class="md-raised md-primary" ng-click="$ctrl.cancel()">
@@ -20,5 +27,4 @@
             </md-dialog-actions>
         </form>
     </md-dialog-content>
-
 </md-dialog>
