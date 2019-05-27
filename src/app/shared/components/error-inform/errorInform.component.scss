@@ -1,0 +1,36 @@
+@import '../../styles/mixins/background';
+
+error-inform {
+    .error-background {
+        @include setBackground("../../../../../img/contentBackground.svg");
+    }
+
+    div.title {
+        md-icon.material-icons {
+            padding-right: 10px;
+            font-size: 80px;
+            height: 80px;
+            width: 80px;
+        }
+
+        span {
+            font-size: 40px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    div.subtitle {
+        span {
+            font-size: 20px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        padding-bottom: 10px;
+    }
+
+    div.buttons {
+        md-button {
+            flex: 0 1 50%;
+        }
+    }
+}

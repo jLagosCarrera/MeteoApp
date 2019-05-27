@@ -18,7 +18,7 @@ export default class OpenWeatherMaps {
             const currentForecast = await this.$http.get(`${this.baseURL}/weather`, params);
             return currentForecast;
         } catch (response) {
-            return response;
+            throw response;
         }
     }
 
@@ -36,7 +36,7 @@ export default class OpenWeatherMaps {
             const fiveDayForecast = await this.$http.get(`${this.baseURL}/forecast`, params);
             return fiveDayForecast;
         } catch (response) {
-            return response;
+            throw response;
         }
     }
 }

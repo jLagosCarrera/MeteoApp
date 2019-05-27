@@ -30,7 +30,7 @@
             </span>
             <span class="flex-25">
                 <md-icon class="material-icons">network_check</md-icon>
-                {{::$ctrl.currentForecast.wind.speed * 3.6 | number:2 }} km/h
+                {{$ctrl.currentForecast.wind.speed * 3.6 | number:2 }} km/h
             </span>
             <span class="pressure flex-25">
                 <md-icon class="material-icons">vertical_align_bottom</md-icon>{{::$ctrl.currentForecast.main.pressure}}
@@ -42,7 +42,7 @@
                 ng-class="{'flex-25': $ctrl.currentForecast, 'flex-100': !$ctrl.currentForecast}"
                 ng-repeat="forecast in $ctrl.forecastData track by $index">
                 <img ng-src="https://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" class="md-avatar" />
-                <span>{{ ::forecast.dt * 1000 | date:'HH:mm' }}</span>
+                <span>{{ forecast.dt * 1000 | date:'HH:mm' }}</span>
             </md-list-item>
         </md-list>
     </md-card-content>

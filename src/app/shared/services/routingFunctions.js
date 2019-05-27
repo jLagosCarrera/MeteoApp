@@ -4,13 +4,22 @@ export default class RoutingFunctions {
     }
 
     search(city) {
-        this.$state.go('search', {
+        this.$state.go('searchCity', {
             city: city.toLowerCase()
+        }, {
+            reload: true
         });
     }
 
     goHome() {
         this.$state.go('home');
+    }
+
+    goError(error, city) {
+        this.$state.go('searchError', {
+            errorInfo: error,
+            citySearched: city
+        });
     }
 }
 
