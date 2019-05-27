@@ -1,4 +1,4 @@
-export default class ForecastCardsController {
+export default class AllCardsController {
     constructor(openWeatherMapsService, $timeout, $state) {
         this.openWeatherMapsService = openWeatherMapsService;
         this.$timeout = $timeout;
@@ -27,21 +27,27 @@ export default class ForecastCardsController {
                         }
                     });
 
-                    this.fiveDayForecast = Array.from(this.fiveDayForecast.values());
+                    this.$timeout(() => this.fiveDayForecast = Array.from(this.fiveDayForecast.values()));
                 }
             })
             .catch((error) => {
-                this.$state.go('searchError');
+                this.$state.go('searchError', {
+                    errorInfo: error,
+                    citySearched: this.cityParam
+                });
             });
 
         this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
             .then((data) => {
-                this.currentForecast = data.data;
+                this.$timeout(() => this.currentForecast = data.data);
             })
             .catch((error) => {
-                this.$state.go('searchError');
+                this.$state.go('searchError', {
+                    errorInfo: error,
+                    citySearched: this.cityParam
+                });
             });
     }
 }
 
-ForecastCardsController.$inject = ['openWeatherMapsService', '$timeout', '$state'];
+AllCardsController.$inject = ['openWeatherMapsService', '$timeout', '$state'];

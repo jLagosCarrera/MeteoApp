@@ -16,14 +16,18 @@ export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider
         parent: 'search',
         name: 'searchCity',
         url: '/search?city',
-        component: 'forecastCards'
+        component: 'allCards'
     }
 
     const searchError = {
         parent: 'search',
         name: 'searchError',
         url: '/search/error',
-        component: 'errorInform'
+        component: 'errorInform',
+        params: {
+            errorInfo: undefined,
+            citySearched: undefined
+        }
     }
 
     $stateProvider.state(homeState);

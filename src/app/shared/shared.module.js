@@ -17,7 +17,7 @@ import webLogo from './components/web-logo/webLogo.component';
 import citySearch from './components/city-search/citySearch.component';
 import displayableList from './components/displayable-list/displayableList.component';
 import forecastCard from './components/forecast-card/forecastCard.component';
-import forecastCards from './components/forecast-cards/forecastCards.component';
+import allCards from './components/all-cards/allCards.component';
 import progressBar from './components/progress-bar/progressBar.component';
 import errorInform from './components/error-inform/errorInform.component';
 
@@ -30,7 +30,7 @@ export default angular.module('sharedModule', [])
     .component('citySearch', citySearch)
     .component('displayableList', displayableList)
     .component('forecastCard', forecastCard)
-    .component('forecastCards', forecastCards)
+    .component('allCards', allCards)
     .component('progressBar', progressBar)
     .component('errorInform', errorInform)
     .name;

@@ -4,8 +4,5 @@ import './errorInform.component.scss';
 
 export default {
     controller,
-    template,
-    bindings: {
-        error: '<'
-    }
+    template
 };

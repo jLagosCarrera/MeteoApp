@@ -1,7 +1,22 @@
 export default class ErrorPageController {
-    constructor() {}
+    constructor($state, $stateParams, routingFunctionsService) {
+        this.$state = $state;
+        this.$stateParams = $stateParams;
+        this.routingFunctionsService = routingFunctionsService;
+    }
 
-    $onInit() {}
+    $onInit() {
+        this.errorInfo = this.$stateParams.errorInfo;
+        this.citySearched = this.$stateParams.citySearched;
+    }
+
+    goHome() {
+        this.routingFunctionsService.goHome();
+    }
+
+    reload() {
+        this.routingFunctionsService.search(this.citySearched);
+    }
 }
 
-ErrorPageController.$inject = [];
+ErrorPageController.$inject = ['$state', '$stateParams', 'routingFunctionsService'];

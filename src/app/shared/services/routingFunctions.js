@@ -6,6 +6,8 @@ export default class RoutingFunctions {
     search(city) {
         this.$state.go('searchCity', {
             city: city.toLowerCase()
+        }, {
+            reload: true
         });
     }
 

@@ -21,7 +21,10 @@ export default class SearchPageController {
                 this.$timeout(() => this.nearbyCities = cities);
             })
             .catch((error) => {
-                this.$state.go('searchError');
+                this.$state.go('searchError', {
+                    errorInfo: error,
+                    citySearched: this.cityParam
+                });
             });
     }
 }
