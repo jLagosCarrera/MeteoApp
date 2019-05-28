@@ -48,7 +48,9 @@ export default class SearchPageController {
                     .theme('success-toast')
                     .hideDelay(3000)
                 );
-            })
+            }).catch(() => {
+                //Do nothing on dialog cancel
+            });
     }
 }
 
