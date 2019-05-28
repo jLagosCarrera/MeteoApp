@@ -9,6 +9,7 @@ export default class ContactFormController {
 
     cancel() {
         this.$mdDialog.cancel();
+        console.log(this);
     };
 }
 

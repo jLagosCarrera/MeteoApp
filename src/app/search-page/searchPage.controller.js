@@ -34,8 +34,7 @@ export default class SearchPageController {
                 parent: this.$rootElement,
                 targetEvent: event,
                 clickOutsideToClose: true,
-                escapeToClose: true,
-                fullscreen: true
+                escapeToClose: true
             })
             .then((answer) => {
                 //Make toast
