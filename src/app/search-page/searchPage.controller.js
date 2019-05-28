@@ -1,5 +1,5 @@
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement) {
+    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast) {
         this.geoNamesService = geoNamesService;
         this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
@@ -8,6 +8,7 @@ export default class SearchPageController {
         this.$mdDialog = $mdDialog;
         this.$rootElement = $rootElement;
         this.$state = $state;
+        this.$mdToast = $mdToast;
     }
 
     $onInit() {
@@ -37,12 +38,18 @@ export default class SearchPageController {
                 escapeToClose: true
             })
             .then((answer) => {
-                //Make toast
+                //Implement here email sending service, bottom toast on mail sending
+                //add another toast for email error sending
+                console.log(answer);
+                this.$mdToast.show(
+                    this.$mdToast.simple()
+                    .textContent('We will contact you soon!')
+                    .position('bottom right')
+                    .theme('success-toast')
+                    .hideDelay(3000)
+                );
             })
-            .catch((error) => {
-                //Make toast
-            });
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement'];
+SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast'];

@@ -20,7 +20,8 @@
             <md-input-container class="md-icon-float md-block">
                 <label>Email</label>
                 <md-icon class="material-icons">mail_outline</md-icon>
-                <input name="mail" ng-model="mail" type="email" required autocomplete="off">
+                <input name="mail" ng-model="mail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    required autocomplete="off">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
                 <label>Subject</label>
