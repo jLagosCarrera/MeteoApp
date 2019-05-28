@@ -1,14 +1,29 @@
 <div class="flex-column justify-center align-center fill-content error-background">
     <div class="title flex-row align-center">
         <md-icon class="material-icons">mood_bad</md-icon>
-        <span ng-show=$ctrl.errorInfo>{{ ::$ctrl.errorInfo.status }}: {{ ::$ctrl.errorInfo.statusText }}</span>
+        <span ng-show=$ctrl.errorInfo>
+            <md-tooltip md-delay="400">
+                Error code
+            </md-tooltip>
+            {{ ::$ctrl.errorInfo.status }}: {{ ::$ctrl.errorInfo.statusText }}
+        </span>
         <span ng-hide=$ctrl.errorInfo>Nothing here to show</span>
     </div>
     <div class="subtitle flex-row align-center">
         <span>Sorry! We're working on it...</span>
     </div>
     <div class="buttons flex-row align-center">
-        <md-button ng-click="$ctrl.reload()" ng-show=$ctrl.errorInfo class="md-raised md-warn">Try reload?</md-button>
-        <md-button ng-click="$ctrl.goHome()" class="md-raised md-warn">Go home</md-button>
+        <md-button ng-click="$ctrl.reload()" ng-show=$ctrl.errorInfo class="md-raised md-warn">
+            <md-tooltip md-delay="400">
+                Reload city forecast
+            </md-tooltip>
+            Try reload?
+        </md-button>
+        <md-button ng-click="$ctrl.goHome()" class="md-raised md-warn">
+            <md-tooltip md-delay="400">
+                Go back to home page
+            </md-tooltip>
+            Go home
+        </md-button>
     </div>
 </div>

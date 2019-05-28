@@ -8,6 +8,7 @@ export default {
     bindings: {
         iconToDisplay: '@',
         progress: '<',
-        color: '@'
+        color: '@',
+        barType: '@'
     }
 };

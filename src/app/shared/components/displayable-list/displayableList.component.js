@@ -8,6 +8,7 @@ export default {
     bindings: {
         listToDisplay: '<',
         displayIcon: '@',
-        useHeader: '<'
+        useHeader: '<',
+        listType: '@'
     }
 };
