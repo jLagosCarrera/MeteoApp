@@ -1,4 +1,4 @@
-export default ['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
     $urlRouterProvider.otherwise('/home');
 
     const homeState = {
