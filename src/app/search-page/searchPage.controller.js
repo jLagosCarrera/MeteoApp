@@ -1,11 +1,14 @@
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state) {
+    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast) {
         this.geoNamesService = geoNamesService;
         this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
         this.nearbyCities = [];
+        this.$mdDialog = $mdDialog;
+        this.$rootElement = $rootElement;
         this.$state = $state;
+        this.$mdToast = $mdToast;
     }
 
     $onInit() {
@@ -25,6 +28,30 @@ export default class SearchPageController {
                 this.routingFunctionsService.goError(error, this.cityParam);
             });
     }
+
+    openFormDialog(event) {
+        this.$mdDialog.show({
+                template: '<contact-form></contact-form>',
+                parent: this.$rootElement,
+                targetEvent: event,
+                clickOutsideToClose: true,
+                escapeToClose: true
+            })
+            .then((answer) => {
+                //Implement here email sending service, bottom toast on mail sending
+                //add another toast for email error sending
+                console.log(answer);
+                this.$mdToast.show(
+                    this.$mdToast.simple()
+                    .textContent('We will contact you soon!')
+                    .position('bottom right')
+                    .theme('success-toast')
+                    .hideDelay(3000)
+                );
+            }).catch(() => {
+                //Do nothing on dialog cancel
+            });
+    }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state'];
+SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast'];

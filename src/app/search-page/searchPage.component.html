@@ -1,16 +1,30 @@
 <div class="flex-row fill-content">
-    <div class="flex-25 flex-column align-center menu-background">
-        <web-logo class="flex-row justify-center padding-top-20" icon-size="34px"></web-logo>
-        <div class="flex-row padding-y-20">
-            <city-search class="flex-column"></city-search>
+    <div class="flex-25 flex-column justify-space-between align-center menu-background">
+        <div class="flex-row full-width justify-center">
+            <div class="flex-column align-center">
+                <web-logo class="flex-row justify-center padding-top-20" icon-size="34px"></web-logo>
+                <div class="flex-row padding-y-20">
+                    <city-search class="flex-column"></city-search>
+                </div>
+            </div>
         </div>
-        <div class="flex-row">
-            <displayable-list class="flex-column justify-center align-center" use-header="true" display-icon="restore"
-                list-to-display="$ctrl.latestSearches"></displayable-list>
+        <div class="flex-row full-width justify-center">
+            <div class="flex-column align-center full-width">
+                <displayable-list class="flex-column justify-center align-center full-width" use-header="true"
+                    display-icon="restore" list-to-display="$ctrl.latestSearches"></displayable-list>
+            </div>
         </div>
-        <div class="flex-row">
-            <displayable-list class="flex-column justify-center align-center" use-header="true" display-icon="near_me"
-                list-to-display="$ctrl.nearbyCities"></displayable-list>
+        <div class="flex-row full-width justify-center">
+            <div class="flex-column align-center full-width">
+                <displayable-list class="flex-column justify-center align-center full-width" use-header="true"
+                    display-icon="near_me" list-to-display="$ctrl.nearbyCities"></displayable-list>
+            </div>
+        </div>
+        <div class="flex-row full-width justify-center">
+            <div class="flex-column align-center full-width btn-padding">
+                <md-button ng-click="$ctrl.openFormDialog($event)" class="md-raised md-primary full-width">Need help?
+                </md-button>
+            </div>
         </div>
     </div>
     <ui-view class="flex-75"></ui-view>

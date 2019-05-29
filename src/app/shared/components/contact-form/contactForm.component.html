@@ -1,0 +1,50 @@
+<md-dialog flex="100">
+    <md-dialog-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <div flex>
+                    <md-icon class="material-icons">contact_support</md-icon>
+                    <span>Contact us!</span>
+                </div>
+                <md-button ng-click="$ctrl.cancel()" class="md-icon-button">
+                    <md-icon class="material-icons">clear</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <form name="form" class="flex-column" ng-submit="$ctrl.success()" novalidate>
+            <md-input-container class="md-icon-float md-block">
+                <label>Your Name</label>
+                <md-icon class="material-icons">perm_identity</md-icon>
+                <input name="name" ng-model="name" type="text" required autocomplete="off">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Your Email</label>
+                <md-icon class="material-icons">mail_outline</md-icon>
+                <input name="mail" ng-model="mail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    required autocomplete="off">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Subject</label>
+                <md-icon class="material-icons">subject</md-icon>
+                <input name="subject" ng-model="subject" type="text" required autocomplete="off">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <label>Message</label>
+                <md-icon class="material-icons">message</md-icon>
+                <textarea name="text" ng-model="text" md-no-autogrow md-no-resize md-no-resize max-rows="5" rows="5"
+                    required></textarea>
+            </md-input-container>
+            <md-dialog-actions class="justify-center">
+                <md-button class="md-raised md-primary" ng-click="$ctrl.cancel()">
+                    Cancel
+                </md-button>
+                <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.success()" ng-disabled="
+                form.mail.$pristine || form.mail.$invalid ||
+                form.subject.$pristine || form.subject.$invalid ||
+                form.text.$pristine || form.text.$invalid">
+                    Send
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog-content>
+</md-dialog>
