@@ -37,3 +37,5 @@
     <img src="https://img.shields.io/github/issues-closed/jLagosCarrera/MeteoApp.svg?style=plastic">
   </a>
 </p>
+<h1 align="center">MeteoApp</h1>
+<p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter, Redux, Material... The purpose of this application is the build of a modern web application using the latest technology on the market.</p>
