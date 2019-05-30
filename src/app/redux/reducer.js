@@ -4,7 +4,7 @@ const initialState = {
     cities: JSON.parse(localStorage.getItem('latestSearches')) || []
 }
 
-export default function (state = initialState, action) {    
+export default function (state = initialState, action) {
     switch (action.type) {
         case types.ADD_CITY: {
             addCity(state, action);
@@ -16,12 +16,12 @@ export default function (state = initialState, action) {
 
 const addCity = (state, action) => {
     action.city = action.city.trim().toLowerCase();
-    if (state.cities.includes(action.city)) {
-        const index = state.cities.indexOf(action.city);
-        if (index > -1) {
-            state.cities.splice(index, 1);
-        }
+    
+    const index = state.cities.indexOf(action.city);
+    if (index > -1) {
+        state.cities.splice(index, 1);
     }
+
     state.cities.unshift(action.city);
     if (state.cities.length > 10) {
         state.cities.splice(10, state.cities.length - 10);
