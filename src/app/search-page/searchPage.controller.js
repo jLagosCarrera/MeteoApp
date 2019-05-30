@@ -61,7 +61,7 @@ export default class SearchPageController {
 
     mapStateToThis(state) {
         return {
-            latestSearches: state.cities
+            latestSearches: state.main.cities
         };
     }
 

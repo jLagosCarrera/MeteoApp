@@ -6,7 +6,7 @@ export default class HomePageController {
 
     mapStateToThis(state) {
         return {
-            latestSearches: state.cities
+            latestSearches: state.main.cities
         };
     }
 

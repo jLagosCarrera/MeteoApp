@@ -4,11 +4,7 @@ const initialState = {
     cities: JSON.parse(localStorage.getItem('latestSearches')) || []
 }
 
-export default function (state = initialState, action) {
-    if (angular.equals(state, {})){
-        state = initialState;
-    }
-    
+export default function (state = initialState, action) {    
     switch (action.type) {
         case types.ADD_CITY: {
             addCity(state, action);
