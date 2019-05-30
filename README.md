@@ -40,8 +40,21 @@
 <h1 align="center">MeteoApp</h1>
 <p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
 
-## Table of Contents
+## Index
+1. [Introduction](#introduction)
+2. [Install](#install)
+3. [Tutorial](#tutorial)
+4. [Dependencies](#dependencies)
+5. [Known Issues](#known-issues)
+6. [Contributing & Support](#contributing-&-support)
+7. [Special Thanks](#special-thanks)
+8. [License](#license)
 
-1. [Install](#install)
-
+<h2 align="center">Introduction</h2>
 <h2 align="center">Install</h2>
+<h2 align="center">Tutorial</h2>
+<h2 align="center">Dependencies</h2>
+<h2 align="center">Known Issues</h2>
+<h2 align="center">Contributing & Support</h2>
+<h2 align="center">Special Thanks</h2>
+<h2 align="center">License</h2>
