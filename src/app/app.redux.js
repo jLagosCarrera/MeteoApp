@@ -1,6 +1,6 @@
 import {
     combineReducers
-} from "redux";
+} from 'redux';
 import reducer from './redux/reducer';
 
 export default ['$ngReduxProvider', ($ngReduxProvider) => {
