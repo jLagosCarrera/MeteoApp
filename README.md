@@ -39,3 +39,9 @@
 </p>
 <h1 align="center">MeteoApp</h1>
 <p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
+
+## Table of Contents
+
+1. [Install](#install)
+
+<h2 align="center">Install</h2>
