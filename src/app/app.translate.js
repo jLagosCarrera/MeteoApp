@@ -1,11 +1,9 @@
-export default ['$translateProvider', function ($translateProvider) {
-    $translateProvider.translations('en', {
-        //Translations
-    });
+import en from '../resources/translations/en';
+import es from '../resources/translations/es';
 
-    $translateProvider.translations('es', {
-        //Translations
-    });
+export default ['$translateProvider', function ($translateProvider) {
+    $translateProvider.translations('en', en);
+    $translateProvider.translations('es', es);
 
     $translateProvider.preferredLanguage('en');
 }]
