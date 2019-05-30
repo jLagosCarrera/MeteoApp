@@ -1,6 +1,7 @@
 export default class GeoNames {
-    constructor($http) {
+    constructor($http, $translate) {
         this.$http = $http;
+        this.lang = $translate.use();
         this.baseURL = 'https://secure.geonames.org';
     }
 
@@ -14,6 +15,7 @@ export default class GeoNames {
                 name: city,
                 cities: cities,
                 style: style,
+                lang: this.lang,
                 username: process.env.GEONAMES_API_KEY
             }
         };
@@ -26,6 +28,7 @@ export default class GeoNames {
                 radius: radius,
                 maxRows: maxRows,
                 style: style,
+                lang: this.lang,
                 username: process.env.GEONAMES_API_KEY
             }
         };
@@ -51,4 +54,4 @@ export default class GeoNames {
     }
 }
 
-GeoNames.$inject = ['$http'];
+GeoNames.$inject = ['$http', '$translate'];
