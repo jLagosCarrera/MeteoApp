@@ -7,5 +7,12 @@ export default ['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('es', es);
     $translateProvider.translations('gl', gl);
 
-    $translateProvider.preferredLanguage('es');
+    $translateProvider.registerAvailableLanguageKeys(['en', 'es', 'gl'], {
+        'en_*': 'en',
+        'es_*': 'es',
+        'gl_*': 'gl',
+        '*': 'en'
+    })
+    $translateProvider.determinePreferredLanguage();
+    $translateProvider.fallbackLanguage('en');
 }]
