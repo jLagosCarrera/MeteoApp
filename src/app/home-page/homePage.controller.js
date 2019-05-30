@@ -1,11 +1,18 @@
 export default class HomePageController {
-    constructor(latestSearchesUtilService) {
-        this.latestSearchesUtilService = latestSearchesUtilService;
+    constructor($ngRedux) {
+        this.$ngRedux = $ngRedux;
+        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
     }
 
-    $onInit() {
-        this.latestSearches = this.latestSearchesUtilService.getLatestSearches();
+    mapStateToThis(state) {
+        return {
+            latestSearches: state.main.cities
+        };
+    }
+
+    $onDestroy() {
+        this.unsubscribe();
     }
 }
 
-HomePageController.$inject = ['latestSearchesUtilService'];
+HomePageController.$inject = ['$ngRedux'];

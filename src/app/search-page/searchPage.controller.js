@@ -1,7 +1,10 @@
+import {
+    addCity
+} from '../redux/actions';
+
 export default class SearchPageController {
-    constructor(geoNamesService, latestSearchesUtilService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast) {
+    constructor(geoNamesService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast, $ngRedux) {
         this.geoNamesService = geoNamesService;
-        this.latestSearchesUtilService = latestSearchesUtilService;
         this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
         this.nearbyCities = [];
@@ -9,6 +12,8 @@ export default class SearchPageController {
         this.$rootElement = $rootElement;
         this.$state = $state;
         this.$mdToast = $mdToast;
+        this.$ngRedux = $ngRedux;
+        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
     }
 
     $onInit() {
@@ -16,8 +21,9 @@ export default class SearchPageController {
             this.cityParam = this.$state.params.city.toLowerCase();
         }
 
-        this.latestSearches = this.latestSearchesUtilService.getLatestSearches();
-        this.latestSearchesUtilService.addCity(this.cityParam, this.latestSearches);
+        if (this.cityParam && this.cityParam.trim() !== '') {
+            this.$ngRedux.dispatch(addCity(this.cityParam));
+        }
 
         this.geoNamesService.getNearbyCities(this.cityParam)
             .then((data) => {
@@ -27,6 +33,10 @@ export default class SearchPageController {
             .catch((error) => {
                 this.routingFunctionsService.goError(error, this.cityParam);
             });
+    }
+
+    $onDestroy() {
+        this.unsubscribe();
     }
 
     openFormDialog(event) {
@@ -52,6 +62,13 @@ export default class SearchPageController {
                 //Do nothing on dialog cancel
             });
     }
+
+    mapStateToThis(state) {
+        return {
+            latestSearches: state.main.cities
+        };
+    }
+
 }
 
-SearchPageController.$inject = ['geoNamesService', 'latestSearchesUtilService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast'];
+SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
