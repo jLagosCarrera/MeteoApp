@@ -38,4 +38,4 @@
   </a>
 </p>
 <h1 align="center">MeteoApp</h1>
-<p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter, Redux, Material... The purpose of this application is the build of a modern web application using the latest technology on the market.</p>
+<p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
