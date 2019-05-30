@@ -1,8 +1,6 @@
-<p align="center">
-  <a href="https://github.com/jLagosCarrera/MeteoApp">
-    <img src="img/logo.png" height="100px"/>
-  </a>
-</p>
+<h1 align="center">MeteoApp</h1>
+<p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
+<h1></h1>
 <p align="center">
   <a href="https://app.netlify.com/sites/meteoapp/deploys" alt="Netlify Continuous Deployment">
     <img src="https://api.netlify.com/api/v1/badges/5afac4ae-1dc4-4a0a-a291-c6a3167a2442/deploy-status">
@@ -37,8 +35,7 @@
     <img src="https://img.shields.io/github/issues-closed/jLagosCarrera/MeteoApp.svg?style=plastic">
   </a>
 </p>
-<h1 align="center">MeteoApp</h1>
-<p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
+<h1></h1>
 
 ## Index
 1. [Introduction](#introduction)
