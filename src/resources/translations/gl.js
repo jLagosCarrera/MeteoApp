@@ -19,7 +19,7 @@ export default {
             "INSERT_ISSUE": "Introduce o teu problema aquí",
             "INSERT_MESSAGE": "Explícanos o teu problema aquí",
             "INSERT_NAME": "Introduce o teu nome aquí",
-            "SEND_ISSUE": "Envia o problema"
+            "SEND_ISSUE": "Envía o problema"
         }
     },
     "DISPLAYABLE_LIST": {
