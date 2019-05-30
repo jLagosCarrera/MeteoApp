@@ -1,5 +1,6 @@
 <md-tooltip md-delay="400">
-    Percentage of {{ ::$ctrl.barType }}
+    <span translate translate-values="{ type: '{{ ::$ctrl.barType }}' }">
+        PROGRESS_BAR.TOOLTIPS.BAR_INFO</span>
 </md-tooltip>
 <md-icon ng-show="$ctrl.iconToDisplay" class="material-icons">{{ ::$ctrl.iconToDisplay }}</md-icon>
 <div class="all-rounded progress-bar">
