@@ -5,85 +5,78 @@ export default {
             "SEARCH_CITY": "Go search the city!"
         }
     },
-
     "CONTACT_FORM": {
-        "TITLE": "Contact us!",
-        "INPUT_NAME": "Your name",
+        "BUTTON_CANCEL": "Cancel",
+        "BUTTON_SEND": "Send",
         "INPUT_EMAIL": "Your email",
         "INPUT_ISSUE": "Issue",
         "INPUT_MESSAGE": "Message",
-        "BUTTON_CANCEL": "Cancel",
-        "BUTTON_SEND": "Send",
+        "INPUT_NAME": "Your name",
+        "TITLE": "Contact us!",
         "TOOLTIPS": {
-            "INSERT_NAME": "Insert your name here",
+            "EXIT": "Exit",
             "INSERT_EMAIL": "Insert your email here",
             "INSERT_ISSUE": "Insert the issue you had here",
             "INSERT_MESSAGE": "Explain us your problem here",
-            "SEND_ISSUE": "Send the issue",
-            "EXIT": "Exit"
+            "INSERT_NAME": "Insert your name here",
+            "SEND_ISSUE": "Send the issue"
         }
     },
-
     "DISPLAYABLE_LIST": {
-        "TYPES": {
-            "RECENT": "Recent",
-            "NEARBY": "Nearby"
-        },
         "TOOLTIPS": {
             "HEADER": "{{ type }} cities list",
-            "SINGLE_CARD": "{{ type }} city",
-            "NO_RESULTS": "No results"
+            "NO_RESULTS": "No results",
+            "SINGLE_CARD": "{{ type }} city"
+        },
+        "TYPES": {
+            "NEARBY": "Nearby",
+            "RECENT": "Recent"
         }
     },
-
     "ERROR_INFORM": {
-        "NOTHING_TO_SHOW": "Nothing here to show",
-        "WORKING_ON_IT": "Sorry! We're working on it...",
-        "RELOAD_BUTTON": "Try reload?",
         "GO_HOME_BUTTON": "Go home",
+        "NOTHING_TO_SHOW": "Nothing here to show",
+        "RELOAD_BUTTON": "Try reload?",
         "TOOLTIPS": {
             "ERROR": "Error code",
-            "RELOAD": "Reload city forecast",
-            "GO_HOME": "Go back to home page"
-        }
+            "GO_HOME": "Go back to home page",
+            "RELOAD": "Reload city forecast"
+        },
+        "WORKING_ON_IT": "Sorry! We're working on it..."
     },
-
     "FORECAST_CARD": {
         "SUNRISE": "Sunrise",
         "SUNSET": "Sunset",
         "TOOLTIPS": {
+            "AIR_PRESSURE": "Air pressure on hPa",
+            "DATE": "Date of the forecast",
+            "PLACE_INFO": "City (Country)",
             "SUNRISE_INFO": "Sunrise local time",
             "SUNSET_INFO": "Sunset local time",
-            "PLACE_INFO": "City (Country)",
-            "DATE": "Date of the forecast",
-            "TIME": "Local time",
             "TEMPERATURE": "Temperature",
+            "TIME": "Local time",
             "WIND_DIRECTION": "Wind direction on degrees",
-            "WIND_SPEED": "Wind speed on km/h",
-            "AIR_PRESSURE": "Air pressure on hPa"
+            "WIND_SPEED": "Wind speed on km/h"
         }
     },
-
     "PROGRESS_BAR": {
+        "TOOLTIPS": {
+            "BAR_INFO": "Percentage of {{ type }}"
+        },
         "TYPES": {
             "CLOUDS": "clouds",
             "HUMIDITY": "humidity"
-        },
-        "TOOLTIPS": {
-            "BAR_INFO": "Percentage of {{ type }}",
         }
     },
-
     "SEARCH_PAGE": {
         "CONTACT_BUTTON": "Need help?",
         "TOOLTIPS": {
             "OPEN_CONTACT": "Open contact form"
         }
     },
-
     "WEBLOGO": {
         "TOOLTIPS": {
-            "INFO": "Go back to homepage",
+            "INFO": "Go back to homepage"
         }
     }
 }
