@@ -24,16 +24,16 @@
 </p>
 <p align="center">
   <img src="https://img.shields.io/maintenance/yes/2019.svg?style=plastic">
-  <a href="https://github.com/jLagosCarrera/MeteoApp" alt="Download Repository">
+  <a href="https://github.com/jLagosCarrera/MeteoApp/releases" alt="Download Repository">
     <img src="https://img.shields.io/github/downloads/jLagosCarrera/MeteoApp/total.svg?style=plastic">
   </a>
   <img src="https://img.shields.io/github/repo-size/JLagosCarrera/MeteoApp.svg?style=plastic">
 </p>
 <p align="center">
-  <a href="https://github.com/jLagosCarrera/MeteoApp" alt="Open Issues">
+  <a href="https://github.com/jLagosCarrera/MeteoApp/issues" alt="Open Issues">
     <img src="https://img.shields.io/github/issues/jLagosCarrera/MeteoApp.svg?style=plastic">
   </a>
-  <a href="https://github.com/jLagosCarrera/MeteoApp" alt="Closed Issues">
+  <a href="https://github.com/jLagosCarrera/MeteoApp/issues?q=is%3Aissue+is%3Aclosed" alt="Closed Issues">
     <img src="https://img.shields.io/github/issues-closed/jLagosCarrera/MeteoApp.svg?style=plastic">
   </a>
 </p>
