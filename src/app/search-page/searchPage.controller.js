@@ -35,6 +35,10 @@ export default class SearchPageController {
             });
     }
 
+    $onDestroy() {
+        this.unsubscribe();
+    }
+
     openFormDialog(event) {
         this.$mdDialog.show({
                 template: '<contact-form></contact-form>',
@@ -65,9 +69,6 @@ export default class SearchPageController {
         };
     }
 
-    $onDestroy() {
-        this.unsubscribe();
-    }
 }
 
 SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
