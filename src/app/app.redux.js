@@ -1,9 +1,5 @@
-import loggerMiddleware from 'redux-logger';
-import reducers from './redux/reducer';
-import {
-    combineReducers
-} from "redux";
+import reducer from './redux/reducer';
 
 export default ['$ngReduxProvider', ($ngReduxProvider) => {
-    $ngReduxProvider.createStoreWith(combineReducers(reducers), [loggerMiddleware]);
+    $ngReduxProvider.createStoreWith(reducer);
 }];

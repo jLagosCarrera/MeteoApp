@@ -1,12 +1,11 @@
 export default class DisplayableListController {
-    constructor(routingFunctionsService, latestSearchesUtilService) {
+    constructor(routingFunctionsService) {
         this.routingFunctionsService = routingFunctionsService;
-        this.latestSearches = latestSearchesUtilService.getLatestSearches();
     }
 
-    search(city, cities) {
-        this.routingFunctionsService.search(city, cities);
+    search(city) {
+        this.routingFunctionsService.search(city);
     }
 }
 
-DisplayableListController.$inject = ['routingFunctionsService', 'latestSearchesUtilService'];
+DisplayableListController.$inject = ['routingFunctionsService'];

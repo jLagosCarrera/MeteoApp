@@ -3,7 +3,6 @@ import angular from 'angular';
 
 //Services
 import openWeatherMapsService from './services/openWeatherMaps';
-import latestSearchesUtilService from './services/latestSearchesUtil';
 import routingFunctionsService from './services/routingFunctions';
 import geoNamesService from './services/geoNames';
 
@@ -25,7 +24,6 @@ import contactForm from './components/contact-form/contactForm.component';
 export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
     .factory('geoNamesService', geoNamesService)
-    .factory('latestSearchesUtilService', latestSearchesUtilService)
     .factory('routingFunctionsService', routingFunctionsService)
     .component('webLogo', webLogo)
     .component('citySearch', citySearch)

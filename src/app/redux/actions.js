@@ -6,9 +6,3 @@ export function addCity(city) {
         city: city
     };
 }
-
-export function getCities() {
-    return {
-        type: types.GET_CITIES,
-    };
-}
