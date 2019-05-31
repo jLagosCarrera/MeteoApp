@@ -32,7 +32,7 @@
 3. [Tutorial](#tutorial)
 4. [Dependencies](#dependencies)
 5. [Known Issues](#known-issues)
-6. [Contributing & Support](#contributing-&-support)
+6. [Contributing and Support](#contributing-and-support)
 7. [Special Thanks](#special-thanks)
 8. [License](#license)
 
@@ -46,7 +46,7 @@
 
 <h2 align="center">Known Issues</h2>
 
-<h2 align="center">Contributing & Support</h2>
+<h2 align="center">Contributing and Support</h2>
 
 <h2 align="center">Special Thanks</h2>
 
