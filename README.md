@@ -40,8 +40,9 @@
 8. [License](#license)
 
 <h2 align="center">Introduction</h2>
-MeteoApp is an application developed entirely during my 3 month FCT internship on GBtec Software.
-</br>
+MeteoApp is an application developed entirely during my 3 month FCT internship on GBtec Software.  
+
+
 The main purpose of the application is learning about web development. The use of Javascript ES6+, modern framework like AngularJS, useful libraries used on big applications like uiRouter or Redux and handling geoNames and openWeatherMaps API calls for filtering the data retrieved by them. With all these new concepts and technologies learnt I was able to create and deploy a standard modern weather web application.
 
 <h2 align="center">Install</h2>
