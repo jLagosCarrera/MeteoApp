@@ -23,6 +23,7 @@ import reduxConfig from './app.redux';
 //Styles
 import 'angular-material/angular-material.scss';
 import 'material-icons/iconfont/material-icons.scss';
+import 'flag-icon-css/sass/flag-icon.scss'
 
 //Modules
 import homePageModule from './home-page/homePage.module';

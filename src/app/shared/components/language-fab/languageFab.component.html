@@ -1,0 +1,18 @@
+<md-fab-speed-dial class="md-scale md-fab-bottom-right" md-open="false" md-direction="up" ng-cloak>
+    <md-fab-trigger>
+        <md-button class="md-fab md-primary md-hue-2">
+            <md-icon class="material-icons">language</md-icon>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button ng-click="$ctrl.useLanguage('en')" class="md-fab md-primary md-mini">
+            <span class="flag-icon flag-icon-gb"></span>
+        </md-button>
+        <md-button ng-click="$ctrl.useLanguage('es')" class="md-fab md-primary md-mini">
+            <span class="flag-icon flag-icon-es"></span>
+        </md-button>
+        <md-button ng-click="$ctrl.useLanguage('pt')" class="md-fab md-primary md-mini">
+            <span class="flag-icon flag-icon-pt"></span>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial>

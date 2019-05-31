@@ -68,7 +68,6 @@ export default class SearchPageController {
             latestSearches: state.main.cities
         };
     }
-
 }
 
 SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
