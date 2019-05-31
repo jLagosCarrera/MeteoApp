@@ -11,22 +11,24 @@
         <div class="flex-row full-width justify-center">
             <div class="flex-column align-center full-width">
                 <displayable-list class="flex-column justify-center align-center full-width" use-header="true"
-                    display-icon="restore" list-to-display="$ctrl.latestSearches" list-type="Recent"></displayable-list>
+                    display-icon="restore" list-to-display="$ctrl.latestSearches"
+                    list-type="{{ 'DISPLAYABLE_LIST.TYPES.RECENT' | translate }}"></displayable-list>
             </div>
         </div>
         <div class="flex-row full-width justify-center">
             <div class="flex-column align-center full-width">
                 <displayable-list class="flex-column justify-center align-center full-width" use-header="true"
-                    display-icon="near_me" list-to-display="$ctrl.nearbyCities" list-type="Nearby"></displayable-list>
+                    display-icon="near_me" list-to-display="$ctrl.nearbyCities"
+                    list-type="{{ 'DISPLAYABLE_LIST.TYPES.NEARBY' | translate }}"></displayable-list>
             </div>
         </div>
         <div class="flex-row full-width justify-center">
             <div class="flex-column align-center full-width btn-padding">
                 <md-button ng-click="$ctrl.openFormDialog($event)" class="md-raised md-primary full-width">
                     <md-tooltip md-delay="400">
-                        Open contact form
+                        <span translate>SEARCH_PAGE.TOOLTIPS.OPEN_CONTACT</span>
                     </md-tooltip>
-                    Need help?
+                    <span translate>SEARCH_PAGE.CONTACT_BUTTON</span>
                 </md-button>
             </div>
         </div>

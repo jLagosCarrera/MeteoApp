@@ -21,6 +21,9 @@ import progressBar from './components/progress-bar/progressBar.component';
 import errorInform from './components/error-inform/errorInform.component';
 import contactForm from './components/contact-form/contactForm.component';
 
+//Filters
+import capitalize from './filters/capitalize';
+
 export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
     .factory('geoNamesService', geoNamesService)
@@ -33,4 +36,5 @@ export default angular.module('sharedModule', [])
     .component('progressBar', progressBar)
     .component('errorInform', errorInform)
     .component('contactForm', contactForm)
+    .filter('capitalize', () => capitalize)
     .name;

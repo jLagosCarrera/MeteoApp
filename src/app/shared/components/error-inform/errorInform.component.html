@@ -3,27 +3,27 @@
         <md-icon class="material-icons">mood_bad</md-icon>
         <span ng-show=$ctrl.errorInfo>
             <md-tooltip md-delay="400">
-                Error code
+                <span translate>ERROR_INFORM.TOOLTIPS.ERROR</span>
             </md-tooltip>
             {{ ::$ctrl.errorInfo.status }}: {{ ::$ctrl.errorInfo.statusText }}
         </span>
-        <span ng-hide=$ctrl.errorInfo>Nothing here to show</span>
+        <span ng-hide=$ctrl.errorInfo translate>ERROR_INFORM.NOTHING_TO_SHOW</span>
     </div>
     <div class="subtitle flex-row align-center">
-        <span>Sorry! We're working on it...</span>
+        <span translate>ERROR_INFORM.WORKING_ON_IT</span>
     </div>
     <div class="buttons flex-row align-center">
         <md-button ng-click="$ctrl.reload()" ng-show=$ctrl.errorInfo class="md-raised md-warn">
             <md-tooltip md-delay="400">
-                Reload city forecast
+                <span translate>ERROR_INFORM.TOOLTIPS.RELOAD</span>
             </md-tooltip>
-            Try reload?
+            <span translate>ERROR_INFORM.RELOAD_BUTTON</span>
         </md-button>
         <md-button ng-click="$ctrl.goHome()" class="md-raised md-warn">
             <md-tooltip md-delay="400">
-                Go back to home page
+                <span translate>ERROR_INFORM.TOOLTIPS.GO_HOME</span>
             </md-tooltip>
-            Go home
+            <span translate>ERROR_INFORM.GO_HOME_BUTTON</span>
         </md-button>
     </div>
 </div>

@@ -1,6 +1,7 @@
 export default class OpenWeatherMaps {
-    constructor($http) {
+    constructor($http, $translate) {
         this.$http = $http;
+        this.lang = $translate.use();
         this.baseURL = 'https://api.openweathermap.org/data/2.5';
     }
 
@@ -9,7 +10,7 @@ export default class OpenWeatherMaps {
             params: {
                 q: city,
                 units: 'metric',
-                lang: 'en',
+                lang: this.lang,
                 appid: process.env.OPENWEATHERMAP_API_KEY
             }
         };
@@ -27,7 +28,7 @@ export default class OpenWeatherMaps {
             params: {
                 q: city,
                 units: 'metric',
-                lang: 'en',
+                lang: this.lang,
                 appid: process.env.OPENWEATHERMAP_API_KEY
             }
         };
@@ -41,4 +42,4 @@ export default class OpenWeatherMaps {
     }
 }
 
-OpenWeatherMaps.$inject = ['$http'];
+OpenWeatherMaps.$inject = ['$http', '$translate'];

@@ -1,6 +1,7 @@
 <md-icon class="material-icons recent" ng-show="$ctrl.useHeader">
     <md-tooltip md-delay="400">
-        {{ ::$ctrl.listType }} cities list
+        <span translate translate-values="{ type: '{{ ::$ctrl.listType }}' }">
+            DISPLAYABLE_LIST.TOOLTIPS.HEADER</span>
     </md-tooltip>
     {{ ::$ctrl.displayIcon }}
 </md-icon>
@@ -9,7 +10,8 @@
         ng-repeat="city in $ctrl.listToDisplay track by $index">
         <a class="link-effect spacing-4" href ng-click="$ctrl.search(city)">
             <md-tooltip md-delay="400">
-                {{ ::$ctrl.listType }} city
+                <span translate translate-values="{ type: '{{ ::$ctrl.listType }}' }">
+                    DISPLAYABLE_LIST.TOOLTIPS.SINGLE_CARD</span>
             </md-tooltip>
             <md-icon class="material-icons recent" ng-hide="$ctrl.useHeader">{{ ::$ctrl.displayIcon }}</md-icon>
             <span class="capitalize">{{ city }}</span>
@@ -17,7 +19,7 @@
     </li>
     <li class="flex-row justify-center align-center" ng-show="!$ctrl.listToDisplay || $ctrl.listToDisplay.length === 0">
         <md-tooltip md-delay="400">
-            No results
+            <span translate>DISPLAYABLE_LIST.TOOLTIPS.NO_RESULTS</span>
         </md-tooltip>
         <md-icon class="material-icons recent">more_horiz</md-icon>
     </li>

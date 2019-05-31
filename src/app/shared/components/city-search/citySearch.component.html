@@ -1,14 +1,14 @@
 <form class="fill-content flex-type" ng-submit="$ctrl.search($ctrl.city)" novalidate>
     <md-input-container class="md-icon-float md-block md-title form-components-height remove-all-spacing">
         <md-tooltip md-delay="400">
-            Insert a city here
+            <span translate>CITY_SEARCH.TOOLTIPS.INSERT_CITY</span>
         </md-tooltip>
         <input class="tealInput form-components-height" required md-no-asterisk ng-model="$ctrl.city" type="text"
             placeholder="" autocomplete="off"></input>
     </md-input-container>
     <md-button type="submit" class="md-raised md-primary form-components-height remove-all-spacing">
         <md-tooltip md-delay="400">
-            Go search the city!
+            <span translate>CITY_SEARCH.TOOLTIPS.SEARCH_CITY</span>
         </md-tooltip>
         <md-icon class="material-icons">search</md-icon>
     </md-button>
