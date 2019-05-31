@@ -94,5 +94,7 @@ If you find any trouble or problem with the app just let me know opening a new i
 
 - [GBtec software](https://www.linkedin.com/company/gbtec-software-espana-latam/), [Cibrán Ledo](https://www.linkedin.com/in/cibran/) for applying me for the FCT internship and giving me the oportunity to learn and work with new and modern web applications.
 - [Jorge Villar](https://www.linkedin.com/in/jorge-villar-arana-34885151), [Diego Pascual](https://www.linkedin.com/in/diego-pascual-formoso/) and [Eloy Castelo](https://www.linkedin.com/in/eloy-castelo/) for taking time to explain new concepts and technologies used on this application. And of course, for taking time to review all the Pull Requests on this project along it's usual job tasks.
+- [Samuel Figueirido](https://www.instagram.com/samuelfigueirido/) for spending and sharing the time of the FCT internship with me, we, the both, have learnt a lot on these 3 months and we could know more about the eachother on that time.
+- Nuria Oujo for helping me with the design of the application despite I didn't pay too much attention because the quantity of tasks I had to do in the internship time.
 
 <h2 align="center">License</h2>
