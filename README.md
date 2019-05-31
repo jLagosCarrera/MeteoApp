@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/jLagosCarrera/MeteoApp">
-    <img src="img/logo.png" height="100px"/>
+    <img src="src/app/resources/img/logo.png" height="100px"/>
   </a>
 </p>
 <p align="center">

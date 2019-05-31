@@ -19,6 +19,6 @@ all-cards {
     }
 
     .content-background {
-        @include setBackground("../../../../../img/contentBackground.svg");
+        @include setBackground("../../../../resources/img/contentBackground.svg");
     }
 }
