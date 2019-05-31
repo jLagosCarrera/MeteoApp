@@ -1,7 +1,7 @@
 <div class="flex-column justify-center align-center fill-content error-background">
     <div class="title flex-row align-center">
         <md-icon class="material-icons">mood_bad</md-icon>
-        <span ng-show=$ctrl.errorInfo>
+        <span ng-show=$ctrl.errorInfo md-direction="left">
             <md-tooltip md-delay="400">
                 <span translate>ERROR_INFORM.TOOLTIPS.ERROR</span>
             </md-tooltip>
@@ -14,13 +14,13 @@
     </div>
     <div class="buttons flex-row align-center">
         <md-button ng-click="$ctrl.reload()" ng-show=$ctrl.errorInfo class="md-raised md-warn">
-            <md-tooltip md-delay="400">
+            <md-tooltip md-delay="400" md-direction="left">
                 <span translate>ERROR_INFORM.TOOLTIPS.RELOAD</span>
             </md-tooltip>
             <span translate>ERROR_INFORM.RELOAD_BUTTON</span>
         </md-button>
         <md-button ng-click="$ctrl.goHome()" class="md-raised md-warn">
-            <md-tooltip md-delay="400">
+            <md-tooltip md-delay="400" md-direction="left">
                 <span translate>ERROR_INFORM.TOOLTIPS.GO_HOME</span>
             </md-tooltip>
             <span translate>ERROR_INFORM.GO_HOME_BUTTON</span>

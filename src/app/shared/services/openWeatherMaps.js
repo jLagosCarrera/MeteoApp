@@ -1,8 +1,12 @@
 export default class OpenWeatherMaps {
-    constructor($http, $translate) {
+    constructor($http, $ngRedux) {
         this.$http = $http;
-        this.lang = $translate.use();
         this.baseURL = 'https://api.openweathermap.org/data/2.5';
+        this.$ngRedux = $ngRedux;
+        $ngRedux.subscribe(() => {
+            const state = $ngRedux.getState();
+            this.lang = state.main.preferedLanguage;
+        });
     }
 
     async getCurrentForecastCity(city) {
@@ -42,4 +46,4 @@ export default class OpenWeatherMaps {
     }
 }
 
-OpenWeatherMaps.$inject = ['$http', '$translate'];
+OpenWeatherMaps.$inject = ['$http', '$ngRedux'];

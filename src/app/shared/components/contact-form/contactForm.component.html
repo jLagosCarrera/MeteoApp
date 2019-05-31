@@ -7,7 +7,7 @@
                     <span translate>CONTACT_FORM.TITLE</span>
                 </div>
                 <md-button ng-click="$ctrl.cancel()" class="md-icon-button">
-                    <md-tooltip md-delay="400">
+                    <md-tooltip md-delay="400" md-direction="left">
                         <span translate>CONTACT_FORM.TOOLTIPS.EXIT</span>
                     </md-tooltip>
                     <md-icon class="material-icons">clear</md-icon>
@@ -16,7 +16,7 @@
         </md-toolbar>
         <form name="form" class="flex-column" ng-submit="$ctrl.success()" novalidate>
             <md-input-container class="md-icon-float md-block">
-                <md-tooltip md-delay="400">
+                <md-tooltip md-delay="400" md-direction="left">
                     <span translate>CONTACT_FORM.TOOLTIPS.INSERT_NAME</span>
                 </md-tooltip>
                 <label translate>CONTACT_FORM.INPUT_NAME</label>
@@ -24,7 +24,7 @@
                 <input name="name" ng-model="name" type="text" required autocomplete="off">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-                <md-tooltip md-delay="400">
+                <md-tooltip md-delay="400" md-direction="left">
                     <span translate>CONTACT_FORM.TOOLTIPS.INSERT_EMAIL</span>
                 </md-tooltip>
                 <label translate>CONTACT_FORM.INPUT_EMAIL</label>
@@ -33,7 +33,7 @@
                     required autocomplete="off">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-                <md-tooltip md-delay="400">
+                <md-tooltip md-delay="400" md-direction="left">
                     <span translate>CONTACT_FORM.TOOLTIPS.INSERT_ISSUE</span>
                 </md-tooltip>
                 <label translate>CONTACT_FORM.INPUT_ISSUE</label>
@@ -41,7 +41,7 @@
                 <input name="subject" ng-model="subject" type="text" required autocomplete="off">
             </md-input-container>
             <md-input-container class="md-icon-float md-block">
-                <md-tooltip md-delay="400">
+                <md-tooltip md-delay="400" md-direction="left">
                     <span translate>CONTACT_FORM.TOOLTIPS.INSERT_MESSAGE</span>
                 </md-tooltip>
                 <label translate>CONTACT_FORM.INPUT_MESSAGE</label>
@@ -51,7 +51,7 @@
             </md-input-container>
             <md-dialog-actions class="justify-center">
                 <md-button class="md-raised md-primary" ng-click="$ctrl.cancel()">
-                    <md-tooltip md-delay="400">
+                    <md-tooltip md-delay="400" md-direction="left">
                         <span translate>CONTACT_FORM.TOOLTIPS.EXIT</span>
                     </md-tooltip>
                     <span translate>CONTACT_FORM.BUTTON_CANCEL</span>
@@ -60,7 +60,7 @@
                 form.mail.$pristine || form.mail.$invalid ||
                 form.subject.$pristine || form.subject.$invalid ||
                 form.text.$pristine || form.text.$invalid">
-                    <md-tooltip md-delay="400">
+                    <md-tooltip md-delay="400" md-direction="left">
                         <span translate>CONTACT_FORM.TOOLTIPS.SEND_ISSUE</span>
                     </md-tooltip>
                     <span translate>CONTACT_FORM.BUTTON_SEND</span>

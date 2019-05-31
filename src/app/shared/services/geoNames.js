@@ -1,8 +1,12 @@
 export default class GeoNames {
-    constructor($http, $translate) {
+    constructor($http, $ngRedux) {
         this.$http = $http;
-        this.lang = $translate.use();
         this.baseURL = 'https://secure.geonames.org';
+        this.$ngRedux = $ngRedux;
+        $ngRedux.subscribe(() => {
+            const state = $ngRedux.getState();
+            this.lang = state.main.preferedLanguage;
+        });
     }
 
     //maxRows -> Number of JSON objects returned (cities)
@@ -54,4 +58,4 @@ export default class GeoNames {
     }
 }
 
-GeoNames.$inject = ['$http', '$translate'];
+GeoNames.$inject = ['$http', '$ngRedux'];

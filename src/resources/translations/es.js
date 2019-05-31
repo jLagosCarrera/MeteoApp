@@ -59,6 +59,11 @@ export default {
             "WIND_SPEED": "Velocidad del viento en km/h"
         }
     },
+    "LANGUAGE_FAB": {
+        "TOOLTIPS": {
+            "CHANGE_LANGUAGE": "Cambiar el idioma de la web"
+        }
+    },
     "PROGRESS_BAR": {
         "TOOLTIPS": {
             "BAR_INFO": "Porcentaje de {{ type }}"
