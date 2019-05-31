@@ -25,6 +25,9 @@
 </p>
 <h1 align="center">MeteoApp</h1>
 <p align="center">MeteoApp is a weather forecast web app. MeteoApp is built with JavaScript over AngularJS framework along some libraries like uiRouter and Redux and geoNames and openWeatherMap API services. The purpose of this application is the deploy of a modern web application using the latest technology on the market.</p>
+<h2 align="center">Demo</h2>
+<p align="center">There is a demo of the application hosted on Netlify with continuous deploys on the following link:</p>
+<p align="center"><a href="https://meteoapp.netlify.com">https://meteoapp.netlify.com</a></p>
 
 ## Index
 1. [Introduction](#introduction)
