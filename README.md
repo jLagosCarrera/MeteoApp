@@ -86,13 +86,13 @@ Known issues of the application are opened on the [issues section](https://githu
 
 <h2 align="center">Contributing and Support</h2>
 
-Same with the known issues, contributing is free and always welcome, I'm accepting every kind of contributions going from little updates like typo corrections to big updates like new screens of the application and functionallities.  
+Same as the known issues. Contributing is free and always welcome. I'm accepting every kind of contributions, going from little updates like typo corrections to big updates like new screens of the application and functionallities so feel free to make a new Pull Request!  
 
-If you find any trouble or problem with the app just let me know in an issue on this repo or contact me on [julio.lagos.carrera@gmail.com](mailto:julio.lagos.carrera@gmail.com)
+If you find any trouble or problem with the app just let me know opening a new issue on this repo or contact me on [julio.lagos.carrera@gmail.com](mailto:julio.lagos.carrera@gmail.com)
 
 <h2 align="center">Special Thanks</h2>
 
-- [GBtec software](https://www.linkedin.com/company/gbtec-software-espana-latam/), [Cibrán Ledo](https://www.linkedin.com/in/cibran/) for accepting me for the FCT internship and giving me the oportunity to learn and work with new and modern web applications.
-- [Jorge Villar](https://www.linkedin.com/in/jorge-villar-arana-34885151), [Diego Pascual](https://www.linkedin.com/in/diego-pascual-formoso/) and [Eloy Castelo](https://www.linkedin.com/in/eloy-castelo/) for taking time to explain new concepts and technologies used on this application and of course, for taking time to review all the Pull Requests on this project along it's habitual job time.
+- [GBtec software](https://www.linkedin.com/company/gbtec-software-espana-latam/), [Cibrán Ledo](https://www.linkedin.com/in/cibran/) for applying me for the FCT internship and giving me the oportunity to learn and work with new and modern web applications.
+- [Jorge Villar](https://www.linkedin.com/in/jorge-villar-arana-34885151), [Diego Pascual](https://www.linkedin.com/in/diego-pascual-formoso/) and [Eloy Castelo](https://www.linkedin.com/in/eloy-castelo/) for taking time to explain new concepts and technologies used on this application. And of course, for taking time to review all the Pull Requests on this project along it's usual job tasks.
 
 <h2 align="center">License</h2>
