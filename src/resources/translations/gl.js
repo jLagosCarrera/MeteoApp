@@ -24,7 +24,7 @@ export default {
     },
     "DISPLAYABLE_LIST": {
         "TOOLTIPS": {
-            "HEADER": "lista de cidades {{ type }}s",
+            "HEADER": "Lista de cidades {{ type }}s",
             "NO_RESULTS": "Non hai resultados",
             "SINGLE_CARD": "Cidade {{ type }}"
         },
@@ -36,7 +36,7 @@ export default {
     "ERROR_INFORM": {
         "GO_HOME_BUTTON": "Ir ao inicio",
         "NOTHING_TO_SHOW": "Nada que ver aquí",
-        "RELOAD_BUTTON": "Recargar?",
+        "RELOAD_BUTTON": "¿Recargar?",
         "TOOLTIPS": {
             "ERROR": "Código de error",
             "GO_HOME": "Volver á páxina de inicio",
@@ -69,7 +69,7 @@ export default {
         }
     },
     "SEARCH_PAGE": {
-        "CONTACT_BUTTON": "Necesitas axuda?",
+        "CONTACT_BUTTON": "¿Necesitas axuda?",
         "TOOLTIPS": {
             "OPEN_CONTACT": "Abrir formulario de contacto"
         }

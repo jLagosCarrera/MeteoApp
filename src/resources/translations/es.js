@@ -24,19 +24,19 @@ export default {
     },
     "DISPLAYABLE_LIST": {
         "TOOLTIPS": {
-            "HEADER": "lista de ciudades {{ type }}s",
+            "HEADER": "Lista de ciudades {{ type }}s",
             "NO_RESULTS": "No hay resultados",
             "SINGLE_CARD": "Ciudad {{ type }}"
         },
         "TYPES": {
             "NEARBY": "cercana",
-            "RECENT": "reciente"
+            "RECENT": "recente"
         }
     },
     "ERROR_INFORM": {
         "GO_HOME_BUTTON": "Ir al inicio",
         "NOTHING_TO_SHOW": "Nada que ver aquí",
-        "RELOAD_BUTTON": "Recargar?",
+        "RELOAD_BUTTON": "¿Recargar?",
         "TOOLTIPS": {
             "ERROR": "Código de error",
             "GO_HOME": "Volver a la página de inicio",
@@ -69,7 +69,7 @@ export default {
         }
     },
     "SEARCH_PAGE": {
-        "CONTACT_BUTTON": "Necesitas ayuda?",
+        "CONTACT_BUTTON": "¿Necesitas ayuda?",
         "TOOLTIPS": {
             "OPEN_CONTACT": "Abrir formulario de contacto"
         }
