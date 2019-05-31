@@ -32,12 +32,11 @@
 ## Index
 1. [Introduction](#introduction)
 2. [Local Deploy](#local-deploy)
-3. [Tutorial](#tutorial)
-4. [Dependencies](#dependencies)
-5. [Known Issues](#known-issues)
-6. [Contributing and Support](#contributing-and-support)
-7. [Special Thanks](#special-thanks)
-8. [License](#license)
+3. [Dependencies](#dependencies)
+4. [Known Issues](#known-issues)
+5. [Contributing and Support](#contributing-and-support)
+6. [Special Thanks](#special-thanks)
+7. [License](#license)
 
 <h2 align="center">Introduction</h2>
 
@@ -50,17 +49,17 @@ The main purpose of the application is learning about web development. The use o
 If you want to deploy this application locally on your computer you will need [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) which comes along with the Node installation.  
 
 Download this repository and after the download you need to add an .env file on the root folder of the application with the following API keys you can get for free:
-* [openWeatherMaps API Key](https://openweathermap.org/appid).
-* [geoNames API Key](https://www.geonames.org/export/).  
+- [openWeatherMaps API Key](https://openweathermap.org/appid).
+- [geoNames API Key](https://www.geonames.org/export/).  
 
 ```text
 OPENWEATHERMAP_API_KEY=(openWeatherMaps API Key)
 GEONAMES_API_KEY=(geoNames API Key)
 ```  
 
-After this you are almost ready to go, just open a terminal and run the following commands:
-* *dev* -> Runs server locally on port 9000.
-* *build* -> Generates a build of the web on the dist folder.
+After this you are almost ready to go, just open a terminal on the repository folder and run the following commands:
+- **_dev_** -> Runs server locally on port 9000.
+- **_build_** -> Generates a build of the web on the dist folder.
 
 ```bash
 npm i
@@ -69,9 +68,17 @@ npm run dev
 npm run build
 ```
 
-<h2 align="center">Tutorial</h2>
-
 <h2 align="center">Dependencies</h2>
+
+- [angular](https://angularjs.org/): Framework used for the dynamic build of the application.
+- [angular-material](https://material.angularjs.org/): Used for implementing UI components into the application.
+- [angular-animate](https://www.npmjs.com/package/angular-animate): Allow material components animations.
+- [angular-aria](https://www.npmjs.com/package/angular-aria): Allows material components accesibility.
+- [angular-messages](https://www.npmjs.com/package/angular-messages): Allows material components messages content display.
+- [material-icons](https://marella.github.io/material-icons/): Used for displaying material design icons.  
+- [redux](https://redux.js.org/): Library used to work with the state of the application.
+- [ng-redux](https://github.com/angular-redux/ng-redux): Implementation of redux to AngularJS.  
+- [uiRouter](https://ui-router.github.io/): Manage of the application screens and routing.
 
 <h2 align="center">Known Issues</h2>
 
