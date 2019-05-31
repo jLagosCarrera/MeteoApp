@@ -31,7 +31,7 @@
 
 ## Index
 1. [Introduction](#introduction)
-2. [Install](#install)
+2. [Local Deploy](#local-deploy)
 3. [Tutorial](#tutorial)
 4. [Dependencies](#dependencies)
 5. [Known Issues](#known-issues)
@@ -40,13 +40,34 @@
 8. [License](#license)
 
 <h2 align="center">Introduction</h2>
-MeteoApp is an application developed entirely during my 3 month FCT internship on GBtec Software.  
 
+MeteoApp is an application developed entirely during my 3 month FCT internship on GBtec Software.  
 
 The main purpose of the application is learning about web development. The use of Javascript ES6+, modern framework like AngularJS, useful libraries used on big applications like uiRouter or Redux and handling geoNames and openWeatherMaps API calls for filtering the data retrieved by them. With all these new concepts and technologies learnt I was able to create and deploy a standard modern weather web application.
 
-<h2 align="center">Install</h2>
+<h2 align="center">Local deploy</h2>
 
+If you want to deploy this application locally on your computer you will need [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) which comes along with the Node installation.  
+
+Download this repository and after the download you need to add an .env file on the root folder of the application with the following API keys you can get for free:
+* [openWeatherMaps API Key](https://openweathermap.org/appid).
+* [geoNames API Key](https://www.geonames.org/export/).  
+
+```text
+OPENWEATHERMAP_API_KEY=(openWeatherMaps API Key)
+GEONAMES_API_KEY=(geoNames API Key)
+```  
+
+After this you are almost ready to go, just open a terminal and run the following commands:
+* *dev* -> Runs server locally on port 9000.
+* *build* -> Generates a build of the web on the dist folder.
+
+```bash
+npm i
+
+npm run dev
+npm run build
+```
 
 <h2 align="center">Tutorial</h2>
 
