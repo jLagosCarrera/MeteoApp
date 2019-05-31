@@ -30,7 +30,7 @@ export default {
         },
         "TYPES": {
             "NEARBY": "cercana",
-            "RECENT": "recente"
+            "RECENT": "reciente"
         }
     },
     "ERROR_INFORM": {
