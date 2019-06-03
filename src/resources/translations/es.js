@@ -1,4 +1,12 @@
 export default {
+    "APP": {
+        "STATE": {
+            "HOME": "Inicio",
+            "SEARCH": "Búsqueda",
+            "SEARCH_CITY": "Búsqueda de ciudad",
+            "SEARCH_ERROR": "Error en la búsqueda"
+        }
+    },
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Introduce una ciudad aquí",
