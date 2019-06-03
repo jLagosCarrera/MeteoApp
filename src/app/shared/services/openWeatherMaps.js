@@ -3,13 +3,16 @@ export default class OpenWeatherMaps {
         this.$http = $http;
         this.baseURL = 'https://api.openweathermap.org/data/2.5';
         this.$ngRedux = $ngRedux;
-        $ngRedux.subscribe(() => {
-            const state = $ngRedux.getState();
-            this.lang = state.main.preferedLanguage;
-        });
     }
 
     async getCurrentForecastCity(city) {
+        const state = this.$ngRedux.getState();
+        if (state.main.preferedLanguage === 'gb') {
+            this.lang = 'en';
+        } else {
+            this.lang = state.main.preferedLanguage;
+        }
+
         const params = {
             params: {
                 q: city,
@@ -28,6 +31,13 @@ export default class OpenWeatherMaps {
     }
 
     async getFiveDayForecastCity(city) {
+        const state = this.$ngRedux.getState();
+        if (state.main.preferedLanguage === 'gb') {
+            this.lang = 'en';
+        } else {
+            this.lang = state.main.preferedLanguage;
+        }
+
         const params = {
             params: {
                 q: city,

@@ -16,7 +16,6 @@ export default class LanguageFabController {
     }
     
     useLanguage(langKey) {
-        console.log(langKey)
         this.$translate.use(langKey);
         this.$ngRedux.dispatch(setLanguage(langKey));
         if (this.$state.current.name === 'searchCity') {
