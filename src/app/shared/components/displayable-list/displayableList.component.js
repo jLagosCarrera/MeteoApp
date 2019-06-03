@@ -9,6 +9,7 @@ export default {
         listToDisplay: '<',
         displayIcon: '@',
         useHeader: '<',
-        listType: '@'
+        listType: '@',
+        canDelete: '<'
     }
 };

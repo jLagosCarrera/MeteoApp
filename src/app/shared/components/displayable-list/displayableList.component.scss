@@ -3,6 +3,11 @@ displayable-list {
         color: #000000;
     }
 
+    .clear:hover {
+        background-color: rgba(112, 112, 112, 0.9);
+        border-radius: 20px;
+    }
+
     ul {
         list-style-type: none;
         word-wrap: break-word;
@@ -10,6 +15,7 @@ displayable-list {
 
     .link-effect {
         text-decoration: none;
+        cursor: pointer;
         color: #000000;
         border-radius: 8px;
         background-color: rgba(229, 229, 229, 0.6);
