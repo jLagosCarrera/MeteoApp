@@ -10,10 +10,7 @@ export default ['$transitions', '$window', '$q', ($transitions, $window, $q) => 
         });
         $q.all(promises).then(function () {
             title = resolves.$title;
-            if (!title) {
-                title = 'MeteoApp';
-            }
-            $window.document.title = title;
+            $window.document.title = !title ? 'MeteoApp' : title;
         })
     })
 }];
