@@ -1,10 +1,10 @@
 export default ['$transitions', '$window', '$q', ($transitions, $window, $q) => {
     $transitions.onSuccess({}, (transition) => {
-        let title = "";
+        let title = '';
         const tokens = transition.getResolveTokens();
         const resolves = {};
         const promises = tokens.map(function (token) {
-            var resolved = transition.injector().get(token);
+            const resolved = transition.injector().get(token);
             resolves[token] = resolved;
             return resolved;
         });
