@@ -7,11 +7,7 @@ export default class OpenWeatherMaps {
 
     async getCurrentForecastCity(city) {
         const state = this.$ngRedux.getState();
-        if (state.main.preferedLanguage === 'gb') {
-            this.lang = 'en';
-        } else {
-            this.lang = state.main.preferedLanguage;
-        }
+        this.lang = state.main.preferedLanguage;
 
         const params = {
             params: {
@@ -32,11 +28,7 @@ export default class OpenWeatherMaps {
 
     async getFiveDayForecastCity(city) {
         const state = this.$ngRedux.getState();
-        if (state.main.preferedLanguage === 'gb') {
-            this.lang = 'en';
-        } else {
-            this.lang = state.main.preferedLanguage;
-        }
+        this.lang = state.main.preferedLanguage;
 
         const params = {
             params: {

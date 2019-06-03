@@ -10,11 +10,7 @@ export default class GeoNames {
     //style ('SHORT','MEDIUM','LONG','FULL') -> Quantity of data retrieved
     async getNearbyCities(city, maxRows = 7, style = 'SHORT', radius = 30, cities = 'cities500') {
         const state = this.$ngRedux.getState();
-        if (state.main.preferedLanguage === 'gb') {
-            this.lang = 'en';
-        } else {
-            this.lang = state.main.preferedLanguage;
-        }
+        this.lang = state.main.preferedLanguage;
 
         const latlongParams = {
             params: {
