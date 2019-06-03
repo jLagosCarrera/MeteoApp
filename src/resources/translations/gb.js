@@ -64,7 +64,7 @@ export default {
             "CHANGE_LANGUAGE": "Change the web language",
             "LANGUAGES": {
                 "ES": "Usar el Español como idioma",
-                "EN": "Use English as the language",
+                "GB": "Use English as the language",
                 "PT": "Use o Português como idioma"
             },
         }

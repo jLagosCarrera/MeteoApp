@@ -1,17 +1,17 @@
-import en from '../resources/translations/en';
+import gb from '../resources/translations/gb';
 import es from '../resources/translations/es';
 import pt from '../resources/translations/pt';
 
 export default ['$translateProvider', function ($translateProvider) {
-    $translateProvider.translations('en', en);
+    $translateProvider.translations('gb', gb);
     $translateProvider.translations('es', es);
     $translateProvider.translations('pt', pt);
 
-    $translateProvider.registerAvailableLanguageKeys(['en', 'es', 'pt'], {
-        'en_*': 'en',
+    $translateProvider.registerAvailableLanguageKeys(['gb', 'es', 'pt'], {
+        'en_*': 'gb',
         'es_*': 'es',
         'pt_*': 'pt',
-        '*': 'en'
+        '*': 'gb'
     })
 
     const preferedLanguage = localStorage.getItem('preferedLanguage');
@@ -21,5 +21,5 @@ export default ['$translateProvider', function ($translateProvider) {
         $translateProvider.determinePreferredLanguage();
     }
 
-    $translateProvider.fallbackLanguage('en');
+    $translateProvider.fallbackLanguage('gb');
 }]

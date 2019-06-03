@@ -8,23 +8,12 @@
         </md-button>
     </md-fab-trigger>
     <md-fab-actions>
-        <md-button ng-click="$ctrl.useLanguage('en')" class="md-fab md-primary md-mini">
+        <md-button ng-repeat="language in $ctrl.languages track by $index"
+            ng-click="$ctrl.useLanguage($ctrl.languages[$index])" class="md-fab md-primary md-mini">
             <md-tooltip md-delay="400" md-direction="left">
-                <span translate>LANGUAGE_FAB.TOOLTIPS.LANGUAGES.EN</span>
+                <span translate>{{ ::$ctrl.getLanguageTranslation(language) }}</span>
             </md-tooltip>
-            <span class="flag-icon flag-icon-gb"></span>
-        </md-button>
-        <md-button ng-click="$ctrl.useLanguage('es')" class="md-fab md-primary md-mini">
-            <md-tooltip md-delay="400" md-direction="left">
-                <span translate>LANGUAGE_FAB.TOOLTIPS.LANGUAGES.ES</span>
-            </md-tooltip>
-            <span class="flag-icon flag-icon-es"></span>
-        </md-button>
-        <md-button ng-click="$ctrl.useLanguage('pt')" class="md-fab md-primary md-mini">
-            <md-tooltip md-delay="400" md-direction="left">
-                <span translate>LANGUAGE_FAB.TOOLTIPS.LANGUAGES.PT</span>
-            </md-tooltip>
-            <span class="flag-icon flag-icon-pt"></span>
+            <span class="flag-icon flag-icon-{{ ::language }}"></span>
         </md-button>
     </md-fab-actions>
 </md-fab-speed-dial>

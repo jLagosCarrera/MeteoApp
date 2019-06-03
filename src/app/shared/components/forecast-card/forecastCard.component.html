@@ -3,7 +3,7 @@
         <md-card-header-text>
             <div ng-show="$ctrl.currentForecast" class="flex-row justify-space-around">
                 <span class="md-title">
-                    <md-tooltip md-delay="400" md-direction="left">
+                    <md-tooltip md-delay="400">
                         <span translate>FORECAST_CARD.TOOLTIPS.SUNRISE_INFO</span>
                     </md-tooltip>
                     <span translate>FORECAST_CARD.SUNRISE</span>:
@@ -11,21 +11,21 @@
                 </span>
                 <span class="md-title">
                     <span>
-                        <md-tooltip md-delay="400" md-direction="left">
+                        <md-tooltip md-delay="400">
                             {{ $ctrl.currentForecast.weather[0].description | capitalize }}
                         </md-tooltip>
                         <img ng-src="https://openweathermap.org/img/w/{{::$ctrl.currentForecast.weather[0].icon}}.png"
                             class="md-avatar icon-size">
                     </span>
                     <span>
-                        <md-tooltip md-delay="400" md-direction="left">
+                        <md-tooltip md-delay="400">
                             <span translate>FORECAST_CARD.TOOLTIPS.PLACE_INFO</span>
                         </md-tooltip>
                         {{ ::$ctrl.currentForecast.name }} ({{ ::$ctrl.currentForecast.sys.country }})
                     </span>
                 </span>
                 <span class="md-title">
-                    <md-tooltip md-delay="400" md-direction="left">
+                    <md-tooltip md-delay="400">
                         <span translate>FORECAST_CARD.TOOLTIPS.SUNSET_INFO</span>
                     </md-tooltip>
                     <span translate>FORECAST_CARD.SUNSET</span>:
@@ -49,27 +49,27 @@
                 bar-type="{{ 'PROGRESS_BAR.TYPES.HUMIDITY' | translate }}">
             </progress-bar>
             <span class="flex-25">
-                <md-tooltip md-delay="400" md-direction="left">
+                <md-tooltip md-delay="400">
                     <span translate>FORECAST_CARD.TOOLTIPS.TEMPERATURE</span>
                 </md-tooltip>
                 <md-icon class="material-icons temp">whatshot</md-icon>{{::$ctrl.currentForecast.main.temp}}ºC
             </span>
             <span class="flex-25">
-                <md-tooltip md-delay="400" md-direction="left">
+                <md-tooltip md-delay="400">
                     <span translate>FORECAST_CARD.TOOLTIPS.WIND_DIRECTION</span>
                 </md-tooltip>
                 <md-icon class="material-icons" ng-style="{'transform': $ctrl.getRotation()}">arrow_downward</md-icon>
                 {{::$ctrl.currentForecast.wind.deg}}º
             </span>
             <span class="flex-25">
-                <md-tooltip md-delay="400" md-direction="left">
+                <md-tooltip md-delay="400">
                     <span translate>FORECAST_CARD.TOOLTIPS.WIND_SPEED</span>
                 </md-tooltip>
                 <md-icon class="material-icons">network_check</md-icon>
                 {{$ctrl.currentForecast.wind.speed * 3.6 | number:2 }} km/h
             </span>
             <span class="pressure flex-25">
-                <md-tooltip md-delay="400" md-direction="left">
+                <md-tooltip md-delay="400">
                     <span translate>FORECAST_CARD.TOOLTIPS.AIR_PRESSURE</span>
                 </md-tooltip>
                 <md-icon class="material-icons">vertical_align_bottom</md-icon>{{::$ctrl.currentForecast.main.pressure}}
@@ -81,14 +81,14 @@
                 ng-class="{'flex-25': $ctrl.currentForecast, 'flex-100': !$ctrl.currentForecast}"
                 ng-repeat="forecast in $ctrl.forecastData track by $index">
                 <span>
-                    <md-tooltip md-delay="400" md-direction="left">
+                    <md-tooltip md-delay="400">
                         {{ forecast.weather[0].description | capitalize }}
                     </md-tooltip>
                     <img ng-src="https://openweathermap.org/img/w/{{::forecast.weather[0].icon}}.png"
                         class="md-avatar" />
                 </span>
                 <span>
-                    <md-tooltip md-delay="400" md-direction="left">
+                    <md-tooltip md-delay="400">
                         <span translate>FORECAST_CARD.TOOLTIPS.TIME</span>
                     </md-tooltip>
                     {{ forecast.dt * 1000 | date:'HH:mm' }}

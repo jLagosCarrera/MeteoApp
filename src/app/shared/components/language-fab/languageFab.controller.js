@@ -8,18 +8,24 @@ export default class LanguageFabController {
         this.$ngRedux = $ngRedux;
         this.$state = $state;
         this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
+        this.languages = $translate.getAvailableLanguageKeys();
     }
-
+    
     $onDestroy() {
         this.unsubscribe();
     }
-
+    
     useLanguage(langKey) {
+        console.log(langKey)
         this.$translate.use(langKey);
         this.$ngRedux.dispatch(setLanguage(langKey));
         if (this.$state.current.name === 'searchCity') {
             this.$state.reload();
         }
+    }
+
+    getLanguageTranslation(langKey){
+        return `LANGUAGE_FAB.TOOLTIPS.LANGUAGES.${langKey.toUpperCase()}`;
     }
 
     mapStateToThis(state) {
