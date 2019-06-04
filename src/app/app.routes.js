@@ -4,19 +4,22 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
     const homeState = {
         name: 'home',
         url: '/home',
-        component: 'homePage'
+        component: 'homePage',
+        resolve: getTitleTranslation('HOME')
     };
 
     const searchState = {
         name: 'search',
-        component: 'searchPage'
+        component: 'searchPage',
+        resolve: getTitleTranslation('SEARCH')
     };
 
     const searchCity = {
         parent: 'search',
         name: 'searchCity',
         url: '/search?city',
-        component: 'allCards'
+        component: 'allCards',
+        resolve: getTitleTranslation('SEARCH_CITY')
     }
 
     const searchError = {
@@ -24,6 +27,7 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
         name: 'searchError',
         url: '/search/error',
         component: 'errorInform',
+        resolve: getTitleTranslation('SEARCH_ERROR'),
         params: {
             errorInfo: undefined,
             citySearched: undefined
@@ -35,3 +39,13 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
     $stateProvider.state(searchCity);
     $stateProvider.state(searchError);
 }];
+
+function getTitleTranslation(stateName) {
+    return {
+        $title: ['$translate', ($translate) => {
+            return $translate.onReady().then(() => {
+                return `${$translate.instant('APP.NAME')} - ${$translate.instant(`APP.STATE.${stateName.toUpperCase()}`)}`;
+            })
+        }]
+    }
+}

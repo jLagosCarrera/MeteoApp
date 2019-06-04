@@ -1,4 +1,13 @@
 {
+    "APP": {
+        "NAME": "MeteoApp",
+        "STATE": {
+            "HOME": "Home",
+            "SEARCH": "Search",
+            "SEARCH_CITY": "Search City",
+            "SEARCH_ERROR": "Search Error"
+        }
+    },
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Insert a city here",

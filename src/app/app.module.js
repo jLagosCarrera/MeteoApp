@@ -22,6 +22,9 @@ import ngRedux from 'ng-redux';
 //Angular Redux config
 import reduxConfig from './app.redux';
 
+//Title update
+import titleUpdate from './app.title'
+
 //Styles
 import 'angular-material/angular-material.scss';
 import 'material-icons/iconfont/material-icons.scss';
@@ -48,4 +51,5 @@ export default angular.module('app', [
     ])
     .config(translations)
     .config(routes)
-    .config(reduxConfig);
+    .config(reduxConfig)
+    .run(titleUpdate);

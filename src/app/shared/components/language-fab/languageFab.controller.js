@@ -7,29 +7,26 @@ export default class LanguageFabController {
         this.$translate = $translate;
         this.$ngRedux = $ngRedux;
         this.$state = $state;
-        this.languages = [...$translate.getAvailableLanguageKeys()].map((key) => {
-            return key === 'en' ? 'gb' : key;
-        });
+        this.languages = $translate.getAvailableLanguageKeys();
     }
 
     useLanguage(langKey) {
-        if (langKey === 'gb') {
-            langKey = 'en'
-        }
-
-        this.$translate.use(langKey);
-        this.$ngRedux.dispatch(setLanguage(langKey));
-        if (this.$state.current.name === 'searchCity') {
+        this.$translate.use(langKey).then(() => {
+            this.$ngRedux.dispatch(setLanguage(langKey));
             this.$state.reload();
-        }
+        });
     }
 
     getLanguageTranslation(langKey) {
-        if (langKey === 'gb') {
-            langKey = 'en'
+        return `LANGUAGE_FAB.TOOLTIPS.LANGUAGES.${langKey.toUpperCase()}`;
+    }
+
+    getFlagIcon(langKey) {
+        if (langKey === 'en') {
+            langKey = 'gb';
         }
 
-        return `LANGUAGE_FAB.TOOLTIPS.LANGUAGES.${langKey.toUpperCase()}`;
+        return `flag-icon flag-icon-${langKey}`
     }
 }
 

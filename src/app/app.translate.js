@@ -13,7 +13,7 @@ export default ['$translateProvider', function ($translateProvider) {
 
     const preferedLanguage = localStorage.getItem('preferedLanguage');
     if (preferedLanguage) {
-        $translateProvider.preferredLanguage(preferedLanguage);
+        $translateProvider.use(preferedLanguage);
     } else {
         $translateProvider.determinePreferredLanguage();
     }
