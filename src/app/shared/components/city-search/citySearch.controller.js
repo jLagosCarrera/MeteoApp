@@ -1,6 +1,13 @@
 export default class CitySearchController {
-    constructor(routingFunctionsService) {
+    constructor(routingFunctionsService, geoNamesService) {
         this.routingFunctionsService = routingFunctionsService;
+        this.geoNamesService = geoNamesService;
+        this.geoNamesService.getMatches('Vigo').then((data) => {
+                this.matches = data;
+            })
+            .catch((error) => {
+                this.routingFunctionsService.goError(error, 'Vigo');
+            });
     }
 
     search(city) {
@@ -8,4 +15,4 @@ export default class CitySearchController {
     }
 }
 
-CitySearchController.$inject = ['routingFunctionsService'];
+CitySearchController.$inject = ['routingFunctionsService', 'geoNamesService'];

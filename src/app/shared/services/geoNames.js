@@ -5,6 +5,34 @@ export default class GeoNames {
         this.$ngRedux = $ngRedux;
     }
 
+    async getMatches(city, maxRows = 5, style = 'SHORT', cities = 'cities500') {
+        const state = this.$ngRedux.getState();
+        this.lang = state.main.preferedLanguage;
+
+        const latlongParams = {
+            params: {
+                q: city,
+                cities: cities,
+                maxRows: maxRows,
+                style: style,
+                lang: this.lang,
+                username: process.env.GEONAMES_API_KEY
+            }
+        };
+
+        try {
+            let cityLatLon = await this.$http.get(`${this.baseURL}/searchJSON`, latlongParams);
+            if (cityLatLon.data.totalResultsCount === 0) {
+                delete latlongParams.params.cities;
+                cityLatLon = await this.$http.get(`${this.baseURL}/searchJSON`, latlongParams);
+            }
+
+            return cityLatLon.data.geonames;
+        } catch (response) {
+            throw response;
+        }
+    }
+
     //maxRows -> Number of JSON objects returned (cities)
     //cities ('cities500','cities1000','cities5000','cities15000') -> Minimum quantity of population filter
     //style ('SHORT','MEDIUM','LONG','FULL') -> Quantity of data retrieved
@@ -15,8 +43,8 @@ export default class GeoNames {
         const latlongParams = {
             params: {
                 q: city,
-                name: city,
                 cities: cities,
+                maxRows: maxRows,
                 style: style,
                 lang: this.lang,
                 username: process.env.GEONAMES_API_KEY
