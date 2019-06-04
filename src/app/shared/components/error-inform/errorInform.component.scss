@@ -2,7 +2,7 @@
 
 error-inform {
     .error-background {
-        @include setBackground("../../../../../img/contentBackground.svg");
+        @include setBackground("../../../../resources/img/contentBackground.svg");
     }
 
     div.title {

@@ -23,7 +23,7 @@ search-page {
     }
 
     .menu-background {
-        @include setBackground("../../../img/menuBackground.svg");
+        @include setBackground("../../resources/img/menuBackground.svg");
         border-right: 1px solid;
     }
 

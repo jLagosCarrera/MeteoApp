@@ -1,14 +1,17 @@
 export default class GeoNames {
-    constructor($http, $translate) {
+    constructor($http, $ngRedux) {
         this.$http = $http;
-        this.lang = $translate.use();
         this.baseURL = 'https://secure.geonames.org';
+        this.$ngRedux = $ngRedux;
     }
 
     //maxRows -> Number of JSON objects returned (cities)
     //cities ('cities500','cities1000','cities5000','cities15000') -> Minimum quantity of population filter
     //style ('SHORT','MEDIUM','LONG','FULL') -> Quantity of data retrieved
     async getNearbyCities(city, maxRows = 7, style = 'SHORT', radius = 30, cities = 'cities500') {
+        const state = this.$ngRedux.getState();
+        this.lang = state.main.preferedLanguage;
+
         const latlongParams = {
             params: {
                 q: city,
@@ -54,4 +57,4 @@ export default class GeoNames {
     }
 }
 
-GeoNames.$inject = ['$http', '$translate'];
+GeoNames.$inject = ['$http', '$ngRedux'];

@@ -1,4 +1,4 @@
-export default {
+{
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Insert a city here",
@@ -57,6 +57,16 @@ export default {
             "TIME": "Local time",
             "WIND_DIRECTION": "Wind direction on degrees",
             "WIND_SPEED": "Wind speed on km/h"
+        }
+    },
+    "LANGUAGE_FAB": {
+        "TOOLTIPS": {
+            "CHANGE_LANGUAGE": "Change the web language",
+            "LANGUAGES": {
+                "ES": "Usar el Español como idioma",
+                "EN": "Use English as the language",
+                "PT": "Use o Português como idioma"
+            }
         }
     },
     "PROGRESS_BAR": {
