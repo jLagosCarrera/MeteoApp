@@ -1,18 +1,15 @@
-import en from '../resources/translations/en';
-import es from '../resources/translations/es';
-import pt from '../resources/translations/pt';
-
 export default ['$translateProvider', function ($translateProvider) {
-    $translateProvider.translations('en', en);
-    $translateProvider.translations('es', es);
-    $translateProvider.translations('pt', pt);
-
+    $translateProvider.useStaticFilesLoader({
+        prefix: './resources/translations/',
+        suffix: '.json'
+    });
     $translateProvider.registerAvailableLanguageKeys(['en', 'es', 'pt'], {
         'en_*': 'en',
         'es_*': 'es',
         'pt_*': 'pt',
         '*': 'en'
-    })
+    });
+    $translateProvider.fallbackLanguage('en');
 
     const preferedLanguage = localStorage.getItem('preferedLanguage');
     if (preferedLanguage) {
@@ -21,5 +18,6 @@ export default ['$translateProvider', function ($translateProvider) {
         $translateProvider.determinePreferredLanguage();
     }
 
-    $translateProvider.fallbackLanguage('en');
+    $translateProvider.useSanitizeValueStrategy('escape');
+    $translateProvider.forceAsyncReload(true);
 }]

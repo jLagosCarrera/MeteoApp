@@ -7,14 +7,9 @@ export default class LanguageFabController {
         this.$translate = $translate;
         this.$ngRedux = $ngRedux;
         this.$state = $state;
-        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
-        this.languages = $translate.getAvailableLanguageKeys().map((key) => {
+        this.languages = [...$translate.getAvailableLanguageKeys()].map((key) => {
             return key === 'en' ? 'gb' : key;
         });
-    }
-
-    $onDestroy() {
-        this.unsubscribe();
     }
 
     useLanguage(langKey) {
@@ -27,12 +22,6 @@ export default class LanguageFabController {
 
     getLanguageTranslation(langKey) {
         return `LANGUAGE_FAB.TOOLTIPS.LANGUAGES.${langKey.toUpperCase()}`;
-    }
-
-    mapStateToThis(state) {
-        return {
-            latestSearches: state.main.language
-        };
     }
 }
 

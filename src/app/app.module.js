@@ -9,6 +9,8 @@ import angularMessages from 'angular-messages';
 import angularTranslate from 'angular-translate';
 //Angular translate config
 import translations from './app.translate';
+//Angular translate Static files loader
+import staticFilesLoader from 'angular-translate-loader-static-files';
 
 //UiRouter
 import uiRouter from '@uirouter/angularjs';
@@ -32,6 +34,7 @@ import sharedModule from './shared/shared.module';
 
 export default angular.module('app', [
         angularTranslate,
+        staticFilesLoader,
         angularAnimate,
         angularAria,
         angularMessages,

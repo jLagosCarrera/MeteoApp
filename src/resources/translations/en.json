@@ -1,4 +1,4 @@
-export default {
+{
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Insert a city here",
@@ -66,7 +66,7 @@ export default {
                 "ES": "Usar el Español como idioma",
                 "EN": "Use English as the language",
                 "PT": "Use o Português como idioma"
-            },
+            }
         }
     },
     "PROGRESS_BAR": {

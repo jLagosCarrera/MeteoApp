@@ -1,4 +1,4 @@
-export default {
+{
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Introduce una ciudad aquí",
