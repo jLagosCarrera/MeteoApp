@@ -15,7 +15,7 @@ export default ['$translateProvider', function ($translateProvider) {
     if (preferedLanguage) {
         $translateProvider.use(preferedLanguage);
     } else {
-        $translateProvider.determinePreferredLanguage();
+        $translateProvider.use('en');
     }
 
     $translateProvider.useSanitizeValueStrategy('escape');
