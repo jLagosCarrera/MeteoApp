@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/jLagosCarrera/MeteoApp">
-    <img src="img/logo.png" height="100px"/>
+    <img src="src/resources/img/logo.png" height="100px"/>
   </a>
 </p>
 <p align="center">
@@ -75,7 +75,8 @@ npm run build
 - [angular-animate](https://www.npmjs.com/package/angular-animate): Allow material components animations.
 - [angular-aria](https://www.npmjs.com/package/angular-aria): Allows material components accesibility.
 - [angular-messages](https://www.npmjs.com/package/angular-messages): Allows material components messages content display.
-- [material-icons](https://marella.github.io/material-icons/): Used for displaying material design icons.  
+- [material-icons](https://marella.github.io/material-icons/): Used for displaying material design icons.
+- [flag-icon-css](https://github.com/lipis/flag-icon-css): Used for taking country flags for language selection.
 - [redux](https://redux.js.org/): Library used to work with the state of the application.
 - [ng-redux](https://github.com/angular-redux/ng-redux): Implementation of redux to AngularJS.  
 - [uiRouter](https://ui-router.github.io/): Manage of the application screens and routing.
