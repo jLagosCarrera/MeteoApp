@@ -1,7 +1,8 @@
 {
     "APP": {
+        "NAME": "MeteoApp",
         "STATE": {
-            "HOME": "Home",
+            "HOME": "Casinha",
             "SEARCH": "Pesquisa",
             "SEARCH_CITY": "Pesquisa cidade",
             "SEARCH_ERROR": "Erro na pesquisa"

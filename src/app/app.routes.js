@@ -43,7 +43,9 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
 function getTitleTranslation(stateName) {
     return {
         $title: ['$translate', ($translate) => {
-            return `${$translate.instant('APP.NAME')} - ${$translate.instant(`APP.STATE.${stateName.toUpperCase()}`)}`;
+            return $translate.onReady().then(() => {
+                return `${$translate.instant('APP.NAME')} - ${$translate.instant(`APP.STATE.${stateName.toUpperCase()}`)}`;
+            })
         }]
     }
 }

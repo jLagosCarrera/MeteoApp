@@ -1,5 +1,6 @@
 {
     "APP": {
+        "NAME": "MeteoApp",
         "STATE": {
             "HOME": "Inicio",
             "SEARCH": "Búsqueda",
