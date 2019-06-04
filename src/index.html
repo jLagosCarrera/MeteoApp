@@ -7,7 +7,85 @@
 </head>
 
 <body ng-app="app" ng-strict-di ng-cloak>
-    <ui-view></ui-view>
+    <ui-view>
+        <div class="lds-css ng-scope">
+            <div class="lds-blocks" style="width:100%;height:100%">
+                <div style="left:6px;top:6px;animation-delay:0s"></div>
+                <div style="left:70px;top:6px;animation-delay:0.25s"></div>
+                <div style="left:134px;top:6px;animation-delay:0.5s"></div>
+                <div style="left:6px;top:70px;animation-delay:1.75s"></div>
+                <div style="left:134px;top:70px;animation-delay:0.75s"></div>
+                <div style="left:6px;top:134px;animation-delay:1.5s"></div>
+                <div style="left:70px;top:134px;animation-delay:1.25s"></div>
+                <div style="left:134px;top:134px;animation-delay:1s"></div>
+            </div>
+            <style type="text/css">
+                @keyframes lds-blocks {
+                    0% {
+                        background: #93dbe9;
+                    }
+
+                    12.5% {
+                        background: #93dbe9;
+                    }
+
+                    12.625% {
+                        background: #689cc5;
+                    }
+
+                    100% {
+                        background: #689cc5;
+                    }
+                }
+
+                @-webkit-keyframes lds-blocks {
+                    0% {
+                        background: #93dbe9;
+                    }
+
+                    12.5% {
+                        background: #93dbe9;
+                    }
+
+                    12.625% {
+                        background: #689cc5;
+                    }
+
+                    100% {
+                        background: #689cc5;
+                    }
+                }
+
+                html {
+                    background: #e0ebf3;
+                }
+
+                .lds-blocks {
+                    position: absolute;
+                }
+
+                .lds-blocks div {
+                    position: absolute;
+                    width: 60px;
+                    height: 60px;
+                    background: #689cc5;
+                    -webkit-animation: lds-blocks 2s linear infinite;
+                    animation: lds-blocks 2s linear infinite;
+                    border-radius: 2px;
+                }
+
+                .lds-blocks {
+                    margin: auto;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 200px !important;
+                    height: 200px !important;
+                }
+            </style>
+        </div>
+    </ui-view>
 </body>
 
 </html>
