@@ -21,24 +21,19 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.(html)$/,
-                use: {
-                    loader: 'html-loader',
-                    options: {
-                        attrs: [':data-src']
-                    }
-                }
+                use: 'html-loader'
             },
             {
                 test: /\.(s*)css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(woff|woff2|eot|ttf|svg|otf)$/,
-                use: ['url-loader?limit=100000']
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: ['url-loader']
             },
             {
-                test: /\.(png|jpg)$/,
-                loader: ['url-loader?limit=8192']
+                test: /\.(png|jpg|svg)$/,
+                use: ['url-loader']
             }
         ]
     }
