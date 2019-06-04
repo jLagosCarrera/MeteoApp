@@ -20,6 +20,7 @@ import allCards from './components/all-cards/allCards.component';
 import progressBar from './components/progress-bar/progressBar.component';
 import errorInform from './components/error-inform/errorInform.component';
 import contactForm from './components/contact-form/contactForm.component';
+import languageFab from './components/language-fab/languageFab.component';
 
 //Filters
 import capitalize from './filters/capitalize';
@@ -36,5 +37,6 @@ export default angular.module('sharedModule', [])
     .component('progressBar', progressBar)
     .component('errorInform', errorInform)
     .component('contactForm', contactForm)
+    .component('languageFab', languageFab)
     .filter('capitalize', () => capitalize)
     .name;

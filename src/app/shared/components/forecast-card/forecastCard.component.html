@@ -43,10 +43,10 @@
     <md-card-content ng-class="{'make-column': $ctrl.currentForecast}">
         <div ng-show="$ctrl.currentForecast" class="flex-row today-content flex-wrap">
             <progress-bar icon-to-display="cloud" progress="$ctrl.currentForecast.clouds.all" color="#878582"
-                bar-type="{{ ::'PROGRESS_BAR.TYPES.CLOUDS' | translate }}">
+                bar-type="{{ 'PROGRESS_BAR.TYPES.CLOUDS' | translate }}">
             </progress-bar>
             <progress-bar icon-to-display="opacity" progress="$ctrl.currentForecast.main.humidity" color="#a9dcf4"
-                bar-type="{{ ::'PROGRESS_BAR.TYPES.HUMIDITY' | translate }}">
+                bar-type="{{ 'PROGRESS_BAR.TYPES.HUMIDITY' | translate }}">
             </progress-bar>
             <span class="flex-25">
                 <md-tooltip md-delay="400">

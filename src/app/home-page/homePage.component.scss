@@ -2,7 +2,7 @@
 
 home-page {
     .content-background {
-        @include setBackground("../../../img/contentBackground.svg");
+        @include setBackground("../../resources/img/contentBackground.svg");
     }
 
     city-search {

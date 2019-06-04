@@ -1,4 +1,4 @@
-export default {
+{
     "APP": {
         "NAME": "MeteoApp",
         "STATE": {
@@ -35,7 +35,8 @@ export default {
         "TOOLTIPS": {
             "HEADER": "{{ type }} cities list",
             "NO_RESULTS": "No results",
-            "SINGLE_CARD": "{{ type }} city"
+            "SINGLE_CARD": "{{ type }} city",
+            "DELETE_ELEMENT": "Delete this from the list"
         },
         "TYPES": {
             "NEARBY": "Nearby",
@@ -66,6 +67,16 @@ export default {
             "TIME": "Local time",
             "WIND_DIRECTION": "Wind direction on degrees",
             "WIND_SPEED": "Wind speed on km/h"
+        }
+    },
+    "LANGUAGE_FAB": {
+        "TOOLTIPS": {
+            "CHANGE_LANGUAGE": "Change the web language",
+            "LANGUAGES": {
+                "ES": "Usar el Español como idioma",
+                "EN": "Use English as the language",
+                "PT": "Use o Português como idioma"
+            }
         }
     },
     "PROGRESS_BAR": {

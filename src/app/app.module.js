@@ -9,6 +9,8 @@ import angularMessages from 'angular-messages';
 import angularTranslate from 'angular-translate';
 //Angular translate config
 import translations from './app.translate';
+//Angular translate Static files loader
+import staticFilesLoader from 'angular-translate-loader-static-files';
 
 //UiRouter
 import uiRouter from '@uirouter/angularjs';
@@ -26,6 +28,7 @@ import titleUpdate from './app.title'
 //Styles
 import 'angular-material/angular-material.scss';
 import 'material-icons/iconfont/material-icons.scss';
+import 'flag-icon-css/sass/flag-icon.scss'
 
 //Modules
 import homePageModule from './home-page/homePage.module';
@@ -34,6 +37,7 @@ import sharedModule from './shared/shared.module';
 
 export default angular.module('app', [
         angularTranslate,
+        staticFilesLoader,
         angularAnimate,
         angularAria,
         angularMessages,

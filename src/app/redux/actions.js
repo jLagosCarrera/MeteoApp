@@ -6,3 +6,10 @@ export function addCity(city) {
         city
     };
 }
+
+export function setLanguage(languageKey) {
+    return {
+        type: types.SET_LANGUAGE,
+        languageKey
+    }
+}
