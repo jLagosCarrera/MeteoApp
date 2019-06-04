@@ -3,21 +3,22 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
+    mode: 'development',
     entry: './src/app/app.module.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist')
     },
     devServer: {
-        contentBase: path.join(__dirname, "/dist/"),
+        contentBase: path.join(__dirname, "../src"),
         compress: true,
         port: 9000
     },
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.resolve(__dirname, '../src/index.html'),
-            filename: path.resolve(__dirname, '../dist/index.html')
+            template: './src/index.html',
+            filename: './index.html'
         }),
         new Dotenv({
             systemvars: true,

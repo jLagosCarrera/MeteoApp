@@ -3,6 +3,7 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
+    mode: 'production',
     entry: './src/app/app.module.js',
     output: {
         filename: 'bundle.js',
@@ -11,8 +12,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            template: path.resolve(__dirname, '../src/index.html'),
-            filename: path.resolve(__dirname, '../dist/index.html')
+            template: './src/index.html',
+            filename: './index.html'
         }),
         new Dotenv({
             systemvars: true,
