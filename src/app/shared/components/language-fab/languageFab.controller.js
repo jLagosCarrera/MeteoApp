@@ -13,6 +13,10 @@ export default class LanguageFabController {
     }
 
     useLanguage(langKey) {
+        if (langKey === 'gb') {
+            langKey = 'en'
+        }
+
         this.$translate.use(langKey);
         this.$ngRedux.dispatch(setLanguage(langKey));
         if (this.$state.current.name === 'searchCity') {
@@ -21,6 +25,10 @@ export default class LanguageFabController {
     }
 
     getLanguageTranslation(langKey) {
+        if (langKey === 'gb') {
+            langKey = 'en'
+        }
+
         return `LANGUAGE_FAB.TOOLTIPS.LANGUAGES.${langKey.toUpperCase()}`;
     }
 }
