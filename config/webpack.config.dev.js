@@ -27,7 +27,7 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.(html)$/,
-                use: 'html-loader'
+                use: ['html-loader']
             },
             {
                 test: /\.(s*)css$/,

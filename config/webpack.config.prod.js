@@ -1,3 +1,4 @@
+const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
@@ -17,12 +18,17 @@ module.exports = {
         }),
         new Dotenv({
             systemvars: true,
-        })
+        }),
+        new CopyPlugin([{
+                from: './src/resources/translations',
+                to: './resources/translations'
+            },
+        ]),
     ],
     module: {
         rules: [{
                 test: /\.(html)$/,
-                use: 'html-loader'
+                use: ['html-loader']
             },
             {
                 test: /\.(s*)css$/,
