@@ -19,9 +19,7 @@ export default class LanguageFabController {
 
         this.$translate.use(langKey);
         this.$ngRedux.dispatch(setLanguage(langKey));
-        if (this.$state.current.name === 'searchCity') {
-            this.$state.reload();
-        }
+        this.$state.reload();
     }
 
     getLanguageTranslation(langKey) {

@@ -3,7 +3,7 @@
         "STATE": {
             "HOME": "Home",
             "SEARCH": "Pesquisa",
-            "SEARCH_CITY": "Pesquisa de ciudade",
+            "SEARCH_CITY": "Pesquisa cidade",
             "SEARCH_ERROR": "Erro na pesquisa"
         }
     },
