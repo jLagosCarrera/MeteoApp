@@ -26,7 +26,8 @@
         "TOOLTIPS": {
             "HEADER": "Lista de cidades {{ type }}s",
             "NO_RESULTS": "Não há resultados",
-            "SINGLE_CARD": "Cidade {{ type }}"
+            "SINGLE_CARD": "Cidade {{ type }}",
+            "DELETE_ELEMENT": "Excluir isto da lista"
         },
         "TYPES": {
             "NEARBY": "próxima",
