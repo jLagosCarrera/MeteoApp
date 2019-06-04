@@ -1,4 +1,12 @@
 {
+    "APP": {
+        "STATE": {
+            "HOME": "Home",
+            "SEARCH": "Pesquisa",
+            "SEARCH_CITY": "Pesquisa de ciudade",
+            "SEARCH_ERROR": "Erro na pesquisa"
+        }
+    },
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Coloque uma cidade aqui",
