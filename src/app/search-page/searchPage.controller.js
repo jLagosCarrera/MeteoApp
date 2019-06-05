@@ -17,17 +17,24 @@ export default class SearchPageController {
     }
 
     $onInit() {
-        if (this.$state.params.city) {
-            this.cityParam = this.$state.params.city.toLowerCase();
-        }
-
-        if (this.cityParam && this.cityParam.trim() !== '') {
+        if (this.$state.params.cityName && this.$state.params.lat && this.$state.params.lng) {
+            this.cityParam = {
+                cityName: this.$state.params.cityName,
+                lat: this.$state.params.lat,
+                lng: this.$state.params.lng
+            };
             this.$ngRedux.dispatch(addCity(this.cityParam));
         }
 
         this.geoNamesService.getNearbyCities(this.cityParam)
             .then((data) => {
-                const cities = data.map(city => city.name);
+                const cities = data.map(city => {
+                    return {
+                        cityName: city.name,
+                        lat: city.lat,
+                        lng: city.lng
+                    }
+                });
                 this.$timeout(() => this.nearbyCities = cities);
             })
             .catch((error) => {

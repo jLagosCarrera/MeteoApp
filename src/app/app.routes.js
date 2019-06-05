@@ -17,7 +17,7 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
     const searchCity = {
         parent: 'search',
         name: 'searchCity',
-        url: '/search?city',
+        url: '/search?cityName&lat&lng',
         component: 'allCards',
         resolve: getTitleTranslation('SEARCH_CITY')
     }
@@ -29,8 +29,8 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
         component: 'errorInform',
         resolve: getTitleTranslation('SEARCH_ERROR'),
         params: {
-            errorInfo: undefined,
-            citySearched: undefined
+            errorInfo: null,
+            citySearched: null
         }
     }
 

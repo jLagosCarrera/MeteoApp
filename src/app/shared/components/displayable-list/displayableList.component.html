@@ -15,7 +15,7 @@
                         DISPLAYABLE_LIST.TOOLTIPS.SINGLE_CARD</span>
                 </md-tooltip>
                 <md-icon class="material-icons recent" ng-hide="$ctrl.useHeader">{{ ::$ctrl.displayIcon }}</md-icon>
-                <span class="capitalize">{{ city }}</span>
+                <span class="capitalize">{{ city.cityName }}</span>
             </span>
             <md-icon ng-click="$ctrl.deleteItem(city, $event)" class="material-icons clear recent" ng-show="$ctrl.canDelete">
                 <md-tooltip md-delay="400" md-direction="right">

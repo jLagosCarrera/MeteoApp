@@ -11,7 +11,8 @@ export default class OpenWeatherMaps {
 
         const params = {
             params: {
-                q: city,
+                lat: city.lat,
+                lon: city.lng,
                 units: 'metric',
                 lang: this.lang,
                 appid: process.env.OPENWEATHERMAP_API_KEY
@@ -32,7 +33,8 @@ export default class OpenWeatherMaps {
 
         const params = {
             params: {
-                q: city,
+                lat: city.lat,
+                lon: city.lng,
                 units: 'metric',
                 lang: this.lang,
                 appid: process.env.OPENWEATHERMAP_API_KEY
