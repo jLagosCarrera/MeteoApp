@@ -1,9 +1,12 @@
 export default class AllCardsController {
-    constructor(openWeatherMapsService, $timeout, routingFunctionsService, $state) {
+    constructor(openWeatherMapsService, $timeout, routingFunctionsService, $scope, $state, $rootElement, $mdDialog) {
         this.openWeatherMapsService = openWeatherMapsService;
         this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
+        this.$scope = $scope;
         this.$state = $state;
+        this.$rootElement = $rootElement;
+        this.$mdDialog = $mdDialog;
     }
 
     $onInit() {
@@ -59,8 +62,19 @@ export default class AllCardsController {
     }
 
     openDialog(day) {
-        console.log(day)
+        const dialogScope = angular.extend(this.$scope.$new(true), {
+            day
+        });
+
+        this.$mdDialog.show({
+            template: '<detailed-day></detailed-day>',
+            scope: dialogScope,
+            parent: this.$rootElement,
+            targetEvent: event,
+            clickOutsideToClose: true,
+            escapeToClose: true
+        })
     }
 }
 
-AllCardsController.$inject = ['openWeatherMapsService', '$timeout', 'routingFunctionsService', '$state'];
+AllCardsController.$inject = ['openWeatherMapsService', '$timeout', 'routingFunctionsService', '$scope', '$state', '$rootElement', '$mdDialog'];

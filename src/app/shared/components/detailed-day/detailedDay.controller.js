@@ -1,4 +1,4 @@
-export default class ContactFormController {
+export default class DetailedDayController {
     constructor($mdDialog, $scope, $rootScope) {
         this.$mdDialog = $mdDialog;
         this.$scope = $scope;
@@ -12,23 +12,14 @@ export default class ContactFormController {
         });
     }
 
-    success() {
-        const name = this.$scope.name;
-        const mail = this.$scope.mail;
-        const subject = this.$scope.subject;
-        const text = this.$scope.text;
-
-        this.$mdDialog.hide({
-            name,
-            mail,
-            subject,
-            text
-        });
-    };
+    $onInit() {
+        this.day = this.$scope.$parent.day;
+        console.log(this.day)
+    }
 
     cancel() {
         this.$mdDialog.cancel();
     };
 }
 
-ContactFormController.$inject = ['$mdDialog', '$scope', '$rootScope'];
+DetailedDayController.$inject = ['$mdDialog', '$scope', '$rootScope'];
