@@ -29,8 +29,8 @@ export default ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRou
         component: 'errorInform',
         resolve: getTitleTranslation('SEARCH_ERROR'),
         params: {
-            errorInfo: undefined,
-            citySearched: undefined
+            errorInfo: null,
+            citySearched: null
         }
     }
 

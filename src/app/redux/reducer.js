@@ -13,6 +13,9 @@ export default function (state = initialState, action) {
         case types.SET_LANGUAGE:
             setLanguage(state, action);
             break;
+        case types.SET_CITIES:
+            setCities(state, action);
+            break;
     }
 
     return state;
@@ -33,10 +36,17 @@ const addCity = (state, action) => {
         state.cities.splice(10, state.cities.length - 10);
     }
 
-    localStorage.setItem('latestSearches', JSON.stringify(state.cities));
+    setCities(state, {
+        cities: state.cities
+    });
 }
 
 const setLanguage = (state, action) => {
     state.preferedLanguage = action.languageKey;
     localStorage.setItem('preferedLanguage', state.preferedLanguage);
+}
+
+const setCities = (state, action) => {
+    state.cities = action.cities;
+    localStorage.setItem('latestSearches', JSON.stringify(state.cities));
 }

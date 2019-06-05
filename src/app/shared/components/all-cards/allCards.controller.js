@@ -17,7 +17,6 @@ export default class AllCardsController {
 
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
-                console.log(data);
                 this.todayForecast = [];
                 this.fiveDayForecast = [];
 

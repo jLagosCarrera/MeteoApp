@@ -28,7 +28,13 @@ export default class SearchPageController {
 
         this.geoNamesService.getNearbyCities(this.cityParam)
             .then((data) => {
-                const cities = data.map(city => city.name);
+                const cities = data.map(city => {
+                    return {
+                        cityName: city.name,
+                        lat: city.lat,
+                        lng: city.lng
+                    }
+                });
                 this.$timeout(() => this.nearbyCities = cities);
             })
             .catch((error) => {

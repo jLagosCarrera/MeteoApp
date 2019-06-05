@@ -13,3 +13,10 @@ export function setLanguage(languageKey) {
         languageKey
     }
 }
+
+export function setCities(cities) {
+    return {
+        type: types.SET_CITIES,
+        cities
+    }
+}
