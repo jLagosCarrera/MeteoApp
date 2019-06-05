@@ -7,12 +7,17 @@ export default class AllCardsController {
     }
 
     $onInit() {
-        if (this.$state.params.city) {
-            this.cityParam = this.$state.params.city.toLowerCase();
+        if (this.$state.params.cityName && this.$state.params.lat && this.$state.params.lng) {
+            this.cityParam = {
+                cityName: this.$state.params.cityName,
+                lat: this.$state.params.lat,
+                lng: this.$state.params.lng
+            };
         }
 
         this.openWeatherMapsService.getFiveDayForecastCity(this.cityParam)
             .then((data) => {
+                console.log(data);
                 this.todayForecast = [];
                 this.fiveDayForecast = [];
 

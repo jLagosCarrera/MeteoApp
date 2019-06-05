@@ -10,7 +10,9 @@
     },
     "CITY_SEARCH": {
         "TOOLTIPS": {
-            "INSERT_CITY": "Insert a city here",
+            "INSERT_CITY": "Insert a city!",
+            "MATCH": "City match",
+            "NO_RESULTS": "No results were found",
             "SEARCH_CITY": "Go search the city!"
         }
     },

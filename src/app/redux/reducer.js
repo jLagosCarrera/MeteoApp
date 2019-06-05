@@ -19,9 +19,11 @@ export default function (state = initialState, action) {
 }
 
 const addCity = (state, action) => {
-    action.city = action.city.trim().toLowerCase();
-
-    const index = state.cities.indexOf(action.city);
+    const index = state.cities.findIndex(city => {
+        return action.city.cityName.toLowerCase().trim() === city.cityName &&
+            action.city.lat === city.lat &&
+            action.city.lng === city.lng;
+    });
     if (index > -1) {
         state.cities.splice(index, 1);
     }
@@ -30,6 +32,7 @@ const addCity = (state, action) => {
     if (state.cities.length > 10) {
         state.cities.splice(10, state.cities.length - 10);
     }
+
     localStorage.setItem('latestSearches', JSON.stringify(state.cities));
 }
 
