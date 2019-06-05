@@ -9,7 +9,6 @@ export default class DisplayableListController {
     }
 
     search(city) {
-        console.log(city)
         this.routingFunctionsService.search(city);
     }
 
