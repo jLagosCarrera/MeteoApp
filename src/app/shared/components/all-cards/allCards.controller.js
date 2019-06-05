@@ -57,6 +57,10 @@ export default class AllCardsController {
                 this.routingFunctionsService.goError(error, this.cityParam);
             });
     }
+
+    openDialog(day) {
+        console.log(day)
+    }
 }
 
 AllCardsController.$inject = ['openWeatherMapsService', '$timeout', 'routingFunctionsService', '$state'];
