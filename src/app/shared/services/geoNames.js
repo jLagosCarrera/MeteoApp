@@ -12,9 +12,9 @@ export default class GeoNames {
         const latlongParams = {
             params: {
                 name: city,
-                cities: cities,
-                maxRows: maxRows,
-                style: style,
+                cities,
+                maxRows,
+                style,
                 lang: this.lang,
                 username: process.env.GEONAMES_API_KEY
             }
