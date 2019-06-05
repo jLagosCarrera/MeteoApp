@@ -11,6 +11,8 @@
     "CITY_SEARCH": {
         "TOOLTIPS": {
             "INSERT_CITY": "Introduce una ciudad aquí",
+            "MATCH": "Coincidencia",
+            "NO_RESULTS": "No se encontraron resultados",
             "SEARCH_CITY": "Busca tu ciudad!"
         }
     },
@@ -71,7 +73,12 @@
     },
     "LANGUAGE_FAB": {
         "TOOLTIPS": {
-            "CHANGE_LANGUAGE": "Cambiar el idioma de la web"
+            "CHANGE_LANGUAGE": "Cambiar el idioma de la web",
+            "LANGUAGES": {
+                "ES": "Usar el Español como idioma",
+                "EN": "Use English as the language",
+                "PT": "Use o Português como idioma"
+            }
         }
     },
     "PROGRESS_BAR": {
