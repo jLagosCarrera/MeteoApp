@@ -22,6 +22,23 @@ module.exports = {
     ],
     module: {
         rules: [{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                '@babel/preset-env',
+                                {
+                                    useBuiltIns: "entry"
+                                }
+                            ]
+                        ]
+                    }
+                }]
+            },
+            {
                 test: /\.(html)$/,
                 use: ['html-loader']
             },
@@ -37,16 +54,6 @@ module.exports = {
                 test: /\.(png|jpg|svg)$/,
                 use: ['url-loader']
             },
-            {
-                test: /\.m?js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            }
         ]
     }
 }
