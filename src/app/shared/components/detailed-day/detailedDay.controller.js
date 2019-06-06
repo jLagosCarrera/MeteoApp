@@ -14,7 +14,6 @@ export default class DetailedDayController {
 
     $onInit() {
         this.day = this.$scope.$parent.day;
-        console.log(this.day);
     }
 
     cancel() {
