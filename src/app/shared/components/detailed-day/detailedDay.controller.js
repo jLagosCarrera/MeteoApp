@@ -12,6 +12,10 @@ export default class DetailedDayController {
         });
     }
 
+    getRotation(deg) {
+        return `rotate(${deg}deg)`;
+    }
+
     $onInit() {
         this.day = this.$scope.$parent.day;
     }
