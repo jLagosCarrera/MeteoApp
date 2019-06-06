@@ -3,9 +3,8 @@ import {
 } from '../redux/actions';
 
 export default class SearchPageController {
-    constructor(geoNamesService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast, $ngRedux) {
+    constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast, $ngRedux) {
         this.geoNamesService = geoNamesService;
-        this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
         this.nearbyCities = [];
         this.$mdDialog = $mdDialog;
@@ -35,7 +34,7 @@ export default class SearchPageController {
                         lng: city.lng
                     }
                 });
-                this.$timeout(() => this.nearbyCities = cities);
+                this.nearbyCities = cities;
             })
             .catch((error) => {
                 this.routingFunctionsService.goError(error, this.cityParam);
@@ -77,4 +76,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
+SearchPageController.$inject = ['geoNamesService', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
