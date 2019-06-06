@@ -11,15 +11,15 @@ export default class DetailedDayController {
             }
         });
     }
-    
+
     $onInit() {
         this.day = this.$scope.$parent.day;
-        console.log(this.day)
+        console.log(this.day);
     }
 
     cancel() {
         this.$mdDialog.cancel();
-    };
+    }
 }
 
 DetailedDayController.$inject = ['$mdDialog', '$scope', '$rootScope'];

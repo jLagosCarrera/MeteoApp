@@ -33,6 +33,17 @@
             "SEND_ISSUE": "Envía el problema"
         }
     },
+    "DETAILED_DAY": {
+        "TITLE": "Más información para el {{ day }}",
+        "TOOLTIPS": {
+            "AIR_PRESSURE": "Presión del aire en hPa",
+            "EXIT": "Salir",
+            "TEMPERATURE": "Temperatura",
+            "TIME": "Hora local",
+            "WIND_DIRECTION": "Dirección del viento en grados",
+            "WIND_SPEED": "Velocidad del viento en km/h"
+        }
+    },
     "DISPLAYABLE_LIST": {
         "TOOLTIPS": {
             "HEADER": "Lista de ciudades {{ type }}s",

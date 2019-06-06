@@ -33,6 +33,17 @@
             "SEND_ISSUE": "Send the issue"
         }
     },
+    "DETAILED_DAY": {
+        "TITLE": "More info for the {{ day }}",
+        "TOOLTIPS": {
+            "AIR_PRESSURE": "Air pressure on hPa",
+            "EXIT": "Exit",
+            "TEMPERATURE": "Temperature",
+            "TIME": "Local time",
+            "WIND_DIRECTION": "Wind direction on degrees",
+            "WIND_SPEED": "Wind speed on km/h"
+        }
+    },
     "DISPLAYABLE_LIST": {
         "TOOLTIPS": {
             "HEADER": "{{ type }} cities list",
