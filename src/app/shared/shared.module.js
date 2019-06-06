@@ -26,9 +26,9 @@ import languageFab from './components/language-fab/languageFab.component';
 import capitalize from './filters/capitalize';
 
 export default angular.module('sharedModule', [])
-    .factory('openWeatherMapsService', openWeatherMapsService)
-    .factory('geoNamesService', geoNamesService)
-    .factory('routingFunctionsService', routingFunctionsService)
+    .service('openWeatherMapsService', openWeatherMapsService)
+    .service('geoNamesService', geoNamesService)
+    .service('routingFunctionsService', routingFunctionsService)
     .component('webLogo', webLogo)
     .component('citySearch', citySearch)
     .component('displayableList', displayableList)

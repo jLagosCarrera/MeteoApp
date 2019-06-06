@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './src/app/app.module.js',
+    entry: ['@babel/polyfill', './src/app/app.module.js'],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, '../dist')
@@ -53,7 +53,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|svg)$/,
                 use: ['url-loader']
-            },
+            }
         ]
     }
 }
