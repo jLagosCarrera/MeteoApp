@@ -4,8 +4,5 @@ import './detailedDay.component.scss';
 
 export default {
     controller,
-    template,
-    bindings: {
-        day: '<'
-    }
+    template
 };

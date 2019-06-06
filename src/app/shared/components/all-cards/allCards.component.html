@@ -4,8 +4,7 @@
         </forecast-card>
     </div>
     <div class="flex-row justify-center">
-        <forecast-card ng-click="$ctrl.openDialog(day)" class="fiveDays"
-            ng-repeat="day in $ctrl.fiveDayForecast track by $index" forecast-data="day">
+        <forecast-card class="fiveDays" ng-repeat="day in $ctrl.fiveDayForecast track by $index" forecast-data="day">
         </forecast-card>
     </div>
 </div>
