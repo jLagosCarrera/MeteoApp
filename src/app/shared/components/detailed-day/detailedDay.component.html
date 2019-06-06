@@ -5,7 +5,7 @@
                 <div flex>
                     <md-icon class="material-icons">info</md-icon>
                     <span translate
-                        translate-values="{ day: '{{ $ctrl.day[0].dt * 1000 | date:'fullDate' }}' }">DETAILED_DAY.TITLE</span>
+                        translate-values="{ day: '{{ $ctrl.day[0].dt * 1000 | date:'dd/MM/yyyy' }}' }">DETAILED_DAY.TITLE</span>
                 </div>
                 <md-button ng-click="$ctrl.cancel()" class="md-icon-button">
                     <md-tooltip md-delay="400">
