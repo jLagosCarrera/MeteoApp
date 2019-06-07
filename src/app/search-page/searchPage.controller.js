@@ -3,7 +3,7 @@ import {
 } from '../redux/actions';
 
 export default class SearchPageController {
-    constructor(geoNamesService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast, $ngRedux) {
+    constructor(geoNamesService, $timeout, routingFunctionsService, $state, $mdDialog, $rootElement, $ngRedux, mailing) {
         this.geoNamesService = geoNamesService;
         this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
@@ -11,9 +11,9 @@ export default class SearchPageController {
         this.$mdDialog = $mdDialog;
         this.$rootElement = $rootElement;
         this.$state = $state;
-        this.$mdToast = $mdToast;
         this.$ngRedux = $ngRedux;
         this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
+        this.mailing = mailing;
     }
 
     $onInit() {
@@ -55,16 +55,7 @@ export default class SearchPageController {
                 escapeToClose: true
             })
             .then((answer) => {
-                //Implement here email sending service, bottom toast on mail sending
-                //add another toast for email error sending
-                console.log(answer);
-                this.$mdToast.show(
-                    this.$mdToast.simple()
-                    .textContent('We will contact you soon!')
-                    .position('bottom right')
-                    .theme('success-toast')
-                    .hideDelay(3000)
-                );
+                this.mailing.contact(answer);
             }).catch(() => {
                 //Do nothing on dialog cancel
             });
@@ -77,4 +68,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
+SearchPageController.$inject = ['geoNamesService', '$timeout', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$ngRedux', 'mailing'];

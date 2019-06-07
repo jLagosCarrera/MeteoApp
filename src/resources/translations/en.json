@@ -96,6 +96,12 @@
             "OPEN_CONTACT": "Open contact form"
         }
     },
+    "TOAST": {
+        "CONTACT": {
+            "ERROR": "Error contacting us!",
+            "SUCCESS": "We will contact you soon!"
+        }
+    },
     "WEBLOGO": {
         "TOOLTIPS": {
             "INFO": "Go back to homepage"

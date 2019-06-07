@@ -5,6 +5,7 @@ import angular from 'angular';
 import openWeatherMapsService from './services/openWeatherMaps';
 import routingFunctionsService from './services/routingFunctions';
 import geoNamesService from './services/geoNames';
+import mailing from './services/mailing';
 
 //Styles
 import './styles/pageStyles.scss';
@@ -29,6 +30,7 @@ export default angular.module('sharedModule', [])
     .factory('openWeatherMapsService', openWeatherMapsService)
     .factory('geoNamesService', geoNamesService)
     .factory('routingFunctionsService', routingFunctionsService)
+    .factory('mailing', mailing)
     .component('webLogo', webLogo)
     .component('citySearch', citySearch)
     .component('displayableList', displayableList)
