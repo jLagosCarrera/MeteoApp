@@ -2,14 +2,17 @@ export default class ContactFormController {
     constructor($mdDialog, $scope, $rootScope) {
         this.$mdDialog = $mdDialog;
         this.$scope = $scope;
-        this.$rootScope = $rootScope;
 
-        this.$rootScope.$on('$locationChangeStart', ($event) => {
+        this.locationChange = $rootScope.$on('$locationChangeStart', ($event) => {
             if (angular.element(document).find('md-dialog').length > 0) {
                 $event.preventDefault();
                 this.$mdDialog.cancel();
             }
         });
+    }
+
+    $onDestroy() {
+        this.locationChange();
     }
 
     success() {

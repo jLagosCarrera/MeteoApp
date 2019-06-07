@@ -23,7 +23,11 @@ export default class ForecastCardController {
             targetEvent: event,
             clickOutsideToClose: true,
             escapeToClose: true
-        })
+        }).finally(() => {
+            if (dialogScope) {
+                dialogScope.$destroy();
+            }
+        });
     }
 }
 
