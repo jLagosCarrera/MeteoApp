@@ -4,8 +4,8 @@
   "description": "MeteoApp is a Web Applciation made using AngularJS for displaying forecast predictions in desired places",
   "main": "app.module.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --hot --mode development --config ./config/webpack.config.dev.js",
-    "build": "webpack --progress --hide-modules --mode production --config ./config/webpack.config.prod.js"
+    "dev": "webpack-dev-server --open --hot --config ./config/webpack.config.dev.js",
+    "build": "webpack --progress --hide-modules --config ./config/webpack.config.prod.js"
   },
   "keywords": [],
   "author": "Julio Lagos Carrera",
@@ -27,7 +27,8 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.22",
