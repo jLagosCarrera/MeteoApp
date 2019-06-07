@@ -10,22 +10,27 @@ export default class Mailing {
     contact(answer) {
         emailjs.send(process.env.EMAILJS_SERVICE, process.env.EMAILJS_TEMPLATE, answer)
             .then((response) => {
-                this.$mdToast.show(
-                    this.$mdToast.simple()
-                    .textContent(this.$translate.instant('TOAST.CONTACT.SUCCESS'))
-                    .position('bottom right')
-                    .theme('success-toast')
-                    .hideDelay(3000)
-                );
+                this.showToast('success-toast', 'TOAST.CONTACT.SUCCESS');
             }).catch((error) => {
-                this.$mdToast.show(
-                    this.$mdToast.simple()
-                    .textContent(this.$translate.instant('TOAST.CONTACT.ERROR'))
-                    .position('bottom right')
-                    .theme('error-toast')
-                    .hideDelay(3000)
-                );
+                this.showToast('error-toast', 'TOAST.CONTACT.ERROR');
             });
+    }
+
+    showToast(theme, translate) {
+        this.$mdToast.show(
+            this.$mdToast.simple()
+            .textContent(this.$translate.instant(translate))
+            .position('bottom right')
+            .theme(theme)
+            .hideDelay(3000)
+        );
+        this.$mdToast.show(
+            this.$mdToast.simple()
+            .textContent(this.$translate.instant(translate))
+            .position('bottom right')
+            .theme(theme)
+            .hideDelay(3000)
+        );
     }
 }
 

@@ -109,8 +109,8 @@
     },
     "TOAST": {
         "CONTACT": {
-            "ERROR": "Error intentando contactarnos!",
-            "SUCCESS": "Contactaremos contigo cuanto antes!"
+            "ERROR": "¡Error intentando contactarnos!",
+            "SUCCESS": "¡Contactaremos contigo cuanto antes!"
         }
     },
     "WEBLOGO": {
