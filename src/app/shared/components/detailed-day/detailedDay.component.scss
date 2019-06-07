@@ -1,0 +1,30 @@
+detailed-day {
+    md-list {
+        background-color: #4291b6;
+
+        &.md-dense {
+            padding: 0;
+        }
+
+        md-list-item {
+            background-color: rgba(229, 229, 229, 0.6);
+            border-radius: 5px;
+            margin: 4px 4px 0px 4px;
+
+            &:last-of-type {
+                margin: 4px;
+            }
+
+            span {
+                flex: 0 1 15%;
+                text-align: center;
+                font-weight: bold;
+
+                &.hour {
+                    flex: 0 1 5%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

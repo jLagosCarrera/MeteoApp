@@ -4,6 +4,13 @@ html {
     min-width: 100%;
 }
 
+div.md-dialog-container {
+    >md-dialog {
+        flex: 1 1 60%;
+        background-color: lightblue;
+    }
+}
+
 md-toast.md-success-toast-theme {
     .md-toast-content {
         background-color: green;
