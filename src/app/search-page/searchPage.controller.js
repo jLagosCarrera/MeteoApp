@@ -12,7 +12,7 @@ export default class SearchPageController {
         this.$state = $state;
         this.$ngRedux = $ngRedux;
         this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
-        this.mailingService = this.mailingService;
+        this.mailingService = mailingService;
     }
 
     $onInit() {
