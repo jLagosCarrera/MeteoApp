@@ -1,6 +1,6 @@
 import * as emailjs from 'emailjs-com';
 
-export default class Mailing {
+export default class MailingService {
     constructor($mdToast, $translate) {
         this.$mdToast = $mdToast;
         this.$translate = $translate;
@@ -29,4 +29,4 @@ export default class Mailing {
     }
 }
 
-Mailing.$inject = ['$mdToast', '$translate'];
+MailingService.$inject = ['$mdToast', '$translate'];

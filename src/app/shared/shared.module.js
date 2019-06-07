@@ -5,7 +5,7 @@ import angular from 'angular';
 import openWeatherMapsService from './services/openWeatherMaps';
 import routingFunctionsService from './services/routingFunctions';
 import geoNamesService from './services/geoNames';
-import mailing from './services/mailing';
+import mailingService from './services/mailing';
 
 //Styles
 import './styles/pageStyles.scss';
@@ -31,7 +31,7 @@ export default angular.module('sharedModule', [])
     .service('openWeatherMapsService', openWeatherMapsService)
     .service('geoNamesService', geoNamesService)
     .service('routingFunctionsService', routingFunctionsService)
-    .service('mailing', mailing)
+    .service('mailingService', mailingService)
     .component('webLogo', webLogo)
     .component('citySearch', citySearch)
     .component('displayableList', displayableList)

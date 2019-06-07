@@ -3,7 +3,7 @@ import {
 } from '../redux/actions';
 
 export default class SearchPageController {
-    constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $ngRedux, mailing) {
+    constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $ngRedux, mailingService) {
         this.geoNamesService = geoNamesService;
         this.routingFunctionsService = routingFunctionsService;
         this.nearbyCities = [];
@@ -12,7 +12,7 @@ export default class SearchPageController {
         this.$state = $state;
         this.$ngRedux = $ngRedux;
         this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
-        this.mailing = mailing;
+        this.mailingService = this.mailingService;
     }
 
     $onInit() {
@@ -54,7 +54,7 @@ export default class SearchPageController {
                 escapeToClose: true
             })
             .then((answer) => {
-                this.mailing.contact(answer);
+                this.mailingService.contact(answer);
             }).catch(() => {
                 //Do nothing on dialog cancel
             });
@@ -67,4 +67,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$ngRedux', 'mailing'];
+SearchPageController.$inject = ['geoNamesService', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$ngRedux', 'mailingService'];
