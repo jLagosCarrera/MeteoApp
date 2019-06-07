@@ -24,13 +24,6 @@ export default class Mailing {
             .theme(theme)
             .hideDelay(3000)
         );
-        this.$mdToast.show(
-            this.$mdToast.simple()
-            .textContent(this.$translate.instant(translate))
-            .position('bottom right')
-            .theme(theme)
-            .hideDelay(3000)
-        );
     }
 }
 
