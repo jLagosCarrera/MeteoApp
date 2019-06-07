@@ -1,7 +1,6 @@
 export default class AllCardsController {
-    constructor(openWeatherMapsService, $timeout, routingFunctionsService, $state) {
+    constructor(openWeatherMapsService, routingFunctionsService, $state) {
         this.openWeatherMapsService = openWeatherMapsService;
-        this.$timeout = $timeout;
         this.routingFunctionsService = routingFunctionsService;
         this.$state = $state;
     }
@@ -42,7 +41,7 @@ export default class AllCardsController {
                     });
 
                     //We finally get an array with all the arrays of then daily forecast.
-                    this.$timeout(() => this.fiveDayForecast = Array.from(auxMap.values()));
+                    this.fiveDayForecast = Array.from(auxMap.values());
                 }
             })
             .catch((error) => {
@@ -51,7 +50,7 @@ export default class AllCardsController {
 
         this.openWeatherMapsService.getCurrentForecastCity(this.cityParam)
             .then((data) => {
-                this.$timeout(() => this.currentForecast = data.data);
+                this.currentForecast = data.data;
             })
             .catch((error) => {
                 this.routingFunctionsService.goError(error, this.cityParam);
@@ -59,4 +58,4 @@ export default class AllCardsController {
     }
 }
 
-AllCardsController.$inject = ['openWeatherMapsService', '$timeout', 'routingFunctionsService', '$state'];
+AllCardsController.$inject = ['openWeatherMapsService', 'routingFunctionsService', '$state'];
