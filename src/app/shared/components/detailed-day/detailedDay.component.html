@@ -1,0 +1,74 @@
+<md-dialog flex="100">
+    <md-dialog-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <div flex>
+                    <md-icon class="material-icons">info</md-icon>
+                    <span translate
+                        translate-values="{ day: '{{ ::$ctrl.day[0].dt * 1000 | date:'dd/MM/yyyy' }}' }">DETAILED_DAY.TITLE</span>
+                </div>
+                <md-button ng-click="$ctrl.cancel()" class="md-icon-button">
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.EXIT</span>
+                    </md-tooltip>
+                    <md-icon class="material-icons">clear</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-list class="md-dense flex-column">
+            <md-list-item class="align-center flex-row" ng-repeat="hour in $ctrl.day track by $index">
+                <span class="hour">
+                    <md-tooltip md-delay="400">
+                        {{ ::hour.weather[0].description | capitalize }}
+                    </md-tooltip>
+                    <img ng-src="https://openweathermap.org/img/w/{{::hour.weather[0].icon}}.png" class="md-avatar" />
+                </span>
+                <span class="hour">
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.TIME</span>
+                    </md-tooltip>
+                    {{ ::hour.dt * 1000 | date:'HH:mm' }}
+                </span>
+                <span>
+                    <progress-bar icon-to-display="cloud" progress="hour.clouds.all" color="#878582"
+                        bar-type="{{ 'PROGRESS_BAR.TYPES.CLOUDS' | translate }}">
+                    </progress-bar>
+                </span>
+                <span>
+                    <progress-bar icon-to-display="opacity" progress="hour.main.humidity" color="#a9dcf4"
+                        bar-type="{{ 'PROGRESS_BAR.TYPES.HUMIDITY' | translate }}">
+                    </progress-bar>
+                </span>
+                <span>
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.TEMPERATURE</span>
+                    </md-tooltip>
+                    <md-icon class="material-icons temp">whatshot</md-icon>{{::hour.main.temp}}ºC
+                </span>
+                <span>
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.WIND_DIRECTION</span>
+                    </md-tooltip>
+                    <md-icon class="material-icons" ng-style="{'transform': $ctrl.getRotation({{::hour.wind.deg}})}">arrow_downward
+                    </md-icon>
+                    {{::hour.wind.deg}}º
+                </span>
+                <span>
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.WIND_SPEED</span>
+                    </md-tooltip>
+                    <md-icon class="material-icons">network_check</md-icon>
+                    {{hour.wind.speed * 3.6 | number:2 }} km/h
+                </span>
+                <span>
+                    <md-tooltip md-delay="400">
+                        <span translate>DETAILED_DAY.TOOLTIPS.AIR_PRESSURE</span>
+                    </md-tooltip>
+                    <md-icon class="material-icons">vertical_align_bottom</md-icon>
+                    {{::hour.main.pressure}}
+                    hPa
+                </span>
+            </md-list-item>
+        </md-list>
+    </md-dialog-content>
+</md-dialog>
