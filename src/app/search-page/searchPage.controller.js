@@ -55,9 +55,7 @@ export default class SearchPageController {
             })
             .then((answer) => {
                 this.mailingService.contact(answer);
-            }).catch(() => {
-                //Do nothing on dialog cancel
-            });
+            })
     }
 
     mapStateToThis(state) {

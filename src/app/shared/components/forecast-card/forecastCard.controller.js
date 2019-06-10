@@ -23,8 +23,6 @@ export default class ForecastCardController {
             targetEvent: event,
             clickOutsideToClose: true,
             escapeToClose: true
-        }).catch(() => {
-            //Do nothing on dialog cancel
         }).finally(() => {
             if (dialogScope) {
                 dialogScope.$destroy();
