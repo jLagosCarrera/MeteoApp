@@ -17,7 +17,7 @@ export default class GeoNames {
      * @param {number} [maxRows=5] - Number of matching city names retrieved by the geoNames API
      * @param {string} [style='SHORT'] - Quantity of information we retrieve for each city
      * @param {string} [cities='cities500'] - geoNames API filter for displaying only relevant cities
-     * @returns {Object[]} An array containing all the matching cities with it's information
+     * @returns {Object[]} An array containing all the matching cities with its information
      * @memberof GeoNames
      */
     async getMatches(city, maxRows = 5, style = 'SHORT', cities = 'cities500') {
@@ -56,7 +56,7 @@ export default class GeoNames {
      * @param {string} [style='SHORT'] - Quantity of information we retrieve for each city
      * @param {number} [radius=30] - Search radius for the nearby cities in kilometers
      * @param {string} [cities='cities500'] - geoNames API filter for displaying only relevant cities
-     * @returns {Object[]} An array containing all the nearby cities with it's information
+     * @returns {Object[]} An array containing all the nearby cities with its information
      * @memberof GeoNames
      */
     async getNearbyCities(city, maxRows = 7, style = 'SHORT', radius = 30, cities = 'cities500') {
