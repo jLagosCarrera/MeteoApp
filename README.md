@@ -51,10 +51,14 @@ If you want to deploy this application locally on your computer you will need [N
 Download this repository and after the download you need to add an .env file on the root folder of the application with the following API keys you can get for free:
 - [openWeatherMaps API Key](https://openweathermap.org/appid).
 - [geoNames API Key](https://www.geonames.org/export/).  
+- [emailJS API Key, Service and Template](https://dashboard.emailjs.com/account).  
 
 ```text
 OPENWEATHERMAP_API_KEY=(openWeatherMaps API Key)
 GEONAMES_API_KEY=(geoNames API Key)
+EMAILJS_API_KEY=(emailJS API Key)
+EMAILJS_SERVICE=(emailJS mailing service)
+EMAILJS_TEMPLATE=(emailJS template)
 ```  
 
 After this you are almost ready to go, just open a terminal on the repository folder and run the following commands:
@@ -80,6 +84,7 @@ npm run build
 - [redux](https://redux.js.org/): Library used to work with the state of the application.
 - [ng-redux](https://github.com/angular-redux/ng-redux): Implementation of redux to AngularJS.  
 - [uiRouter](https://ui-router.github.io/): Manage of the application screens and routing.
+- [emailjs-com](https://github.com/emailjs-com/emailjs-sdk): Sending contact mails to myself.
 
 <h2 align="center">Known Issues</h2>
 

@@ -107,6 +107,12 @@
             "OPEN_CONTACT": "Abrir formulario de contacto"
         }
     },
+    "TOAST": {
+        "CONTACT": {
+            "ERROR": "¡Error intentando contactarnos!",
+            "SUCCESS": "¡Contactaremos contigo cuanto antes!"
+        }
+    },
     "WEBLOGO": {
         "TOOLTIPS": {
             "INFO": "Volver a la página de inicio"

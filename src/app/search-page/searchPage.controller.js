@@ -3,16 +3,18 @@ import {
 } from '../redux/actions';
 
 export default class SearchPageController {
-    constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $mdToast, $ngRedux) {
-        this.geoNamesService = geoNamesService;
-        this.routingFunctionsService = routingFunctionsService;
-        this.nearbyCities = [];
+    constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $ngRedux, mailingService) {
         this.$mdDialog = $mdDialog;
         this.$rootElement = $rootElement;
         this.$state = $state;
-        this.$mdToast = $mdToast;
         this.$ngRedux = $ngRedux;
+
+        this.geoNamesService = geoNamesService;
+        this.routingFunctionsService = routingFunctionsService;
+        this.mailingService = mailingService;
+
         this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
+        this.nearbyCities = [];
     }
 
     $onInit() {
@@ -54,19 +56,8 @@ export default class SearchPageController {
                 escapeToClose: true
             })
             .then((answer) => {
-                //Implement here email sending service, bottom toast on mail sending
-                //add another toast for email error sending
-                console.log(answer);
-                this.$mdToast.show(
-                    this.$mdToast.simple()
-                    .textContent('We will contact you soon!')
-                    .position('bottom right')
-                    .theme('success-toast')
-                    .hideDelay(3000)
-                );
-            }).catch(() => {
-                //Do nothing on dialog cancel
-            });
+                this.mailingService.contact(answer);
+            })
     }
 
     mapStateToThis(state) {
@@ -76,4 +67,4 @@ export default class SearchPageController {
     }
 }
 
-SearchPageController.$inject = ['geoNamesService', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$mdToast', '$ngRedux'];
+SearchPageController.$inject = ['geoNamesService', 'routingFunctionsService', '$state', '$mdDialog', '$rootElement', '$ngRedux', 'mailingService'];
