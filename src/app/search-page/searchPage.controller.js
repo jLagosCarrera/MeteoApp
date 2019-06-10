@@ -4,15 +4,17 @@ import {
 
 export default class SearchPageController {
     constructor(geoNamesService, routingFunctionsService, $state, $mdDialog, $rootElement, $ngRedux, mailingService) {
-        this.geoNamesService = geoNamesService;
-        this.routingFunctionsService = routingFunctionsService;
-        this.nearbyCities = [];
         this.$mdDialog = $mdDialog;
         this.$rootElement = $rootElement;
         this.$state = $state;
         this.$ngRedux = $ngRedux;
-        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
+
+        this.geoNamesService = geoNamesService;
+        this.routingFunctionsService = routingFunctionsService;
         this.mailingService = mailingService;
+
+        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
+        this.nearbyCities = [];
     }
 
     $onInit() {
