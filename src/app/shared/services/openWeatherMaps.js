@@ -1,3 +1,8 @@
+/**
+ * OpenWeatherMap API service functions
+ *
+ * @class OpenWeatherMaps
+ */
 export default class OpenWeatherMaps {
     constructor($http, $ngRedux) {
         this.$http = $http;
@@ -5,6 +10,13 @@ export default class OpenWeatherMaps {
         this.$ngRedux = $ngRedux;
     }
 
+    /**
+     * Gets current forecast for the given city.
+     *
+     * @param {Object} city - Object with the latitude and the longitude of the base city
+     * @returns {Object} Current forecast for the given city.
+     * @memberof OpenWeatherMaps
+     */
     async getCurrentForecastCity(city) {
         const state = this.$ngRedux.getState();
         this.lang = state.main.preferedLanguage;
@@ -27,6 +39,13 @@ export default class OpenWeatherMaps {
         }
     }
 
+    /**
+     * Gets 5 day forecasts for the given city.
+     *
+     * @param {Object} city - Object with the latitude and the longitude of the base city
+     * @returns {Object[]} 5 day forecast for the given city.
+     * @memberof OpenWeatherMaps
+     */
     async getFiveDayForecastCity(city) {
         const state = this.$ngRedux.getState();
         this.lang = state.main.preferedLanguage;
