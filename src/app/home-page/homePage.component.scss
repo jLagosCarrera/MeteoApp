@@ -1,0 +1,33 @@
+@import '../shared/styles/mixins/background';
+
+home-page {
+    .content-background {
+        @include setBackground("../../resources/img/contentBackground.svg");
+    }
+
+    city-search {
+        .flex-type {
+            display: flex;
+            flex-direction: row;
+
+            >* {
+                flex: 0 1 50%;
+
+                margin: {
+                    right: 4px;
+                    left: 4px;
+                }
+            }
+        }
+    }
+
+    displayable-list {
+        .flex-number {
+            flex: 0 1 33%;
+        }
+    }
+
+    .width-75 {
+        width: 75%;
+    }
+}

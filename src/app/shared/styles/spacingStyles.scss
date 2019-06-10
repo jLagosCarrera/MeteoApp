@@ -1,0 +1,39 @@
+.remove-all-spacing {
+    margin: 0;
+    padding: 0;
+}
+
+.remove-y-spacing {
+    margin: {
+        top: 0;
+        bottom: 0;
+    }
+
+    padding: {
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.remove-x-spacing {
+    margin: {
+        right: 0;
+        left: 0;
+    }
+
+    padding: {
+        right: 0;
+        left: 0;
+    }
+}
+
+.padding-y-20 {
+    padding: {
+        top: 20px;
+        bottom: 20px;
+    }
+}
+
+.padding-top-20 {
+    padding-top: 20px;
+}

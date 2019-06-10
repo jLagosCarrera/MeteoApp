@@ -1,0 +1,19 @@
+<md-fab-speed-dial class="md-scale md-fab-bottom-right" md-open="false" md-direction="up" ng-cloak>
+    <md-fab-trigger>
+        <md-button class="md-fab md-primary md-hue-2">
+            <md-tooltip md-delay="400" md-direction="left">
+                <span translate>LANGUAGE_FAB.TOOLTIPS.CHANGE_LANGUAGE</span>
+            </md-tooltip>
+            <md-icon class="material-icons">language</md-icon>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-button ng-repeat="language in $ctrl.languages track by $index"
+            ng-click="$ctrl.useLanguage(language)" class="md-fab md-primary md-mini">
+            <md-tooltip md-delay="400" md-direction="left">
+                <span translate>{{ ::$ctrl.getLanguageTranslation(language) }}</span>
+            </md-tooltip>
+            <span class="{{ ::$ctrl.getFlagIcon(language) }}"></span>
+        </md-button>
+    </md-fab-actions>
+</md-fab-speed-dial>

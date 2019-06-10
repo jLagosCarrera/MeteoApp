@@ -1,0 +1,35 @@
+progress-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    md-icon {
+        margin: 0 5px;
+    }
+
+    .all-rounded {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .progress-bar {
+        flex: 1 1 90%;
+        background-color: #cccccc;
+        position: relative;
+    }
+
+    .progress-bar-percentage {
+        padding: 5px 0px;
+        color: #FFF;
+        text-align: center;
+        height: 20px;
+    }
+
+    .progress-bar-percentage span {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+}

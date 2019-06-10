@@ -1,0 +1,24 @@
+@import '../../styles/mixins/background';
+
+all-cards {
+    forecast-card {
+        padding: 10px 0 10px 10px;
+    }
+
+    forecast-card:last-of-type {
+        padding-right: 10px;
+    }
+
+    forecast-card.fiveDays {
+        flex: 0 1 20%;
+    }
+
+    forecast-card.current {
+        width: 100%;
+        padding-bottom: 0px;
+    }
+
+    .content-background {
+        @include setBackground("../../../../resources/img/contentBackground.svg");
+    }
+}

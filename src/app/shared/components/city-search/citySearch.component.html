@@ -1,0 +1,25 @@
+<form class="fill-content flex-type" ng-submit="$ctrl.searchForm()" novalidate>
+    <md-autocomplete
+        class="md-icon-float md-block md-title form-components-height remove-all-spacing tealInput form-components-height"
+        md-items="city in $ctrl.queryMatches(cityTyping)" md-selected-item-change="$ctrl.search(city)"
+        md-clear-button="true" md-search-text="cityTyping" md-item-text="city.name" md-autoselect="true"
+        placeholder="{{ 'CITY_SEARCH.TOOLTIPS.INSERT_CITY' | translate }}" md-require-match="true">
+        <md-item-template>
+            <md-tooltip md-delay="400">
+                <span translate>CITY_SEARCH.TOOLTIPS.MATCH</span>
+            </md-tooltip>
+            <span md-highlight-text="cityTyping">
+                {{city.name}} ({{city.countryCode}})
+            </span>
+        </md-item-template>
+        <md-not-found>
+            <span translate>CITY_SEARCH.TOOLTIPS.NO_RESULTS</span>
+        </md-not-found>
+    </md-autocomplete>
+    <md-button ng-disabled="!$ctrl.matches[0]" type="submit" class="md-raised md-primary form-components-height remove-all-spacing">
+        <md-tooltip md-delay="400">
+            <span translate>CITY_SEARCH.TOOLTIPS.SEARCH_CITY</span>
+        </md-tooltip>
+        <md-icon class="material-icons">search</md-icon>
+    </md-button>
+</form>

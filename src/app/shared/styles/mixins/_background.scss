@@ -1,0 +1,7 @@
+@mixin setBackground($backgroundUrl) {
+    height: 100%;
+    background-image: url($backgroundUrl);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
