@@ -1,6 +1,6 @@
 {
   "name": "MeteoApp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MeteoApp is a Web Applciation made using AngularJS for displaying forecast predictions in desired places",
   "main": "app.module.js",
   "scripts": {
