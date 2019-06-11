@@ -27,6 +27,12 @@ export default class CitySearchController {
             return this.matches = [];
         }
     }
+
+    update(cityTyping) {
+        if (!cityTyping || cityTyping.length <= 2) {
+            return this.matches = [];
+        }
+    }
 }
 
 CitySearchController.$inject = ['routingFunctionsService', 'geoNamesService'];
