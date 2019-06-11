@@ -32,11 +32,12 @@
 ## Index
 1. [Introduction](#introduction)
 2. [Local Deploy](#local-deploy)
-3. [Dependencies](#dependencies)
-4. [Known Issues](#known-issues)
-5. [Contributing and Support](#contributing-and-support)
-6. [Special Thanks](#special-thanks)
-7. [License](#license)
+3. [E2E Testing](#e2e-testing)
+4. [Dependencies](#dependencies)
+5. [Known Issues](#known-issues)
+6. [Contributing and Support](#contributing-and-support)
+7. [Special Thanks](#special-thanks)
+8. [License](#license)
 
 <h2 align="center">Introduction</h2>
 
@@ -61,15 +62,38 @@ EMAILJS_SERVICE=(emailJS mailing service)
 EMAILJS_TEMPLATE=(emailJS template)
 ```  
 
-After this you are almost ready to go, just open a terminal on the repository folder and run the following commands:
+After this you are almost ready to go, just open a terminal on the repository folder, install all the dependencies and finally run the following commands:
 - **_dev_** -> Runs server locally on port 9000.
 - **_build_** -> Generates a build of the web on the dist folder.
 
 ```bash
 npm i
 
+npm run (command)
+```
+
+<h2 align="center">E2E Testing</h2>
+
+Meteoapp comes packed with some E2E tests made with Protractor. To run them, you need to open the local development server on a terminal:
+
+```bash
+npm i
+
 npm run dev
-npm run build
+```
+
+Also, you will need to open another terminal to open an Selenium server with Webdriver Manager, to achieve this, first assure we are up to date and then open the server:
+
+```bash
+webdriver-manager update
+
+webdriver-manager start
+```
+
+You are ready to go and run the Protactor tests with the following command on a terminal:
+
+```bash
+npm run protractor
 ```
 
 <h2 align="center">Dependencies</h2>
@@ -83,8 +107,9 @@ npm run build
 - [flag-icon-css](https://github.com/lipis/flag-icon-css): Used for taking country flags for language selection.
 - [redux](https://redux.js.org/): Library used to work with the state of the application.
 - [ng-redux](https://github.com/angular-redux/ng-redux): Implementation of redux to AngularJS.  
-- [uiRouter](https://ui-router.github.io/): Manage of the application screens and routing.
-- [emailjs-com](https://github.com/emailjs-com/emailjs-sdk): Sending contact mails to myself.
+- [uiRouter](https://ui-router.github.io/): Manage of the application screens and routing.  
+- [emailjs-com](https://github.com/emailjs-com/emailjs-sdk): Sending contact mails to myself.  
+- [protractor](https://github.com/angular/protractor): E2E tests.  
 
 <h2 align="center">Known Issues</h2>
 
