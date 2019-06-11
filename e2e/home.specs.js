@@ -58,7 +58,7 @@ describe('meteoapp home', () => {
     it('should only go search when there is at least only a valid suggestion ', () => {
         const input = element(by.css('md-autocomplete md-autocomplete-wrap input'));
         const mask = element(by.css('.md-scroll-mask'))
-        const button = element(by.id('searchButton'));
+        const button = element(by.id('search-button'));
 
         input.sendKeys('Vi');
         mask.click();
@@ -71,7 +71,7 @@ describe('meteoapp home', () => {
     });
 
     it('should change preferred language', () => {
-        const langButton = element(by.id('langButton'));
+        const langButton = element(by.id('lang-button'));
         const availableLanguages = element.all(by.css('.md-button.md-fab.md-mini'));
 
         availableLanguages.each((element, index) => {
