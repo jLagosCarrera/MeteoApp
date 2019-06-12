@@ -1,6 +1,8 @@
+const baseUrl = 'http://localhost:9000/#!';
+
 describe('meteoapp home', () => {
     beforeEach(() => {
-        browser.get('http://localhost:9000/#!/home');
+        browser.get(`${baseUrl}/home`);
         const recentCitiesSample = [{
             "cityName": "vigo",
             "lat": "42.23282",
@@ -32,7 +34,7 @@ describe('meteoapp home', () => {
         }];
 
         browser.executeScript("return window.localStorage.setItem('latestSearches', '" + JSON.stringify(recentCitiesSample) + "');");
-        browser.get('http://localhost:9000/#!/home');
+        browser.get(`${baseUrl}/home`);
     });
 
     it('should contain MeteoApp on the title', () => {
@@ -42,7 +44,7 @@ describe('meteoapp home', () => {
     it('should go home when clicking on the weblogo', () => {
         const webLogo = element(by.css('web-logo'));
         webLogo.click();
-        expect(browser.getCurrentUrl()).toEqual("http://localhost:9000/#!/home");
+        expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/home`);
     });
 
     it('should only display matches when 3 or more characters are typed in', () => {
@@ -63,11 +65,11 @@ describe('meteoapp home', () => {
         input.sendKeys('Vi');
         mask.click();
         button.click();
-        expect(browser.getCurrentUrl()).toEqual("http://localhost:9000/#!/home");
+        expect(browser.getCurrentUrl()).toEqual(`${baseUrl}/home`);
         input.sendKeys('go');
         mask.click();
         button.click();
-        expect(browser.getCurrentUrl()).toContain("http://localhost:9000/#!/search");
+        expect(browser.getCurrentUrl()).toContain(`${baseUrl}/search`);
     });
 
     it('should change preferred language', () => {
@@ -83,7 +85,7 @@ describe('meteoapp home', () => {
     it('should go search when an recent element is clicked', () => {
         const recentSearches = element.all(by.css('a.link-effect.spacing-4'));
         recentSearches.get(0).click();
-        expect(browser.getCurrentUrl()).toContain("http://localhost:9000/#!/search");
+        expect(browser.getCurrentUrl()).toContain(`${baseUrl}/search`);
     });
 
     it('should delete an item from the recent searches', () => {

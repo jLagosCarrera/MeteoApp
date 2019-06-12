@@ -100,6 +100,7 @@ npm run protractor
 
 - [angular](https://angularjs.org/): Framework used for the dynamic build of the application.
 - [angular-material](https://material.angularjs.org/): Used for implementing UI components into the application.
+- [angular-translate](https://github.com/angular-translate/angular-translate): Used for making the app translations.
 - [angular-animate](https://www.npmjs.com/package/angular-animate): Allow material components animations.
 - [angular-aria](https://www.npmjs.com/package/angular-aria): Allows material components accesibility.
 - [angular-messages](https://www.npmjs.com/package/angular-messages): Allows material components messages content display.
