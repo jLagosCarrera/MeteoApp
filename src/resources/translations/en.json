@@ -73,6 +73,7 @@
         "TOOLTIPS": {
             "AIR_PRESSURE": "Air pressure on hPa",
             "DATE": "Date of the forecast",
+            "OPEN_DETAIL": "Open detailed info",
             "PLACE_INFO": "City (Country)",
             "SUNRISE_INFO": "Sunrise local time",
             "SUNSET_INFO": "Sunset local time",

@@ -73,6 +73,7 @@
         "TOOLTIPS": {
             "AIR_PRESSURE": "Pressão de ar em hPa",
             "DATE": "Data da previsão",
+            "OPEN_DETAIL": "Abrir informação detalhada",
             "PLACE_INFO": "Cidade (País)",
             "SUNRISE_INFO": "Horário local do nascer do sol",
             "SUNSET_INFO": "Horário local do anoitecer",
